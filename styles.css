@@ -115,6 +115,13 @@ main,
   animation: rise-in 680ms ease both;
 }
 
+.page-hero {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 42px 0 28px;
+}
+
 .kicker,
 .eyebrow {
   margin: 0 0 0.55rem;
@@ -760,6 +767,12 @@ textarea:focus-visible {
   text-underline-offset: 0.2em;
 }
 
+.light-return {
+  width: fit-content;
+  margin: 0 0 0.6rem;
+  color: rgba(255, 250, 240, 0.9);
+}
+
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -800,6 +813,11 @@ textarea:focus-visible {
   .hero {
     grid-template-columns: minmax(0, 1fr) 150px;
     min-height: 82vh;
+    padding-top: 72px;
+  }
+
+  .page-hero {
+    grid-template-columns: minmax(0, 1fr) 150px;
     padding-top: 72px;
   }
 

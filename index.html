@@ -11,7 +11,6 @@
 <body>
   <a class="skip-link" href="#portal">Skip to guest portal</a>
   <div class="map-texture" aria-hidden="true"></div>
-  <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
 
   <header class="site-header hero">
     <div class="hero-copy">
@@ -21,7 +20,7 @@
         Your field journal for the cabin, the mountain, and every hidden Bigfoot waiting around Basecamp.
       </p>
       <div class="hero-actions" aria-label="Primary guest actions">
-        <a class="button primary" href="#hunt">Start the Hunt</a>
+        <a class="button primary" href="/scavenger/">Start the Hunt</a>
         <a class="button secondary light" href="/guest-guide/">Open Guest Guide</a>
       </div>
     </div>
@@ -41,126 +40,61 @@
     </section>
 
     <nav class="portal-grid" aria-label="Guest portal sections">
-      <a class="portal-card featured" href="#hunt">
+      <a class="portal-card featured" href="/scavenger/">
         <span class="card-icon" aria-hidden="true">👣</span>
         <span class="card-label">Bigfoot Scavenger Hunt</span>
-        <span class="card-copy">Track clues, reveal hints, and unlock the secret local guide.</span>
+        <span class="card-copy">Find the hidden Bigfoots scattered throughout Basecamp and unlock a secret local guide.</span>
       </a>
       <a class="portal-card" href="/guest-guide/">
         <span class="card-icon" aria-hidden="true">📖</span>
         <span class="card-label">Guest Guide</span>
-        <span class="card-copy">Cabin notes, checkout reminders, and local essentials.</span>
+        <span class="card-copy">Everything you need for a smooth stay, from Wi-Fi and house details to checkout instructions.</span>
       </a>
       <a class="portal-card" href="/explore/">
         <span class="card-icon" aria-hidden="true">🥾</span>
         <span class="card-label">Explore Snoqualmie Pass</span>
-        <span class="card-copy">Trailheads, waterfalls, scenic stops, and seasonal ideas.</span>
+        <span class="card-copy">Hikes, viewpoints, ski areas, family activities, and local adventures.</span>
       </a>
       <a class="portal-card" href="/food-coffee/">
         <span class="card-icon" aria-hidden="true">☕</span>
         <span class="card-label">Food & Coffee</span>
-        <span class="card-copy">Fuel up before the slopes, trails, or a cozy cabin day.</span>
+        <span class="card-copy">Favorite nearby restaurants, coffee stops, and easy meal options around Snoqualmie Pass.</span>
       </a>
       <a class="portal-card" href="/mountain-conditions/">
         <span class="card-icon" aria-hidden="true">🎿</span>
         <span class="card-label">Mountain Conditions</span>
-        <span class="card-copy">Weather, snow, road, and pass condition placeholders.</span>
+        <span class="card-copy">Quick links for weather, snow, roads, and mountain updates.</span>
       </a>
       <a class="portal-card" href="/hot-tub/">
         <span class="card-icon" aria-hidden="true">🛁</span>
         <span class="card-label">Hot Tub Guide</span>
-        <span class="card-copy">Simple care notes for a relaxed mountain soak.</span>
+        <span class="card-copy">Simple instructions for relaxing safely and keeping the spa guest-ready.</span>
       </a>
       <a class="portal-card" href="/family-activities/">
         <span class="card-icon" aria-hidden="true">👨‍👩‍👧‍👦</span>
         <span class="card-label">Family Activities</span>
-        <span class="card-copy">All-ages ideas for snow days, rainy days, and sunny afternoons.</span>
+        <span class="card-copy">All-ages ideas for snow days, rainy days, trail days, and quiet cabin afternoons.</span>
       </a>
       <a class="portal-card" href="/bigfoot-sightings/">
         <span class="card-icon" aria-hidden="true">📸</span>
         <span class="card-label">Bigfoot Sightings</span>
-        <span class="card-copy">Photo prompts and guest memory placeholders.</span>
+        <span class="card-copy">Capture favorite Basecamp moments and keep an eye out for legendary sightings.</span>
       </a>
       <a class="portal-card" href="/reviews/">
         <span class="card-icon" aria-hidden="true">⭐</span>
         <span class="card-label">Leave a Review</span>
-        <span class="card-copy">A future link for sharing your stay.</span>
+        <span class="card-copy">Share your stay and help future guests plan their own mountain escape.</span>
       </a>
       <a class="portal-card" href="/book-direct/">
         <span class="card-icon" aria-hidden="true">📅</span>
         <span class="card-label">Book Direct</span>
-        <span class="card-copy">A future direct-booking path for returning guests.</span>
+        <span class="card-copy">Plan a return trip and find the direct path back to Bigfoot's Basecamp.</span>
       </a>
     </nav>
-
-    <section id="hunt" class="hunt-section" aria-labelledby="hunt-title">
-      <div class="journal-page welcome-panel">
-        <div class="stamp" aria-hidden="true">Field Log</div>
-        <p class="eyebrow">Bigfoot Scavenger Hunt</p>
-        <h2 id="hunt-title">Welcome Explorer!</h2>
-        <p>
-          Legend says Bigfoot has been staying at Bigfoot's Basecamp for years.
-          Every visit he leaves behind tiny versions of himself hidden throughout the cabin.
-        </p>
-        <p class="lead-question">Can you find all of them?</p>
-        <p class="notice">Please do not move furniture or open locked cabinets.</p>
-        <p class="signoff">Good luck!</p>
-      </div>
-
-      <section class="progress-panel" aria-labelledby="progress-title">
-        <div class="progress-copy">
-          <p class="eyebrow">Progress</p>
-          <h2 id="progress-title">Tracker's Log</h2>
-          <p id="progressText" aria-live="polite">0 / 12 Found</p>
-        </div>
-        <div class="progress-meter" role="progressbar" aria-valuemin="0" aria-valuenow="0" aria-valuemax="12" aria-label="Scavenger hunt progress">
-          <div id="progressBar" class="progress-bar"></div>
-        </div>
-        <div id="progressBlocks" class="progress-blocks" aria-hidden="true"></div>
-      </section>
-
-      <section class="hunt-list" id="clues" aria-label="Hidden Bigfoot clues"></section>
-    </section>
-
-    <section id="complete" class="journal-page complete-panel hidden" aria-live="polite">
-      <p class="eyebrow">Expedition Complete</p>
-      <h2>Congratulations!</h2>
-      <p>You found every hidden Bigfoot!</p>
-      <p>You are now an Official Bigfoot Tracker.</p>
-      <p class="tagline">Please tag us: <strong>#BigfootsBasecamp</strong></p>
-    </section>
-
-    <section id="secretGuide" class="secret-guide hidden" aria-labelledby="secret-title">
-      <div class="guide-header">
-        <p class="eyebrow">Unlocked</p>
-        <h2 id="secret-title">Secret Local Guide</h2>
-      </div>
-      <div class="guide-grid" id="guideGrid"></div>
-    </section>
-
-    <section id="adminPanel" class="admin-panel hidden" aria-labelledby="admin-title">
-      <div class="admin-heading">
-        <div>
-          <p class="eyebrow">Local Editor</p>
-          <h2 id="admin-title">Admin Mode</h2>
-        </div>
-        <button class="text-button" id="exitAdmin" type="button">Exit</button>
-      </div>
-      <p class="admin-note">Edits are saved on this device only. Update the default list in <code>script.js</code> before deploying permanent clue changes.</p>
-      <div id="adminList" class="admin-list"></div>
-      <div class="admin-actions">
-        <button class="button primary" id="addBigfoot" type="button">Add Bigfoot</button>
-        <button class="button secondary" id="resetProgress" type="button">Reset Progress</button>
-        <button class="button secondary" id="restoreDefaults" type="button">Restore Default Hunt</button>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
     <p>Bigfoot's Basecamp</p>
-    <button id="adminButton" class="admin-trigger" type="button">Admin</button>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

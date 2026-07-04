@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bigfoot Scavenger Hunt | Bigfoot's Basecamp</title>
+  <meta name="description" content="The Bigfoot's Basecamp scavenger hunt for guests at Bigfoot's Basecamp in Snoqualmie Pass, Washington." />
+  <meta name="theme-color" content="#26382a" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#hunt">Skip to hunt</a>
+  <div class="map-texture" aria-hidden="true"></div>
+  <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header page-hero">
+    <div class="hero-copy">
+      <a class="return-link light-return" href="/">← Return to Guest Portal</a>
+      <p class="kicker">Bigfoot's Basecamp</p>
+      <h1>Bigfoot Scavenger Hunt</h1>
+      <p class="hero-text">
+        Follow the clues, track your progress, and unlock the secret local guide when every Bigfoot is found.
+      </p>
+    </div>
+    <div class="hero-logo" aria-label="Bigfoot's Basecamp">
+      <img src="/assets/images/bigfoots-basecamp-logo.png" alt="Bigfoot's Basecamp logo" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
+      <span class="logo-fallback" hidden>Bigfoot's Basecamp</span>
+    </div>
+  </header>
+
+  <main>
+    <section id="hunt" class="hunt-section" aria-labelledby="hunt-title">
+      <div class="journal-page welcome-panel">
+        <div class="stamp" aria-hidden="true">Field Log</div>
+        <p class="eyebrow">Bigfoot Scavenger Hunt</p>
+        <h2 id="hunt-title">Welcome Explorer!</h2>
+        <p>
+          Legend says Bigfoot has been staying at Bigfoot's Basecamp for years.
+          Every visit he leaves behind tiny versions of himself hidden throughout the cabin.
+        </p>
+        <p class="lead-question">Can you find all of them?</p>
+        <p class="notice">Please do not move furniture or open locked cabinets.</p>
+        <p class="signoff">Good luck!</p>
+      </div>
+
+      <section class="progress-panel" aria-labelledby="progress-title">
+        <div class="progress-copy">
+          <p class="eyebrow">Progress</p>
+          <h2 id="progress-title">Tracker's Log</h2>
+          <p id="progressText" aria-live="polite">0 / 12 Found</p>
+        </div>
+        <div class="progress-meter" role="progressbar" aria-valuemin="0" aria-valuenow="0" aria-valuemax="12" aria-label="Scavenger hunt progress">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <div id="progressBlocks" class="progress-blocks" aria-hidden="true"></div>
+      </section>
+
+      <section class="hunt-list" id="clues" aria-label="Hidden Bigfoot clues"></section>
+    </section>
+
+    <section id="complete" class="journal-page complete-panel hidden" aria-live="polite">
+      <p class="eyebrow">Expedition Complete</p>
+      <h2>Congratulations!</h2>
+      <p>You found every hidden Bigfoot!</p>
+      <p>You are now an Official Bigfoot Tracker.</p>
+      <p class="tagline">Please tag us: <strong>#BigfootsBasecamp</strong></p>
+    </section>
+
+    <section id="secretGuide" class="secret-guide hidden" aria-labelledby="secret-title">
+      <div class="guide-header">
+        <p class="eyebrow">Unlocked</p>
+        <h2 id="secret-title">Secret Local Guide</h2>
+      </div>
+      <div class="guide-grid" id="guideGrid"></div>
+    </section>
+
+    <section id="adminPanel" class="admin-panel hidden" aria-labelledby="admin-title">
+      <div class="admin-heading">
+        <div>
+          <p class="eyebrow">Local Editor</p>
+          <h2 id="admin-title">Admin Mode</h2>
+        </div>
+        <button class="text-button" id="exitAdmin" type="button">Exit</button>
+      </div>
+      <p class="admin-note">Edits are saved on this device only. Update the default list in <code>script.js</code> before deploying permanent clue changes.</p>
+      <div id="adminList" class="admin-list"></div>
+      <div class="admin-actions">
+        <button class="button primary" id="addBigfoot" type="button">Add Bigfoot</button>
+        <button class="button secondary" id="resetProgress" type="button">Reset Progress</button>
+        <button class="button secondary" id="restoreDefaults" type="button">Restore Default Hunt</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Bigfoot's Basecamp</p>
+    <button id="adminButton" class="admin-trigger" type="button">Admin</button>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
