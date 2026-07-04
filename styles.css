@@ -1,0 +1,550 @@
+:root {
+  --forest: #25382a;
+  --deep-forest: #17251c;
+  --moss: #667653;
+  --fern: #8a9567;
+  --cedar: #8b5f39;
+  --copper: #b57a42;
+  --paper: #fbf3df;
+  --paper-deep: #efe0bf;
+  --cream: #fff9ea;
+  --ink: #243024;
+  --muted: #68705f;
+  --line: rgba(55, 61, 43, 0.24);
+  --shadow: 0 18px 45px rgba(27, 35, 24, 0.18);
+  --radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    linear-gradient(180deg, rgba(37, 56, 42, 0.84), rgba(37, 56, 42, 0.34) 28rem, transparent 45rem),
+    radial-gradient(circle at 12% 8%, rgba(181, 122, 66, 0.24), transparent 20rem),
+    linear-gradient(135deg, #e8dcc1 0%, #f6ebd2 42%, #d9c49f 100%);
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(37, 56, 42, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 56, 42, 0.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mix-blend-mode: multiply;
+}
+
+.map-texture {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background:
+    repeating-linear-gradient(28deg, transparent 0 24px, rgba(99, 78, 45, 0.22) 25px 26px, transparent 27px 52px),
+    radial-gradient(ellipse at 78% 18%, transparent 0 7rem, rgba(37, 56, 42, 0.28) 7.1rem 7.2rem, transparent 7.3rem);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 20;
+  background: var(--cream);
+  color: var(--deep-forest);
+  padding: 0.75rem 1rem;
+}
+
+.skip-link:focus { top: 1rem; }
+
+.site-header,
+main,
+.site-footer {
+  width: min(100% - 32px, 980px);
+  margin-inline: auto;
+  position: relative;
+}
+
+.site-header {
+  padding: 42px 0 18px;
+  color: var(--cream);
+}
+
+.kicker,
+.eyebrow {
+  margin: 0 0 0.55rem;
+  color: inherit;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 780px;
+  margin-bottom: 0;
+  font-size: clamp(2.35rem, 12vw, 5.8rem);
+  line-height: 0.94;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 7vw, 3rem);
+  line-height: 1;
+  margin-bottom: 0.85rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.15;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.58;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--copper);
+  outline-offset: 3px;
+}
+
+.journal-page,
+.progress-panel,
+.hunt-card,
+.admin-panel,
+.secret-guide {
+  background:
+    linear-gradient(90deg, rgba(139, 95, 57, 0.09), transparent 1.4rem),
+    var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.welcome-panel {
+  padding: clamp(1.25rem, 5vw, 2.4rem);
+  position: relative;
+}
+
+.stamp {
+  display: inline-grid;
+  place-items: center;
+  min-height: 42px;
+  margin-bottom: 1rem;
+  padding: 0.45rem 0.8rem;
+  border: 2px solid rgba(139, 95, 57, 0.52);
+  color: var(--cedar);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+}
+
+.lead-question {
+  color: var(--deep-forest);
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.notice {
+  border-left: 4px solid var(--copper);
+  margin: 1rem 0;
+  padding: 0.8rem 1rem;
+  background: rgba(181, 122, 66, 0.12);
+  font-weight: 700;
+}
+
+.signoff {
+  margin-bottom: 0;
+  color: var(--cedar);
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.progress-panel {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin: 18px 0;
+  padding: 1rem;
+}
+
+.progress-copy {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.progress-copy h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.progress-copy p:last-child {
+  margin: 0;
+  color: var(--deep-forest);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-weight: 900;
+}
+
+.progress-meter {
+  height: 16px;
+  margin-top: 0.9rem;
+  overflow: hidden;
+  border: 1px solid rgba(37, 56, 42, 0.28);
+  border-radius: 999px;
+  background: rgba(37, 56, 42, 0.12);
+}
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--forest), var(--moss), var(--copper));
+  transition: width 420ms ease;
+}
+
+.progress-blocks {
+  margin-top: 0.55rem;
+  color: var(--forest);
+  font-family: "Courier New", monospace;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+}
+
+.hunt-list {
+  display: grid;
+  gap: 14px;
+}
+
+.hunt-card {
+  padding: 1rem;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.hunt-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 52px rgba(27, 35, 24, 0.22);
+}
+
+.hunt-card.found {
+  background:
+    linear-gradient(90deg, rgba(102, 118, 83, 0.16), transparent 1.4rem),
+    #f3edd6;
+}
+
+.hunt-card-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+}
+
+.hunt-card h3 {
+  margin-bottom: 0.45rem;
+}
+
+.clue-text {
+  margin-bottom: 0;
+  color: #444a3b;
+}
+
+.status-pill {
+  min-width: 84px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.38rem 0.6rem;
+  background: rgba(255, 249, 234, 0.72);
+  color: var(--forest);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.hunt-card.found .status-pill {
+  background: var(--forest);
+  color: var(--cream);
+}
+
+.card-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.button,
+.text-button {
+  min-height: 48px;
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-weight: 900;
+  transition: transform 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.button:hover,
+.text-button:hover {
+  transform: translateY(-1px);
+}
+
+.primary {
+  background: var(--forest);
+  color: var(--cream);
+  box-shadow: 0 10px 20px rgba(37, 56, 42, 0.2);
+}
+
+.secondary {
+  border: 1px solid var(--line);
+  background: var(--cream);
+  color: var(--forest);
+}
+
+.found-action[aria-pressed="true"] {
+  background: var(--moss);
+}
+
+.hint-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 260ms ease;
+}
+
+.hint-panel.open {
+  grid-template-rows: 1fr;
+}
+
+.hint-inner {
+  overflow: hidden;
+}
+
+.hint-inner p {
+  margin: 0.85rem 0 0;
+  padding: 0.85rem;
+  border: 1px dashed rgba(139, 95, 57, 0.55);
+  background: rgba(255, 249, 234, 0.66);
+  color: var(--deep-forest);
+  font-style: italic;
+}
+
+.complete-panel,
+.secret-guide,
+.admin-panel {
+  margin-top: 18px;
+  padding: clamp(1.2rem, 5vw, 2rem);
+}
+
+.complete-panel {
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(102, 118, 83, 0.18), transparent),
+    var(--paper);
+}
+
+.tagline {
+  margin-bottom: 0;
+  color: var(--cedar);
+  font-size: 1.2rem;
+}
+
+.guide-header {
+  margin-bottom: 1rem;
+}
+
+.guide-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.guide-item {
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+
+.guide-item h3 {
+  margin-bottom: 0.35rem;
+}
+
+.guide-item p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.admin-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.admin-note {
+  color: var(--muted);
+}
+
+.text-button {
+  min-height: 40px;
+  padding: 0 0.8rem;
+  background: transparent;
+  color: var(--forest);
+  text-decoration: underline;
+}
+
+.admin-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+  background: rgba(255, 249, 234, 0.62);
+}
+
+.admin-item label {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+  color: var(--deep-forest);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.admin-item input,
+.admin-item textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.admin-item textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.admin-actions {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 26px 0 34px;
+  color: var(--deep-forest);
+}
+
+.site-footer p {
+  margin: 0;
+  font-weight: 700;
+}
+
+.admin-trigger {
+  border: 0;
+  background: transparent;
+  color: rgba(36, 48, 36, 0.34);
+  cursor: pointer;
+  font-size: 0.78rem;
+  padding: 0.6rem;
+}
+
+.admin-trigger:hover,
+.admin-trigger:focus-visible {
+  color: var(--deep-forest);
+}
+
+.confetti-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+}
+
+@media (min-width: 680px) {
+  .site-header {
+    padding-top: 72px;
+  }
+
+  .welcome-panel {
+    padding-right: 32%;
+  }
+
+  .welcome-panel::after {
+    content: "";
+    position: absolute;
+    right: clamp(1.5rem, 5vw, 3rem);
+    top: 50%;
+    width: 150px;
+    height: 210px;
+    border: 2px solid rgba(37, 56, 42, 0.28);
+    border-radius: 48% 45% 42% 46%;
+    transform: translateY(-50%) rotate(8deg);
+    background:
+      radial-gradient(ellipse at 50% 20%, rgba(37, 56, 42, 0.2) 0 22px, transparent 23px),
+      radial-gradient(ellipse at 50% 65%, rgba(37, 56, 42, 0.13) 0 58px, transparent 59px);
+    opacity: 0.82;
+  }
+
+  .card-actions,
+  .admin-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .guide-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+}
