@@ -1,4 +1,4 @@
-# Bigfoot's Basecamp Scavenger Hunt
+# Bigfoot's Basecamp Scavenger Hunt: Test deployment
 
 A static, browser-only scavenger hunt for Bigfoot's Basecamp in Snoqualmie Pass, Washington. The app uses HTML, CSS, and vanilla JavaScript only. Guest progress and admin edits are stored in `localStorage` on the current device.
 
