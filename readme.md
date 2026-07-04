@@ -1,6 +1,17 @@
 # Bigfoot's Basecamp Scavenger Hunt: Test deployment
 
-A static, browser-only scavenger hunt for Bigfoot's Basecamp in Snoqualmie Pass, Washington. The app uses HTML, CSS, and vanilla JavaScript only. Guest progress and admin edits are stored in `localStorage` on the current device.
+A static, browser-only guest portal and scavenger hunt for Bigfoot's Basecamp in Snoqualmie Pass, Washington. The app uses HTML, CSS, and vanilla JavaScript only. Guest progress and admin edits are stored in `localStorage` on the current device.
+
+## Structure
+
+- `index.html` controls the homepage and scavenger hunt.
+- `styles.css` controls the shared guest portal styling.
+- `script.js` controls the scavenger hunt, progress, completion state, and admin mode.
+- `_redirects` serves the app at `/scavenger` and `/scavenger/` on Netlify.
+- `assets/images/`, `assets/icons/`, and `assets/backgrounds/` are reserved for future visual assets.
+- Guest portal placeholder pages live in `guest-guide/`, `explore/`, `food-coffee/`, `mountain-conditions/`, `hot-tub/`, `family-activities/`, `bigfoot-sightings/`, `reviews/`, and `book-direct/`.
+
+The official logo should be added at `assets/images/bigfoots-basecamp-logo.png`.
 
 ## Deploy to Netlify
 
