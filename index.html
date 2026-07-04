@@ -8,20 +8,23 @@
   <meta name="theme-color" content="#26382a" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="home-page">
   <a class="skip-link" href="#portal">Skip to guest portal</a>
   <div class="map-texture" aria-hidden="true"></div>
 
   <header class="site-header hero">
     <div class="hero-copy">
       <p class="kicker">Snoqualmie Pass, Washington</p>
-      <h1>Bigfoot's Basecamp Guest Portal</h1>
+      <h1>Welcome to<br />Bigfoot's Basecamp</h1>
       <p class="hero-text">
-        Your field journal for the cabin, the mountain, and every hidden Bigfoot waiting around Basecamp.
+        Your mountain adventure begins here.
+      </p>
+      <p class="hero-body">
+        Everything you need for an unforgettable stay is just a tap away.
       </p>
       <div class="hero-actions" aria-label="Primary guest actions">
-        <a class="button primary" href="/scavenger/">Start the Hunt</a>
-        <a class="button secondary light" href="/guest-guide/">Open Guest Guide</a>
+        <a class="button primary" href="#experiences">Explore Basecamp</a>
+        <a class="button secondary light" href="/scavenger/">Find Bigfoot</a>
       </div>
     </div>
     <div class="hero-logo" aria-label="Bigfoot's Basecamp">
@@ -31,70 +34,121 @@
   </header>
 
   <main id="portal">
-    <section class="portal-intro" aria-labelledby="portal-title">
-      <p class="eyebrow">Guest Hub</p>
-      <h2 id="portal-title">Plan the perfect mountain stay.</h2>
+    <section class="welcome-section" aria-labelledby="welcome-title">
+      <p class="eyebrow">Guest Portal</p>
+      <h2 id="welcome-title">Welcome Home</h2>
       <p>
-        Find cabin essentials, local favorites, mountain-day ideas, and the original Bigfoot scavenger hunt from one polished basecamp.
+        Whether you're here for powder days, alpine hikes, family adventures, or a relaxing weekend in the mountains,
+        we've gathered everything you need in one place.
+      </p>
+      <p>
+        Take a look around, discover local favorites, and make yourself at home.
       </p>
     </section>
 
-    <nav class="portal-grid" aria-label="Guest portal sections">
-      <a class="portal-card featured" href="/scavenger/">
+    <nav id="experiences" class="experience-grid" aria-label="Bigfoot's Basecamp experiences">
+      <a class="experience-card featured" href="/scavenger/">
         <span class="card-icon" aria-hidden="true">👣</span>
-        <span class="card-label">Bigfoot Scavenger Hunt</span>
-        <span class="card-copy">Find the hidden Bigfoots scattered throughout Basecamp and unlock a secret local guide.</span>
+        <span class="card-category">Bigfoot Scavenger Hunt</span>
+        <span class="card-label">Find the Legend</span>
+        <span class="card-copy">Search the cabin for twelve hidden Bigfoots and unlock a secret local guide when your adventure is complete.</span>
+        <span class="card-action">Explore →</span>
       </a>
-      <a class="portal-card" href="/guest-guide/">
+      <a class="experience-card" href="/guest-guide/">
         <span class="card-icon" aria-hidden="true">📖</span>
-        <span class="card-label">Guest Guide</span>
-        <span class="card-copy">Everything you need for a smooth stay, from Wi-Fi and house details to checkout instructions.</span>
+        <span class="card-category">Guest Guide</span>
+        <span class="card-label">Everything You Need</span>
+        <span class="card-copy">Wi-Fi, cabin information, checkout instructions, and helpful answers for a relaxing stay.</span>
+        <span class="card-action">Open Guide →</span>
       </a>
-      <a class="portal-card" href="/explore/">
+      <a class="experience-card" href="/explore/">
         <span class="card-icon" aria-hidden="true">🥾</span>
-        <span class="card-label">Explore Snoqualmie Pass</span>
-        <span class="card-copy">Hikes, viewpoints, ski areas, family activities, and local adventures.</span>
+        <span class="card-category">Explore Snoqualmie Pass</span>
+        <span class="card-label">Adventure Awaits</span>
+        <span class="card-copy">Hiking trails, scenic drives, waterfalls, viewpoints, and year-round mountain adventures.</span>
+        <span class="card-action">Explore →</span>
       </a>
-      <a class="portal-card" href="/food-coffee/">
+      <a class="experience-card" href="/food-coffee/">
         <span class="card-icon" aria-hidden="true">☕</span>
-        <span class="card-label">Food & Coffee</span>
-        <span class="card-copy">Favorite nearby restaurants, coffee stops, and easy meal options around Snoqualmie Pass.</span>
+        <span class="card-category">Food & Coffee</span>
+        <span class="card-label">Local Favorites</span>
+        <span class="card-copy">Coffee shops, breweries, restaurants, pizza, breakfast, and hidden gems nearby.</span>
+        <span class="card-action">View Guide →</span>
       </a>
-      <a class="portal-card" href="/mountain-conditions/">
+      <a class="experience-card" href="/mountain-conditions/">
         <span class="card-icon" aria-hidden="true">🎿</span>
-        <span class="card-label">Mountain Conditions</span>
-        <span class="card-copy">Quick links for weather, snow, roads, and mountain updates.</span>
+        <span class="card-category">Mountain Conditions</span>
+        <span class="card-label">Before You Head Out</span>
+        <span class="card-copy">Weather, snow conditions, road reports, webcams, and lift status.</span>
+        <span class="card-action">Check Conditions →</span>
       </a>
-      <a class="portal-card" href="/hot-tub/">
+      <a class="experience-card" href="/hot-tub/">
         <span class="card-icon" aria-hidden="true">🛁</span>
-        <span class="card-label">Hot Tub Guide</span>
-        <span class="card-copy">Simple instructions for relaxing safely and keeping the spa guest-ready.</span>
+        <span class="card-category">Hot Tub Guide</span>
+        <span class="card-label">Relax & Recharge</span>
+        <span class="card-copy">Everything you need to enjoy the spa safely during your stay.</span>
+        <span class="card-action">Open Guide →</span>
       </a>
-      <a class="portal-card" href="/family-activities/">
+      <a class="experience-card" href="/family-activities/">
         <span class="card-icon" aria-hidden="true">👨‍👩‍👧‍👦</span>
-        <span class="card-label">Family Activities</span>
-        <span class="card-copy">All-ages ideas for snow days, rainy days, trail days, and quiet cabin afternoons.</span>
+        <span class="card-category">Family Activities</span>
+        <span class="card-label">Fun Together</span>
+        <span class="card-copy">Family-friendly adventures both inside Basecamp and around Snoqualmie Pass.</span>
+        <span class="card-action">Explore →</span>
       </a>
-      <a class="portal-card" href="/bigfoot-sightings/">
+      <a class="experience-card" href="/bigfoot-sightings/">
         <span class="card-icon" aria-hidden="true">📸</span>
-        <span class="card-label">Bigfoot Sightings</span>
-        <span class="card-copy">Capture favorite Basecamp moments and keep an eye out for legendary sightings.</span>
+        <span class="card-category">Bigfoot Sightings</span>
+        <span class="card-label">Share the Adventure</span>
+        <span class="card-copy">See guest photos and add your own Bigfoot sightings.</span>
+        <span class="card-action">View Sightings →</span>
       </a>
-      <a class="portal-card" href="/reviews/">
+      <a class="experience-card" href="/reviews/">
         <span class="card-icon" aria-hidden="true">⭐</span>
-        <span class="card-label">Leave a Review</span>
-        <span class="card-copy">Share your stay and help future guests plan their own mountain escape.</span>
+        <span class="card-category">Leave a Review</span>
+        <span class="card-label">Share Your Experience</span>
+        <span class="card-copy">Help future guests by sharing your favorite memories.</span>
+        <span class="card-action">Leave Review →</span>
       </a>
-      <a class="portal-card" href="/book-direct/">
+      <a class="experience-card" href="/book-direct/">
         <span class="card-icon" aria-hidden="true">📅</span>
-        <span class="card-label">Book Direct</span>
-        <span class="card-copy">Plan a return trip and find the direct path back to Bigfoot's Basecamp.</span>
+        <span class="card-category">Book Direct</span>
+        <span class="card-label">Stay With Us Again</span>
+        <span class="card-copy">Return for another adventure by booking directly with Bigfoot's Basecamp.</span>
+        <span class="card-action">Book Direct →</span>
       </a>
     </nav>
+
+    <section class="about-section" aria-labelledby="about-title">
+      <p class="eyebrow">About Basecamp</p>
+      <h2 id="about-title">About Bigfoot's Basecamp</h2>
+      <p>
+        Bigfoot's Basecamp was created as a place where families and friends can slow down,
+        reconnect, and enjoy everything Snoqualmie Pass has to offer.
+      </p>
+      <p>
+        Whether you're skiing fresh powder, hiking mountain trails, soaking in the hot tub beneath the stars,
+        or hunting for hidden Bigfoots, we hope your stay becomes part of your family's favorite traditions.
+      </p>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <p>Bigfoot's Basecamp</p>
+  <footer class="site-footer premium-footer">
+    <div class="footer-brand">
+      <img src="assets/images/bigfoots-basecamp-logo.png" alt="Bigfoot's Basecamp logo" />
+      <div>
+        <p>Bigfoot's Basecamp</p>
+        <span>Snoqualmie Pass, Washington</span>
+      </div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="/guest-guide/">Guest Guide</a>
+      <a href="/scavenger/">Scavenger Hunt</a>
+      <a href="/explore/">Explore</a>
+      <a href="/food-coffee/">Food & Coffee</a>
+      <a href="/book-direct/">Book Direct</a>
+    </nav>
+    <p class="copyright">© Bigfoot's Basecamp</p>
   </footer>
 </body>
 </html>
