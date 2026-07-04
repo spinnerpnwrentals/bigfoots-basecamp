@@ -11,7 +11,7 @@ A static, browser-only guest portal and scavenger hunt for Bigfoot's Basecamp in
 - `assets/images/`, `assets/icons/`, and `assets/backgrounds/` are reserved for future visual assets.
 - Guest portal placeholder pages live in `guest-guide/`, `explore/`, `food-coffee/`, `mountain-conditions/`, `hot-tub/`, `family-activities/`, `bigfoot-sightings/`, `reviews/`, and `book-direct/`.
 
-The official logo should be added at `assets/images/bigfoots-basecamp-logo.png`.
+The official logo lives at `assets/images/bigfoots-basecamp-logo.png`.
 
 ## Deploy to Netlify
 
