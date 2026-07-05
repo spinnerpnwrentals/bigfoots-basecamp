@@ -108,10 +108,13 @@ main,
   align-items: end;
   min-height: 86vh;
   padding: 42px 0 28px;
+  overflow: hidden;
 }
 
 .hero-copy {
   max-width: 820px;
+  position: relative;
+  z-index: 1;
   animation: rise-in 680ms ease both;
 }
 
@@ -1272,7 +1275,8 @@ textarea:focus-visible {
 
 .home-page {
   background:
-    linear-gradient(180deg, rgba(16, 32, 25, 0.2), rgba(247, 238, 217, 0) 44rem),
+    linear-gradient(180deg, rgba(16, 32, 25, 0.18), rgba(247, 238, 217, 0) 46rem),
+    radial-gradient(circle at 85% 8%, rgba(255, 250, 240, 0.38), transparent 20rem),
     linear-gradient(135deg, #f8efd9 0%, #f1dfbd 48%, #d6bb8e 100%);
 }
 
@@ -1282,11 +1286,12 @@ textarea:focus-visible {
   inset: 0 calc(50% - 50vw);
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(16, 32, 25, 0.3), rgba(16, 32, 25, 0.72)),
-    radial-gradient(circle at 18% 20%, rgba(185, 120, 67, 0.32), transparent 18rem),
-    linear-gradient(145deg, rgba(16, 32, 25, 0.9), rgba(32, 53, 41, 0.48) 48%, rgba(95, 59, 35, 0.5)),
-    linear-gradient(26deg, transparent 0 42%, rgba(255, 250, 240, 0.16) 42.2% 43%, transparent 43.2%),
-    linear-gradient(154deg, transparent 0 46%, rgba(255, 250, 240, 0.14) 46.2% 47%, transparent 47.2%);
+    linear-gradient(180deg, rgba(16, 32, 25, 0.2), rgba(16, 32, 25, 0.74)),
+    radial-gradient(circle at 18% 20%, rgba(185, 120, 67, 0.3), transparent 17rem),
+    radial-gradient(ellipse at 66% 34%, rgba(255, 250, 240, 0.22), transparent 21rem),
+    linear-gradient(154deg, transparent 0 39%, rgba(247, 238, 217, 0.22) 39.2% 40%, transparent 40.3%),
+    linear-gradient(32deg, transparent 0 43%, rgba(247, 238, 217, 0.18) 43.2% 44%, transparent 44.3%),
+    linear-gradient(145deg, rgba(16, 32, 25, 0.92), rgba(32, 53, 41, 0.52) 48%, rgba(95, 59, 35, 0.48));
 }
 
 .hero::after {
@@ -1296,12 +1301,18 @@ textarea:focus-visible {
   right: calc(50% - 50vw);
   bottom: -1px;
   z-index: -1;
-  height: 38%;
+  height: 56%;
   background:
-    linear-gradient(150deg, transparent 0 30%, rgba(16, 32, 25, 0.78) 30.3% 58%, transparent 58.3%),
-    linear-gradient(36deg, transparent 0 40%, rgba(32, 53, 41, 0.86) 40.3% 64%, transparent 64.3%),
-    linear-gradient(180deg, transparent, rgba(16, 32, 25, 0.48));
-  opacity: 0.78;
+    repeating-conic-gradient(from 148deg at 50% 100%, transparent 0deg 31deg, rgba(16, 32, 25, 0.72) 31deg 48deg, transparent 48deg 76deg),
+    repeating-conic-gradient(from 150deg at 50% 100%, transparent 0deg 28deg, rgba(32, 53, 41, 0.56) 28deg 45deg, transparent 45deg 74deg),
+    linear-gradient(150deg, transparent 0 31%, rgba(16, 32, 25, 0.76) 31.3% 59%, transparent 59.3%),
+    linear-gradient(36deg, transparent 0 39%, rgba(32, 53, 41, 0.82) 39.3% 64%, transparent 64.3%),
+    linear-gradient(180deg, rgba(247, 238, 217, 0.08), rgba(16, 32, 25, 0.58));
+  background-size: 92px 235px, 142px 285px, auto, auto, auto;
+  background-position: left bottom, 36px bottom, center, center, center;
+  opacity: 0.84;
+  transform-origin: bottom center;
+  animation: forest-drift 14s ease-in-out infinite alternate;
 }
 
 .hero-body {
@@ -1420,6 +1431,20 @@ textarea:focus-visible {
   color: var(--cream);
 }
 
+.home-page .hero-logo {
+  position: relative;
+  z-index: 1;
+  width: clamp(132px, 38vw, 230px);
+  min-height: clamp(132px, 38vw, 230px);
+  border-color: rgba(255, 250, 240, 0.46);
+  background: rgba(255, 250, 240, 0.18);
+  box-shadow: 0 28px 68px rgba(16, 32, 25, 0.34);
+}
+
+.home-page .hero-logo img {
+  max-width: 210px;
+}
+
 .premium-footer {
   align-items: stretch;
   margin-top: 18px;
@@ -1472,6 +1497,16 @@ textarea:focus-visible {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes forest-drift {
+  from {
+    transform: translate3d(-8px, 0, 0) scale(1.01);
+  }
+
+  to {
+    transform: translate3d(8px, 0, 0) scale(1.02);
   }
 }
 
@@ -1534,7 +1569,7 @@ textarea:focus-visible {
 
 @media (min-width: 900px) {
   .hero {
-    grid-template-columns: minmax(0, 1fr) 150px;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
     min-height: 82vh;
     padding-top: 72px;
   }
@@ -1546,8 +1581,8 @@ textarea:focus-visible {
 
   .hero-logo {
     justify-self: end;
-    align-self: start;
-    margin-bottom: 1rem;
+    align-self: center;
+    margin: 7rem 0 1.25rem;
     animation: rise-in 760ms ease 140ms both;
   }
 
@@ -1621,6 +1656,16 @@ textarea:focus-visible {
 }
 
 @media (max-width: 680px) {
+  .hero {
+    min-height: 88vh;
+  }
+
+  .home-page .hero-logo {
+    justify-self: end;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
   .premium-footer {
     display: grid;
     justify-items: start;
