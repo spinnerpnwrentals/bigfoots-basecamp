@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bigfoot Sightings | Bigfoot's Basecamp</title>
-  <meta name="description" content="View and share Bigfoot's Basecamp guest memories, playful sightings, and photo moments from the mountain adventure." />
+  <title>Guest Journal | Bigfoot's Basecamp</title>
+  <meta name="description" content="Leave a private guest journal note, favorite memory, or helpful tip for future Bigfoot's Basecamp guests." />
   <meta name="theme-color" content="#203529" />
   <link rel="canonical" href="https://bigfootsbasecamp.com/bigfoot-sightings/" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -14,32 +14,120 @@
   <link rel="manifest" href="/site.webmanifest" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Bigfoot's Basecamp" />
-  <meta property="og:title" content="Bigfoot Sightings | Bigfoot's Basecamp" />
-  <meta property="og:description" content="View and share Bigfoot's Basecamp guest memories, playful sightings, and photo moments from the mountain adventure." />
+  <meta property="og:title" content="Guest Journal | Bigfoot's Basecamp" />
+  <meta property="og:description" content="Leave a private guest journal note, favorite memory, or helpful tip for future Bigfoot's Basecamp guests." />
   <meta property="og:url" content="https://bigfootsbasecamp.com/bigfoot-sightings/" />
   <meta property="og:image" content="https://bigfootsbasecamp.com/assets/images/bigfoots-basecamp-logo.png" />
   <meta property="og:image:alt" content="Bigfoot's Basecamp logo" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bigfoot Sightings | Bigfoot's Basecamp" />
-  <meta name="twitter:description" content="View and share Bigfoot's Basecamp guest memories, playful sightings, and photo moments from the mountain adventure." />
+  <meta name="twitter:title" content="Guest Journal | Bigfoot's Basecamp" />
+  <meta name="twitter:description" content="Leave a private guest journal note, favorite memory, or helpful tip for future Bigfoot's Basecamp guests." />
   <meta name="twitter:image" content="https://bigfootsbasecamp.com/assets/images/bigfoots-basecamp-logo.png" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
-<body class="subpage">
+<body class="subpage guide-page">
   <div class="map-texture" aria-hidden="true"></div>
-  <main class="page-shell">
+  <main class="page-shell guide-shell">
     <header class="page-header">
       <div class="page-logo" aria-label="Bigfoot's Basecamp">
         <img src="../assets/images/bigfoots-basecamp-logo.png" alt="Bigfoot's Basecamp logo" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
         <span class="logo-fallback" hidden>Bigfoot's Basecamp</span>
       </div>
       <p class="kicker">Bigfoot's Basecamp</p>
-      <h1>Bigfoot Sightings</h1>
-      <p class="hero-text">Photo prompts and guest memories will live here.</p>
+      <h1>Guest Journal</h1>
+      <p class="hero-text">Leave a note for the next adventurer.</p>
+      <p class="page-intro">Every stay at Basecamp is a little different. Maybe you found the perfect coffee stop, spotted fresh snow on the pass, discovered a favorite trail, or finally got everyone around the table for game night.</p>
+      <p class="page-intro">If you'd like, leave a note for us or for the next guests. Nothing fancy. Just the kind of tip you'd tell a friend.</p>
     </header>
 
-    <section class="info-section page-panel">
-      <p>Content coming soon. This section will become part of the complete Bigfoot's Basecamp Guest Portal.</p>
+    <section class="guide-section page-panel" aria-labelledby="journal-title">
+      <div class="guide-section-head">
+        <p class="eyebrow">Cabin Guest Book</p>
+        <h2 id="journal-title">Leave a Note</h2>
+        <p>Favorite memory, best coffee stop, trail tip, game-night victory, quiet little moment — whatever feels worth passing along.</p>
+      </div>
+
+      <form class="guest-review-form" name="guest-journal" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/bigfoot-sightings/">
+        <input type="hidden" name="form-name" value="guest-journal" />
+
+        <p class="form-hidden">
+          <label>
+            Do not fill this out if you're human:
+            <input name="bot-field" autocomplete="off" />
+          </label>
+        </p>
+
+        <div class="form-grid">
+          <label class="form-field" for="journal-name">
+            <span>Name or first name</span>
+            <input id="journal-name" name="name" type="text" autocomplete="name" required />
+          </label>
+
+          <label class="form-field" for="stay-month">
+            <span>Stay month</span>
+            <input id="stay-month" name="stay-month" type="text" placeholder="Example: March 2026" required />
+          </label>
+        </div>
+
+        <label class="form-field" for="favorite-memory">
+          <span>Favorite memory</span>
+          <textarea id="favorite-memory" name="favorite-memory" rows="5" required placeholder="What moment from your stay do you want to remember?"></textarea>
+        </label>
+
+        <div class="form-grid">
+          <label class="form-field" for="best-meal">
+            <span>Best meal or coffee stop</span>
+            <input id="best-meal" name="best-meal-or-coffee-stop" type="text" />
+          </label>
+
+          <label class="form-field" for="favorite-adventure">
+            <span>Favorite adventure</span>
+            <input id="favorite-adventure" name="favorite-adventure" type="text" />
+          </label>
+        </div>
+
+        <label class="form-field" for="guest-tip">
+          <span>Tip for the next guest</span>
+          <textarea id="guest-tip" name="tip-for-next-guest" rows="4" placeholder="A trail, a restaurant, a packing tip, a rainy-day idea — anything you'd tell a friend."></textarea>
+        </label>
+
+        <div class="form-grid">
+          <label class="form-field" for="hunt-finished">
+            <span>Did you finish the scavenger hunt?</span>
+            <select id="hunt-finished" name="scavenger-hunt-finished">
+              <option value="">Choose one</option>
+              <option value="yes">Yes</option>
+              <option value="not-yet">Not yet</option>
+              <option value="bigfoot-won">We tried, but Bigfoot won</option>
+            </select>
+          </label>
+
+          <label class="form-field" for="anonymous-share">
+            <span>May we anonymously share your note with future guests?</span>
+            <select id="anonymous-share" name="anonymous-sharing-permission">
+              <option value="">Choose one</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+        </div>
+
+        <button class="button primary" type="submit">Leave a Note</button>
+      </form>
+    </section>
+
+    <section class="page-note">
+      <p>These notes go directly to us first. We'll never post your name, photos, or personal details without permission.</p>
+    </section>
+
+    <aside class="owner-tip" aria-labelledby="private-feedback-title">
+      <p class="eyebrow">Need to tell us something private?</p>
+      <h2 id="private-feedback-title">Send Feedback Directly</h2>
+      <p>If something needs attention, please use the Share Your Experience page instead so we can follow up directly.</p>
+      <a class="button secondary light" href="/reviews/">Share Private Feedback</a>
+    </aside>
+
+    <section class="page-note">
       <a class="return-link" href="/">← Return to Guest Portal</a>
     </section>
   </main>
