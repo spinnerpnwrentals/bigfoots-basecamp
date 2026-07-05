@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mountain Conditions | Bigfoot's Basecamp</title>
-  <meta name="description" content="Mountain conditions placeholder for the Bigfoot's Basecamp Guest Portal." />
+  <meta name="description" content="Road, weather, snow, and mountain operations resources for guests at Bigfoot's Basecamp." />
   <meta name="theme-color" content="#26382a" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
-<body class="subpage">
+<body class="subpage guide-page conditions-page">
   <div class="map-texture" aria-hidden="true"></div>
-  <main class="page-shell">
+  <main class="page-shell guide-shell">
     <header class="page-header">
       <div class="page-logo" aria-label="Bigfoot's Basecamp">
         <img src="../assets/images/bigfoots-basecamp-logo.png" alt="Bigfoot's Basecamp logo" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
@@ -18,11 +18,267 @@
       </div>
       <p class="kicker">Bigfoot's Basecamp</p>
       <h1>Mountain Conditions</h1>
-      <p class="hero-text">Weather, snow, and road condition links will live here.</p>
+      <p class="hero-text">Everything you need before heading into the mountains.</p>
+      <p class="page-intro">Mountain weather can change quickly at Snoqualmie Pass. Before heading out for skiing, hiking, or sightseeing, we recommend checking current road conditions, weather, and mountain operations using the trusted resources below.</p>
     </header>
 
-    <section class="info-section page-panel">
-      <p>Content coming soon. This section will become part of the complete Bigfoot's Basecamp Guest Portal.</p>
+    <section class="guide-section page-panel" aria-labelledby="essentials">
+      <div class="guide-section-head">
+        <div class="section-title-row">
+          <span class="guide-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M3 17h18" />
+              <path d="m7 17 5-9 5 9" />
+              <path d="m10 12 2 2 2-2" />
+            </svg>
+          </span>
+          <div>
+            <p class="eyebrow">Today's Essentials</p>
+            <h2 id="essentials">Check Before You Go</h2>
+          </div>
+        </div>
+      </div>
+      <div class="dashboard-grid">
+        <article class="dashboard-card">
+          <span class="dashboard-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M12 3v2" />
+              <path d="M12 19v2" />
+              <path d="m4.9 4.9 1.4 1.4" />
+              <path d="m17.7 17.7 1.4 1.4" />
+              <path d="M3 12h2" />
+              <path d="M19 12h2" />
+              <path d="m4.9 19.1 1.4-1.4" />
+              <path d="m17.7 6.3 1.4-1.4" />
+              <circle cx="12" cy="12" r="4" />
+            </svg>
+          </span>
+          <h3>Current Weather</h3>
+          <p>Check the latest weather forecast for Snoqualmie Pass.</p>
+          <a class="button primary" href="https://forecast.weather.gov/" target="_blank" rel="noopener noreferrer">View Forecast</a>
+        </article>
+
+        <article class="dashboard-card">
+          <span class="dashboard-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M6 19 10 5" />
+              <path d="m14 5 4 14" />
+              <path d="M10 11h4" />
+              <path d="M8 17h8" />
+            </svg>
+          </span>
+          <h3>Pass Conditions</h3>
+          <p>Road conditions, closures, chain requirements, and travel alerts.</p>
+          <a class="button primary" href="https://wsdot.com/travel/real-time/" target="_blank" rel="noopener noreferrer">View WSDOT</a>
+        </article>
+
+        <article class="dashboard-card">
+          <span class="dashboard-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z" />
+              <circle cx="12" cy="13" r="3" />
+            </svg>
+          </span>
+          <h3>Mountain Cameras</h3>
+          <p>Live highway and summit cameras before you leave.</p>
+          <a class="button primary" href="https://wsdot.com/travel/real-time/cameras/" target="_blank" rel="noopener noreferrer">View Cameras</a>
+        </article>
+
+        <article class="dashboard-card">
+          <span class="dashboard-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="m3 18 6-9 4 6 3-4 5 7H3Z" />
+              <path d="m9 9 1.5 2 1.5-2" />
+            </svg>
+          </span>
+          <h3>Summit at Snoqualmie</h3>
+          <p>Lift status, snow report, terrain openings, and operating hours.</p>
+          <a class="button primary" href="https://www.summitatsnoqualmie.com/" target="_blank" rel="noopener noreferrer">View Snow Report</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section" aria-labelledby="winter-checklist">
+      <div class="guide-section-head">
+        <p class="eyebrow">Winter Mountain Checklist</p>
+        <h2 id="winter-checklist">A Quick Pre-Adventure Scan</h2>
+      </div>
+      <ul class="checklist dashboard-checklist">
+        <li>Check weather forecast</li>
+        <li>Check pass conditions</li>
+        <li>Check lift status</li>
+        <li>Confirm chain requirements</li>
+        <li>Allow extra travel time</li>
+        <li>Dress in layers</li>
+        <li>Bring water and snacks</li>
+        <li>Charge your phone before leaving</li>
+      </ul>
+    </section>
+
+    <section class="guide-section" aria-labelledby="resources">
+      <div class="guide-section-head">
+        <p class="eyebrow">Helpful Resources</p>
+        <h2 id="resources">Trusted Mountain Links</h2>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card">
+          <p class="category">National Weather Service</p>
+          <h3>NOAA Forecast</h3>
+          <a class="button secondary" href="https://forecast.weather.gov/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+        </article>
+        <article class="resource-card">
+          <p class="category">Washington State DOT</p>
+          <h3>WSDOT Mountain Passes</h3>
+          <a class="button secondary" href="https://wsdot.com/travel/real-time/mountainpasses/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+        </article>
+        <article class="resource-card">
+          <p class="category">Northwest Avalanche Center</p>
+          <h3>Avalanche Forecast</h3>
+          <a class="button secondary" href="https://nwac.us/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+        </article>
+        <article class="resource-card">
+          <p class="category">Summit at Snoqualmie</p>
+          <h3>Snow Report</h3>
+          <a class="button secondary" href="https://www.summitatsnoqualmie.com/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+        </article>
+        <article class="resource-card">
+          <p class="category">OpenSnow</p>
+          <h3>Snow Forecast</h3>
+          <a class="button secondary" href="https://opensnow.com/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section" aria-labelledby="chains">
+      <div class="guide-section-head">
+        <p class="eyebrow">Chain Requirements</p>
+        <h2 id="chains">Winter Rules Can Change Fast</h2>
+      </div>
+      <aside class="callout-card">
+        <p>Chain requirements can change quickly during winter storms. Even AWD and 4WD vehicles may be required to carry chains. Always follow WSDOT guidance.</p>
+      </aside>
+    </section>
+
+    <section class="guide-section" aria-labelledby="summer-conditions">
+      <div class="guide-section-head">
+        <p class="eyebrow">Summer Conditions</p>
+        <h2 id="summer-conditions">Warm Weather Checks</h2>
+      </div>
+      <div class="recommendation-grid">
+        <article class="recommendation-card">
+          <div class="badge-list" aria-label="Categories">
+            <span class="badge">Hiking</span>
+            <span class="badge">Summer</span>
+          </div>
+          <h3>Trail Conditions</h3>
+          <p>Check recent trail reports before hiking.</p>
+        </article>
+        <article class="recommendation-card">
+          <div class="badge-list" aria-label="Categories">
+            <span class="badge">Air Quality</span>
+            <span class="badge">Late Summer</span>
+          </div>
+          <h3>Wildfire Smoke</h3>
+          <p>Review current air quality during late summer.</p>
+        </article>
+        <article class="recommendation-card">
+          <div class="badge-list" aria-label="Categories">
+            <span class="badge">Spring</span>
+            <span class="badge">Water</span>
+          </div>
+          <h3>River Crossings</h3>
+          <p>Snowmelt may increase creek crossings during spring.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section" aria-labelledby="sunrise-sunset">
+      <div class="guide-section-head">
+        <p class="eyebrow">Sunrise & Sunset</p>
+        <h2 id="sunrise-sunset">Plan Around Daylight</h2>
+      </div>
+      <div class="widget-ready-grid">
+        <article class="recommendation-card">
+          <h3>Why It Matters</h3>
+          <p>Daylight changes quickly in the mountains. For hikes, scenic drives, and winter travel, knowing sunset time helps you plan a safer, more relaxed outing.</p>
+        </article>
+        <article class="widget-placeholder">
+          <p class="category">Future Live Widget</p>
+          <h3>Sunrise</h3>
+          <p>Dynamic sunrise time will appear here.</p>
+        </article>
+        <article class="widget-placeholder">
+          <p class="category">Future Live Widget</p>
+          <h3>Sunset</h3>
+          <p>Dynamic sunset time will appear here.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-section" aria-labelledby="driving-tips">
+      <div class="guide-section-head">
+        <p class="eyebrow">Driving Tips</p>
+        <h2 id="driving-tips">A Smoother Trip Up the Pass</h2>
+      </div>
+      <div class="recommendation-grid">
+        <article class="recommendation-card">
+          <div class="badge-list" aria-label="Categories">
+            <span class="badge">Winter</span>
+            <span class="badge">Roads</span>
+          </div>
+          <h3>Winter Driving</h3>
+          <ul class="plain-list">
+            <li>Drive slower than normal.</li>
+            <li>Increase following distance.</li>
+            <li>Avoid sudden braking.</li>
+            <li>Keep emergency supplies in your vehicle.</li>
+          </ul>
+        </article>
+        <article class="recommendation-card">
+          <div class="badge-list" aria-label="Categories">
+            <span class="badge">Summer</span>
+            <span class="badge">Roads</span>
+          </div>
+          <h3>Summer Driving</h3>
+          <ul class="plain-list">
+            <li>Watch for wildlife.</li>
+            <li>Be aware of cyclists.</li>
+            <li>Expect weekend traffic.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <aside class="owner-tip" aria-labelledby="advice">
+      <p class="eyebrow">Basecamp Tip</p>
+      <h2 id="advice">Our Advice</h2>
+      <p>The weather can change dramatically within a single day in the Cascades. Even if the forecast looks perfect, bring an extra layer and check road conditions before leaving Basecamp. A few minutes of preparation can make your adventure much more enjoyable.</p>
+    </aside>
+
+    <section class="guide-section" aria-labelledby="emergency">
+      <div class="guide-section-head">
+        <p class="eyebrow">Emergency Information</p>
+        <h2 id="emergency">When You Need Help</h2>
+      </div>
+      <div class="resource-grid">
+        <article class="resource-card urgent-card">
+          <p class="category">911</p>
+          <h3>For emergencies.</h3>
+        </article>
+        <article class="resource-card">
+          <p class="category">Washington State Patrol</p>
+          <h3>Non-emergency driving assistance.</h3>
+        </article>
+        <article class="resource-card">
+          <p class="category">WSDOT</p>
+          <h3>Traveler Information</h3>
+          <a class="button secondary" href="https://wsdot.com/travel/real-time/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-note">
+      <p>These links are a starting point for planning. Conditions may change quickly, so check the latest official updates before leaving Basecamp.</p>
       <a class="return-link" href="/">← Return to Guest Portal</a>
     </section>
   </main>
