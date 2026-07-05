@@ -175,14 +175,16 @@ a {
 
 button,
 input,
-textarea {
+textarea,
+select {
   font: inherit;
 }
 
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
-textarea:focus-visible {
+textarea:focus-visible,
+select:focus-visible {
   outline: 3px solid var(--copper);
   outline-offset: 3px;
 }
@@ -1344,6 +1346,71 @@ textarea:focus-visible {
   margin-top: 0.1rem;
 }
 
+.guest-review-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--deep-forest);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-weight: 700;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid rgba(32, 53, 41, 0.24);
+  border-radius: 8px;
+  padding: 0.8rem 0.9rem;
+  background: rgba(255, 250, 240, 0.82);
+  color: var(--deep-forest);
+  box-shadow: inset 0 1px 0 rgba(255, 250, 240, 0.72);
+}
+
+.form-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(32, 53, 41, 0.48);
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  color: #444a3b;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  line-height: 1.45;
+}
+
+.checkbox-field input {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.12rem;
+  accent-color: var(--forest);
+}
+
+.form-hidden {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .etiquette-grid {
   display: grid;
   gap: 14px;
@@ -1670,6 +1737,10 @@ textarea:focus-visible {
   }
 
   .info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

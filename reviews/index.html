@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Leave a Review | Bigfoot's Basecamp</title>
-  <meta name="description" content="Share your Bigfoot's Basecamp stay experience and help future guests discover a memorable Snoqualmie Pass mountain getaway." />
+  <title>Share Your Experience | Bigfoot's Basecamp</title>
+  <meta name="description" content="Send private feedback or share a public-style review about your stay at Bigfoot's Basecamp." />
   <meta name="theme-color" content="#203529" />
   <link rel="canonical" href="https://bigfootsbasecamp.com/reviews/" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -14,32 +14,133 @@
   <link rel="manifest" href="/site.webmanifest" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Bigfoot's Basecamp" />
-  <meta property="og:title" content="Leave a Review | Bigfoot's Basecamp" />
-  <meta property="og:description" content="Share your Bigfoot's Basecamp stay experience and help future guests discover a memorable Snoqualmie Pass mountain getaway." />
+  <meta property="og:title" content="Share Your Experience | Bigfoot's Basecamp" />
+  <meta property="og:description" content="Send private feedback or share a public-style review about your stay at Bigfoot's Basecamp." />
   <meta property="og:url" content="https://bigfootsbasecamp.com/reviews/" />
   <meta property="og:image" content="https://bigfootsbasecamp.com/assets/images/bigfoots-basecamp-logo.png" />
   <meta property="og:image:alt" content="Bigfoot's Basecamp logo" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Leave a Review | Bigfoot's Basecamp" />
-  <meta name="twitter:description" content="Share your Bigfoot's Basecamp stay experience and help future guests discover a memorable Snoqualmie Pass mountain getaway." />
+  <meta name="twitter:title" content="Share Your Experience | Bigfoot's Basecamp" />
+  <meta name="twitter:description" content="Send private feedback or share a public-style review about your stay at Bigfoot's Basecamp." />
   <meta name="twitter:image" content="https://bigfootsbasecamp.com/assets/images/bigfoots-basecamp-logo.png" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
-<body class="subpage">
+<body class="subpage guide-page">
   <div class="map-texture" aria-hidden="true"></div>
-  <main class="page-shell">
+  <main class="page-shell guide-shell">
     <header class="page-header">
       <div class="page-logo" aria-label="Bigfoot's Basecamp">
         <img src="../assets/images/bigfoots-basecamp-logo.png" alt="Bigfoot's Basecamp logo" onerror="this.hidden=true; this.nextElementSibling.hidden=false;" />
         <span class="logo-fallback" hidden>Bigfoot's Basecamp</span>
       </div>
       <p class="kicker">Bigfoot's Basecamp</p>
-      <h1>Leave a Review</h1>
-      <p class="hero-text">Review links and guest feedback options will live here.</p>
+      <h1>Share Your Experience</h1>
+      <p class="hero-text">Tell us what made your stay great — and anything we can do better.</p>
+      <p class="page-intro">Thanks for staying at Bigfoot's Basecamp. We hope you had a great time in the mountains. If something made your stay special, we'd love to hear about it. If something needs fixing, we really want to know that too.</p>
     </header>
 
-    <section class="info-section page-panel">
-      <p>Content coming soon. This section will become part of the complete Bigfoot's Basecamp Guest Portal.</p>
+    <section class="guide-section page-panel" aria-labelledby="feedback-title">
+      <div class="guide-section-head">
+        <p class="eyebrow">Guest Feedback</p>
+        <h2 id="feedback-title">Send Us a Note</h2>
+        <p>Private thoughts, public-style review comments, favorite moments, tiny fixes, big wins — it's all helpful.</p>
+      </div>
+
+      <form class="guest-review-form" name="guest-review" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/reviews/">
+        <input type="hidden" name="form-name" value="guest-review" />
+
+        <p class="form-hidden">
+          <label>
+            Do not fill this out if you're human:
+            <input name="bot-field" autocomplete="off" />
+          </label>
+        </p>
+
+        <div class="form-grid">
+          <label class="form-field" for="guest-name">
+            <span>Guest name</span>
+            <input id="guest-name" name="guest-name" type="text" autocomplete="name" required />
+          </label>
+
+          <label class="form-field" for="guest-email">
+            <span>Email address</span>
+            <input id="guest-email" name="email" type="email" autocomplete="email" required />
+          </label>
+
+          <label class="form-field" for="overall-rating">
+            <span>Overall rating</span>
+            <select id="overall-rating" name="overall-rating" required>
+              <option value="">Choose a rating</option>
+              <option value="5">5 stars — Loved it</option>
+              <option value="4">4 stars — Really good</option>
+              <option value="3">3 stars — Pretty good</option>
+              <option value="2">2 stars — Some issues</option>
+              <option value="1">1 star — We need to talk</option>
+            </select>
+          </label>
+
+          <label class="form-field" for="stay-date">
+            <span>Stay date or approximate stay month</span>
+            <input id="stay-date" name="stay-date" type="text" placeholder="Example: February 2026" required />
+          </label>
+        </div>
+
+        <label class="form-field" for="review-message">
+          <span>Review / feedback message</span>
+          <textarea id="review-message" name="review-message" rows="6" required placeholder="Tell us how the stay went. Favorite moments, little fixes, trail wins, hot tub happiness — we're all ears."></textarea>
+        </label>
+
+        <label class="form-field" for="favorite-part">
+          <span>What was your favorite part of the stay?</span>
+          <textarea id="favorite-part" name="favorite-part" rows="3"></textarea>
+        </label>
+
+        <label class="form-field" for="improvements">
+          <span>Anything we should improve?</span>
+          <textarea id="improvements" name="improvements" rows="3"></textarea>
+        </label>
+
+        <div class="form-grid">
+          <label class="form-field" for="stay-again">
+            <span>Would you stay again?</span>
+            <select id="stay-again" name="stay-again">
+              <option value="">Choose one</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+              <option value="maybe">Maybe</option>
+            </select>
+          </label>
+
+          <label class="form-field" for="quote-permission">
+            <span>May we quote your comments on our website or listing?</span>
+            <select id="quote-permission" name="quote-permission">
+              <option value="">Choose one</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="checkbox-field" for="photo-sharing">
+          <input id="photo-sharing" name="photo-sharing-interest" type="checkbox" value="yes" />
+          <span>I may be interested in sharing a photo from our stay.</span>
+        </label>
+
+        <button class="button primary" type="submit">Send Feedback</button>
+      </form>
+    </section>
+
+    <section class="page-note">
+      <p>Your feedback goes directly to the Bigfoot's Basecamp team. We read every message and use it to make the next stay even better.</p>
+    </section>
+
+    <aside class="owner-tip" aria-labelledby="public-review-title">
+      <p class="eyebrow">Prefer to leave a public review?</p>
+      <h2 id="public-review-title">Public Review Links</h2>
+      <p>Public review links are coming soon. For now, this form is the best way to send feedback directly to us.</p>
+    </aside>
+
+    <section class="page-note">
       <a class="return-link" href="/">← Return to Guest Portal</a>
     </section>
   </main>
