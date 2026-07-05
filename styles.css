@@ -934,6 +934,17 @@ select:focus-visible {
   margin-top: auto;
 }
 
+.dashboard-card .button + .button {
+  margin-top: 0;
+}
+
+.daylight-time {
+  color: var(--deep-forest);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 8vw, 2.8rem);
+  line-height: 1;
+}
+
 .dashboard-checklist {
   border: 1px solid var(--line);
   border-radius: var(--radius);
