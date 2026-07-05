@@ -1,0 +1,22 @@
+{
+  "name": "Bigfoot's Basecamp Guest Portal",
+  "short_name": "Basecamp",
+  "description": "A premium digital guest portal for Bigfoot's Basecamp in Snoqualmie Pass, Washington.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7eed9",
+  "theme_color": "#203529",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
