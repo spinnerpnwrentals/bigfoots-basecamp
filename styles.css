@@ -17,6 +17,12 @@
   --shadow-soft: 0 12px 28px rgba(17, 29, 22, 0.1);
   --radius: 8px;
   --max: 1120px;
+  --illustration-topo: url("/assets/illustrations/topo-pattern.webp");
+  --illustration-mountains-far: url("/assets/illustrations/mountains-far.webp");
+  --illustration-mountains-main: url("/assets/illustrations/mountains-main.webp");
+  --illustration-mist: url("/assets/illustrations/mountain-mist.webp");
+  --illustration-forest: url("/assets/illustrations/forest-foreground.webp");
+  --illustration-trees: url("/assets/illustrations/trees-main.webp");
 }
 
 * {
@@ -32,9 +38,9 @@ body {
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   background:
-    linear-gradient(180deg, rgba(44, 82, 65, 0.84), rgba(69, 102, 79, 0.58) 22rem, rgba(247, 238, 217, 0) 44rem),
-    radial-gradient(circle at 12% 6%, rgba(185, 120, 67, 0.28), transparent 17rem),
-    linear-gradient(135deg, #f8efd9 0%, #f1dfbd 48%, #d6bb8e 100%);
+    linear-gradient(180deg, rgba(76, 105, 82, 0.42), rgba(247, 238, 217, 0) 34rem),
+    radial-gradient(circle at 12% 6%, rgba(185, 120, 67, 0.18), transparent 18rem),
+    linear-gradient(135deg, #f8efd9 0%, #f0dfbd 52%, #d5bd94 100%);
   min-height: 100vh;
 }
 
@@ -44,12 +50,11 @@ body::before {
   inset: 0;
   z-index: -2;
   pointer-events: none;
-  background-image:
-    radial-gradient(ellipse at 20% 18%, transparent 0 4.7rem, rgba(32, 53, 41, 0.17) 4.75rem 4.86rem, transparent 4.92rem),
-    radial-gradient(ellipse at 80% 12%, transparent 0 7.2rem, rgba(32, 53, 41, 0.15) 7.25rem 7.38rem, transparent 7.45rem),
-    radial-gradient(ellipse at 55% 72%, transparent 0 10.2rem, rgba(139, 95, 57, 0.14) 10.28rem 10.4rem, transparent 10.48rem);
-  background-size: 360px 260px, 430px 320px, 520px 380px;
-  opacity: 0.7;
+  background:
+    linear-gradient(180deg, rgba(247, 238, 217, 0.54), rgba(247, 238, 217, 0.84)),
+    var(--illustration-topo) center top / 720px auto repeat;
+  opacity: 0.3;
+  mix-blend-mode: multiply;
 }
 
 body::after {
@@ -70,10 +75,11 @@ body::after {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.18;
+  opacity: 0.12;
   background:
-    repeating-linear-gradient(28deg, transparent 0 24px, rgba(95, 59, 35, 0.25) 25px 26px, transparent 27px 52px),
-    radial-gradient(ellipse at 78% 18%, transparent 0 7rem, rgba(32, 53, 41, 0.28) 7.1rem 7.2rem, transparent 7.3rem);
+    linear-gradient(180deg, rgba(247, 238, 217, 0.16), rgba(247, 238, 217, 0.72)),
+    var(--illustration-topo) center top / 760px auto repeat;
+  mix-blend-mode: multiply;
 }
 
 .skip-link {
@@ -1006,8 +1012,8 @@ select:focus-visible {
   border: 1px solid rgba(255, 250, 240, 0.2);
   border-radius: var(--radius);
   background:
-    linear-gradient(180deg, rgba(57, 94, 74, 0.94), rgba(76, 112, 88, 0.8) 52%, rgba(44, 82, 65, 0.94)),
-    var(--forest);
+    linear-gradient(180deg, rgba(79, 112, 89, 0.94), rgba(91, 120, 93, 0.78) 48%, rgba(52, 86, 67, 0.92)),
+    #4f7059;
   color: var(--cream);
   box-shadow: 0 28px 70px rgba(16, 32, 25, 0.22);
   animation: rise-in 680ms ease both;
@@ -1024,14 +1030,14 @@ select:focus-visible {
   inset: 0;
   z-index: 0;
   background:
-    radial-gradient(ellipse at 18% 18%, rgba(255, 250, 240, 0.28), transparent 16rem),
-    radial-gradient(ellipse at 82% 12%, rgba(234, 216, 183, 0.22), transparent 18rem),
-    linear-gradient(150deg, transparent 0 42%, rgba(255, 250, 240, 0.54) 42.2% 44.2%, transparent 44.4%),
-    linear-gradient(34deg, transparent 0 47%, rgba(255, 250, 240, 0.4) 47.2% 49.2%, transparent 49.4%),
-    linear-gradient(148deg, transparent 0 28%, rgba(221, 232, 220, 0.28) 28.2% 52%, transparent 52.3%),
-    linear-gradient(34deg, transparent 0 40%, rgba(216, 228, 215, 0.24) 40.2% 64%, transparent 64.3%);
-  background-position: center;
-  opacity: 0.9;
+    linear-gradient(90deg, rgba(28, 48, 38, 0.62) 0%, rgba(35, 58, 45, 0.4) 42%, rgba(35, 58, 45, 0.12) 100%),
+    linear-gradient(180deg, rgba(255, 250, 240, 0.28), rgba(69, 102, 79, 0.28) 56%, rgba(27, 55, 42, 0.6)),
+    var(--illustration-mist) center 42% / min(1200px, 118vw) auto no-repeat,
+    var(--illustration-mountains-main) center bottom / min(1180px, 128vw) auto no-repeat,
+    var(--illustration-mountains-far) center 52% / min(1240px, 134vw) auto no-repeat,
+    var(--illustration-topo) center / 720px auto repeat;
+  background-blend-mode: normal, normal, screen, normal, soft-light, multiply;
+  opacity: 0.86;
 }
 
 .page-header::after {
@@ -1041,12 +1047,11 @@ select:focus-visible {
   z-index: 0;
   height: 46%;
   background:
-    repeating-conic-gradient(from 148deg at 50% 100%, transparent 0deg 31deg, rgba(24, 53, 41, 0.62) 31deg 48deg, transparent 48deg 76deg),
-    repeating-conic-gradient(from 150deg at 50% 100%, transparent 0deg 28deg, rgba(42, 77, 60, 0.5) 28deg 45deg, transparent 45deg 74deg),
-    linear-gradient(180deg, rgba(247, 238, 217, 0.03), rgba(24, 53, 41, 0.55));
-  background-size: 86px 214px, 132px 260px, auto;
-  background-position: left bottom, 36px bottom, center;
-  opacity: 0.86;
+    linear-gradient(180deg, rgba(247, 238, 217, 0.02), rgba(30, 62, 47, 0.74)),
+    var(--illustration-forest) center bottom / min(1120px, 130vw) auto no-repeat,
+    var(--illustration-trees) left bottom / auto 100% repeat-x;
+  background-blend-mode: normal, multiply, multiply;
+  opacity: 0.62;
 }
 
 .page-header > * {
@@ -1079,9 +1084,9 @@ select:focus-visible {
 
 .guide-page {
   background:
-    linear-gradient(180deg, rgba(44, 82, 65, 0.78), rgba(69, 102, 79, 0.58) 24rem, rgba(247, 238, 217, 0) 48rem),
-    radial-gradient(circle at 80% 8%, rgba(185, 120, 67, 0.22), transparent 18rem),
-    linear-gradient(135deg, #f8efd9 0%, #f1dfbd 48%, #d6bb8e 100%);
+    linear-gradient(180deg, rgba(73, 104, 81, 0.52), rgba(92, 116, 88, 0.34) 22rem, rgba(247, 238, 217, 0) 48rem),
+    radial-gradient(circle at 80% 8%, rgba(185, 120, 67, 0.14), transparent 18rem),
+    linear-gradient(135deg, #f8efd9 0%, #f0dfbd 50%, #d8c39d 100%);
 }
 
 .guide-shell {
@@ -1801,9 +1806,9 @@ select:focus-visible {
 
 .home-page {
   background:
-    linear-gradient(180deg, rgba(65, 103, 82, 0.22), rgba(247, 238, 217, 0) 46rem),
-    radial-gradient(circle at 85% 8%, rgba(255, 250, 240, 0.46), transparent 20rem),
-    linear-gradient(135deg, #f8efd9 0%, #f1dfbd 48%, #d6bb8e 100%);
+    linear-gradient(180deg, rgba(88, 119, 92, 0.3), rgba(247, 238, 217, 0) 46rem),
+    radial-gradient(circle at 85% 8%, rgba(255, 250, 240, 0.34), transparent 20rem),
+    linear-gradient(135deg, #f8efd9 0%, #f0dfbd 50%, #d8c39d 100%);
 }
 
 .home-page .hero {
@@ -1917,25 +1922,25 @@ select:focus-visible {
 
 .home-page .hero::before {
   background:
-    radial-gradient(ellipse at 17% 18%, rgba(255, 250, 240, 0.42), transparent 13rem),
-    radial-gradient(ellipse at 72% 18%, rgba(255, 250, 240, 0.34), transparent 11rem),
-    radial-gradient(ellipse at 48% 34%, rgba(255, 250, 240, 0.18), transparent 18rem),
-    linear-gradient(150deg, transparent 0 40%, rgba(255, 250, 240, 0.72) 40.2% 42.2%, transparent 42.45%),
-    linear-gradient(34deg, transparent 0 45%, rgba(255, 250, 240, 0.48) 45.2% 47.4%, transparent 47.65%),
-    linear-gradient(148deg, transparent 0 26%, rgba(222, 232, 220, 0.44) 26.2% 53%, transparent 53.3%),
-    linear-gradient(34deg, transparent 0 37%, rgba(210, 226, 211, 0.36) 37.3% 66%, transparent 66.3%),
-    linear-gradient(180deg, rgba(87, 128, 101, 0.92), rgba(57, 94, 74, 0.88) 58%, rgba(45, 78, 62, 0.92));
+    linear-gradient(90deg, rgba(26, 45, 36, 0.72) 0%, rgba(39, 65, 50, 0.46) 45%, rgba(39, 65, 50, 0.08) 100%),
+    linear-gradient(180deg, rgba(255, 250, 240, 0.24), rgba(98, 125, 94, 0.22) 48%, rgba(31, 64, 49, 0.62)),
+    radial-gradient(ellipse at 17% 18%, rgba(255, 250, 240, 0.3), transparent 13rem),
+    radial-gradient(ellipse at 72% 18%, rgba(255, 250, 240, 0.22), transparent 11rem),
+    var(--illustration-mist) center 45% / min(1480px, 142vw) auto no-repeat,
+    var(--illustration-mountains-main) center bottom / min(1540px, 150vw) auto no-repeat,
+    var(--illustration-mountains-far) center 52% / min(1500px, 150vw) auto no-repeat,
+    var(--illustration-topo) center / 760px auto repeat,
+    linear-gradient(180deg, rgba(90, 121, 94, 0.88), rgba(73, 103, 80, 0.82) 58%, rgba(45, 78, 62, 0.9));
+  background-blend-mode: normal, normal, normal, normal, screen, normal, soft-light, multiply, normal;
 }
 
 .home-page .hero::after {
   height: 54%;
   background:
-    repeating-conic-gradient(from 148deg at 50% 100%, transparent 0deg 31deg, rgba(30, 65, 49, 0.62) 31deg 48deg, transparent 48deg 76deg),
-    repeating-conic-gradient(from 150deg at 50% 100%, transparent 0deg 28deg, rgba(54, 88, 68, 0.48) 28deg 45deg, transparent 45deg 74deg),
-    linear-gradient(150deg, transparent 0 29%, rgba(35, 70, 52, 0.5) 29.3% 59%, transparent 59.3%),
-    linear-gradient(36deg, transparent 0 39%, rgba(54, 88, 68, 0.62) 39.3% 64%, transparent 64.3%),
-    linear-gradient(180deg, rgba(247, 238, 217, 0.06), rgba(32, 65, 49, 0.42));
-  background-size: 88px 220px, 136px 270px, auto, auto, auto;
+    linear-gradient(180deg, rgba(247, 238, 217, 0.04), rgba(31, 62, 47, 0.76)),
+    var(--illustration-forest) center bottom / min(1280px, 142vw) auto no-repeat,
+    var(--illustration-trees) left bottom / auto 100% repeat-x;
+  background-blend-mode: normal, multiply, multiply;
   opacity: 0.78;
 }
 
@@ -1946,14 +1951,16 @@ select:focus-visible {
   inset: 0 calc(50% - 50vw);
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(255, 250, 240, 0.04), rgba(28, 63, 48, 0.74)),
-    radial-gradient(circle at 18% 20%, rgba(185, 120, 67, 0.24), transparent 17rem),
-    radial-gradient(ellipse at 66% 34%, rgba(255, 250, 240, 0.3), transparent 21rem),
-    linear-gradient(154deg, transparent 0 39%, rgba(255, 250, 240, 0.5) 39.2% 41%, transparent 41.3%),
-    linear-gradient(32deg, transparent 0 43%, rgba(255, 250, 240, 0.38) 43.2% 45%, transparent 45.3%),
-    linear-gradient(146deg, transparent 0 24%, rgba(219, 231, 219, 0.28) 24.3% 52%, transparent 52.3%),
-    linear-gradient(34deg, transparent 0 38%, rgba(214, 226, 213, 0.24) 38.3% 64%, transparent 64.3%),
-    linear-gradient(145deg, rgba(50, 91, 72, 0.96), rgba(76, 112, 88, 0.62) 48%, rgba(139, 95, 57, 0.38));
+    linear-gradient(90deg, rgba(26, 45, 36, 0.68) 0%, rgba(39, 65, 50, 0.44) 42%, rgba(39, 65, 50, 0.12) 100%),
+    linear-gradient(180deg, rgba(255, 250, 240, 0.14), rgba(70, 104, 81, 0.36) 58%, rgba(30, 61, 47, 0.72)),
+    radial-gradient(circle at 18% 20%, rgba(185, 120, 67, 0.14), transparent 17rem),
+    radial-gradient(ellipse at 66% 34%, rgba(255, 250, 240, 0.2), transparent 21rem),
+    var(--illustration-mist) center 44% / min(1260px, 128vw) auto no-repeat,
+    var(--illustration-mountains-main) center bottom / min(1280px, 136vw) auto no-repeat,
+    var(--illustration-mountains-far) center 52% / min(1320px, 140vw) auto no-repeat,
+    var(--illustration-topo) center / 760px auto repeat,
+    linear-gradient(145deg, rgba(75, 107, 84, 0.96), rgba(89, 119, 91, 0.62) 48%, rgba(139, 95, 57, 0.24));
+  background-blend-mode: normal, normal, normal, normal, screen, normal, soft-light, multiply, normal;
 }
 
 .hero::after,
@@ -1966,14 +1973,12 @@ select:focus-visible {
   z-index: -1;
   height: 56%;
   background:
-    repeating-conic-gradient(from 148deg at 50% 100%, transparent 0deg 31deg, rgba(24, 53, 41, 0.66) 31deg 48deg, transparent 48deg 76deg),
-    repeating-conic-gradient(from 150deg at 50% 100%, transparent 0deg 28deg, rgba(42, 77, 60, 0.5) 28deg 45deg, transparent 45deg 74deg),
-    linear-gradient(150deg, transparent 0 31%, rgba(24, 53, 41, 0.64) 31.3% 59%, transparent 59.3%),
-    linear-gradient(36deg, transparent 0 39%, rgba(42, 77, 60, 0.7) 39.3% 64%, transparent 64.3%),
-    linear-gradient(180deg, rgba(247, 238, 217, 0.08), rgba(24, 53, 41, 0.5));
-  background-size: 92px 235px, 142px 285px, auto, auto, auto;
-  background-position: left bottom, 36px bottom, center, center, center;
-  opacity: 0.84;
+    linear-gradient(180deg, rgba(247, 238, 217, 0.04), rgba(28, 58, 44, 0.76)),
+    var(--illustration-forest) center bottom / min(1220px, 134vw) auto no-repeat,
+    var(--illustration-trees) left bottom / auto 100% repeat-x;
+  background-blend-mode: normal, multiply, multiply;
+  background-position: center, center bottom, left bottom;
+  opacity: 0.68;
   transform-origin: bottom center;
   animation: forest-drift 14s ease-in-out infinite alternate;
 }
