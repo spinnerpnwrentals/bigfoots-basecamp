@@ -1263,6 +1263,119 @@ select:focus-visible {
   line-height: 1;
 }
 
+.daylight-card-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.daylight-card {
+  display: grid;
+  grid-template-columns: minmax(104px, 0.78fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(0.9rem, 4vw, 1.35rem);
+  min-height: 188px;
+  border: 1px solid rgba(61, 69, 50, 0.18);
+  border-radius: 18px;
+  padding: clamp(1rem, 4vw, 1.35rem);
+  background:
+    linear-gradient(135deg, rgba(255, 250, 240, 0.96), rgba(239, 226, 199, 0.86)),
+    var(--cream);
+  box-shadow: 0 18px 34px rgba(17, 29, 22, 0.11);
+}
+
+.daylight-illustration {
+  display: grid;
+  place-items: center;
+  min-height: 132px;
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(224, 235, 221, 0.68), rgba(247, 238, 217, 0.38)),
+    rgba(255, 250, 240, 0.42);
+  overflow: hidden;
+}
+
+.daylight-illustration svg {
+  width: min(100%, 180px);
+  height: auto;
+}
+
+.daylight-illustration rect {
+  fill: rgba(139, 156, 129, 0.16);
+  stroke: rgba(32, 53, 41, 0.14);
+}
+
+.daylight-sky {
+  fill: rgba(129, 154, 136, 0.28);
+}
+
+.daylight-ridge {
+  fill: rgba(67, 99, 79, 0.72);
+}
+
+.daylight-snow {
+  fill: rgba(255, 250, 240, 0.8);
+}
+
+.daylight-sun {
+  fill: rgba(185, 120, 67, 0.72);
+}
+
+.daylight-card-sunset .daylight-sun {
+  fill: rgba(139, 95, 57, 0.76);
+}
+
+.daylight-ray,
+.daylight-horizon {
+  fill: none;
+  stroke: rgba(139, 95, 57, 0.64);
+  stroke-linecap: round;
+  stroke-width: 4;
+}
+
+.daylight-tree {
+  fill: rgba(31, 62, 47, 0.88);
+  stroke: rgba(31, 62, 47, 0.88);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.daylight-card-copy {
+  display: grid;
+  align-content: center;
+  gap: 0.32rem;
+  min-width: 0;
+}
+
+.daylight-card-copy h3 {
+  margin: 0;
+  color: var(--deep-forest);
+  font-size: clamp(1.35rem, 5vw, 1.85rem);
+}
+
+.daylight-card .daylight-time {
+  margin: 0.1rem 0 0;
+  color: var(--deep-forest);
+  font-size: clamp(2.35rem, 11vw, 4.1rem);
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.daylight-label {
+  margin: 0;
+  color: var(--muted);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.daylight-attribution {
+  margin-top: 0.85rem;
+  color: var(--muted);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.86rem;
+}
+
 .dashboard-checklist {
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -2610,6 +2723,10 @@ select:focus-visible {
   .dashboard-grid,
   .resource-grid,
   .widget-ready-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .daylight-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

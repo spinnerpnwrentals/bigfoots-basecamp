@@ -199,23 +199,54 @@
     <section class="guide-section" aria-labelledby="sunrise-sunset">
       <div class="guide-section-head">
         <p class="eyebrow">Sunrise & Sunset</p>
-        <h2 id="sunrise-sunset">Plan Around Daylight</h2>
+        <h2 id="sunrise-sunset">Plan Around the Daylight</h2>
         <p>Mountain days are better when you know how much daylight you've got. Check sunrise and sunset before longer hikes, scenic drives, or winter travel.</p>
       </div>
-      <div class="widget-ready-grid">
-        <article class="widget-placeholder">
-          <p class="category">Snoqualmie Pass / 98068</p>
-          <h3>Sunrise</h3>
-          <p class="daylight-time" data-sunrise-time>Calculating...</p>
-          <p>Calculated for today in Pacific time.</p>
+      <div class="daylight-card-grid">
+        <article class="daylight-card daylight-card-sunrise">
+          <div class="daylight-illustration" aria-hidden="true">
+            <svg viewBox="0 0 180 140" focusable="false">
+              <rect x="12" y="18" width="156" height="104" rx="28" />
+              <path class="daylight-sky" d="M24 84c22-32 42-43 61-32 16 9 22 34 42 27 11-4 20-13 29-22v50H24Z" />
+              <path class="daylight-ridge" d="M20 105 62 65l24 24 22-18 52 34Z" />
+              <path class="daylight-snow" d="m62 65 11 27 13-3-24-24Z" />
+              <path class="daylight-snow" d="m108 71 16 31 11-9-27-22Z" />
+              <circle class="daylight-sun" cx="64" cy="54" r="17" />
+              <path class="daylight-ray" d="M64 25v12M64 71v12M35 54h12M81 54h12M43 33l8 8M77 67l8 8M85 33l-8 8M51 67l-8 8" />
+              <path class="daylight-tree" d="M132 104V77m0 0-12 18h24l-12-18Zm0-11-9 14h18l-9-14Z" />
+              <path class="daylight-tree" d="M147 108V86m0 0-9 14h18l-9-14Zm0-9-7 11h14l-7-11Z" />
+            </svg>
+          </div>
+          <div class="daylight-card-copy">
+            <p class="category">Snoqualmie Pass / 98068</p>
+            <h3>Sunrise</h3>
+            <p class="daylight-time" data-sunrise-time>Calculating...</p>
+            <p class="daylight-label">Today</p>
+          </div>
         </article>
-        <article class="widget-placeholder">
-          <p class="category">Snoqualmie Pass / 98068</p>
-          <h3>Sunset</h3>
-          <p class="daylight-time" data-sunset-time>Calculating...</p>
-          <p>Calculated for today in Pacific time.</p>
+        <article class="daylight-card daylight-card-sunset">
+          <div class="daylight-illustration" aria-hidden="true">
+            <svg viewBox="0 0 180 140" focusable="false">
+              <rect x="12" y="18" width="156" height="104" rx="28" />
+              <path class="daylight-sky" d="M24 82c18-22 34-31 49-26 18 7 24 28 43 24 16-3 25-20 40-31v58H24Z" />
+              <path class="daylight-ridge" d="M20 106 54 72l22 21 24-30 60 43Z" />
+              <path class="daylight-snow" d="m54 72 12 25 10-4-22-21Z" />
+              <path class="daylight-snow" d="m100 63 18 40 12-9-30-31Z" />
+              <circle class="daylight-sun" cx="118" cy="78" r="18" />
+              <path class="daylight-horizon" d="M91 78h54" />
+              <path class="daylight-tree" d="M38 108V82m0 0-12 18h24L38 82Zm0-11-9 14h18l-9-14Z" />
+              <path class="daylight-tree" d="M55 110V91m0 0-8 12h16l-8-12Zm0-8-6 10h12l-6-10Z" />
+            </svg>
+          </div>
+          <div class="daylight-card-copy">
+            <p class="category">Snoqualmie Pass / 98068</p>
+            <h3>Sunset</h3>
+            <p class="daylight-time" data-sunset-time>Calculating...</p>
+            <p class="daylight-label">Today</p>
+          </div>
         </article>
       </div>
+      <p class="daylight-attribution">Sunrise and sunset are calculated locally for Snoqualmie Pass using NOAA's standard solar calculation method.</p>
     </section>
 
     <section class="guide-section" aria-labelledby="driving-tips">
