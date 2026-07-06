@@ -2928,6 +2928,10 @@ select:focus-visible {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .conditions-page .dashboard-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .resource-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
