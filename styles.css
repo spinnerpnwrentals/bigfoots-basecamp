@@ -484,6 +484,48 @@ select:focus-visible {
   color: var(--forest);
 }
 
+.icon,
+.section-icon,
+.feature-icon {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--forest);
+}
+
+.icon svg,
+.section-icon svg,
+.feature-icon svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+}
+
+.icon svg {
+  width: 30px;
+  height: 30px;
+  stroke-width: 2.4;
+}
+
+.icon-lg,
+.feature-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.icon-lg svg,
+.feature-icon svg {
+  width: 40px;
+  height: 40px;
+  stroke-width: 2.8;
+}
+
 .card-icon::before,
 .card-icon::after {
   content: "";
@@ -622,13 +664,16 @@ select:focus-visible {
 }
 
 .home-page .card-icon {
-  width: 54px;
-  height: 54px;
+  width: clamp(58px, 7vw, 64px);
+  height: clamp(58px, 7vw, 64px);
   border: 1px solid rgba(95, 59, 35, 0.18);
-  border-radius: 16px;
+  border-radius: 18px;
   background:
     linear-gradient(135deg, rgba(255, 250, 240, 0.96), rgba(234, 216, 183, 0.74)),
     var(--cream);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 250, 240, 0.52),
+    0 10px 20px rgba(17, 29, 22, 0.08);
 }
 
 .home-page .card-icon::before,
@@ -637,19 +682,19 @@ select:focus-visible {
 }
 
 .home-page .card-icon svg {
-  width: 34px;
-  height: 34px;
+  width: clamp(38px, 4.8vw, 42px);
+  height: clamp(38px, 4.8vw, 42px);
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 2.6;
+  stroke-width: 2.9;
 }
 
 .home-page .icon-coffee svg,
 .home-page .icon-conditions svg,
 .home-page .icon-hot-tub svg {
-  stroke-width: 2.4;
+  stroke-width: 2.7;
 }
 
 .portal-card.featured .card-icon {
@@ -1168,22 +1213,25 @@ select:focus-visible {
   display: inline-grid;
   flex: 0 0 auto;
   place-items: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid rgba(32, 53, 41, 0.18);
-  border-radius: 50%;
-  background: rgba(255, 250, 240, 0.66);
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(95, 59, 35, 0.2);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 240, 0.94), rgba(234, 216, 183, 0.58)),
+    rgba(255, 250, 240, 0.72);
   color: var(--forest);
+  box-shadow: 0 10px 20px rgba(17, 29, 22, 0.08);
 }
 
 .guide-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 34px;
+  height: 34px;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.8;
+  stroke-width: 2.4;
 }
 
 .guide-section .eyebrow,
@@ -1260,22 +1308,25 @@ select:focus-visible {
 .dashboard-icon {
   display: inline-grid;
   place-items: center;
-  width: 46px;
-  height: 46px;
-  border: 1px solid rgba(32, 53, 41, 0.18);
-  border-radius: var(--radius);
-  background: rgba(32, 53, 41, 0.08);
+  width: 56px;
+  height: 56px;
+  border: 1px solid rgba(95, 59, 35, 0.2);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 240, 0.9), rgba(234, 216, 183, 0.56)),
+    rgba(32, 53, 41, 0.08);
   color: var(--forest);
+  box-shadow: 0 10px 20px rgba(17, 29, 22, 0.08);
 }
 
 .dashboard-icon svg {
-  width: 26px;
-  height: 26px;
+  width: 36px;
+  height: 36px;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.8;
+  stroke-width: 2.35;
 }
 
 .dashboard-card .button,
@@ -1317,7 +1368,7 @@ select:focus-visible {
 .daylight-illustration {
   display: grid;
   place-items: center;
-  min-height: 132px;
+  min-height: 142px;
   border-radius: 16px;
   background:
     linear-gradient(180deg, rgba(224, 235, 221, 0.68), rgba(247, 238, 217, 0.38)),
@@ -1326,13 +1377,14 @@ select:focus-visible {
 }
 
 .daylight-illustration svg {
-  width: min(100%, 180px);
+  width: min(100%, 190px);
   height: auto;
 }
 
 .daylight-illustration rect {
   fill: rgba(139, 156, 129, 0.16);
-  stroke: rgba(32, 53, 41, 0.14);
+  stroke: rgba(32, 53, 41, 0.18);
+  stroke-width: 2;
 }
 
 .daylight-sky {
@@ -1360,7 +1412,7 @@ select:focus-visible {
   fill: none;
   stroke: rgba(139, 95, 57, 0.64);
   stroke-linecap: round;
-  stroke-width: 4;
+  stroke-width: 4.5;
 }
 
 .daylight-tree {
@@ -1368,7 +1420,7 @@ select:focus-visible {
   stroke: rgba(31, 62, 47, 0.88);
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 2;
+  stroke-width: 2.35;
 }
 
 .daylight-card-copy {
@@ -2338,15 +2390,15 @@ select:focus-visible {
 
 .footprint {
   --footprint-rotation: 16deg;
-  width: 32px;
-  height: 46px;
+  width: 36px;
+  height: 50px;
   border-radius: 55% 45% 48% 52%;
   background:
-    radial-gradient(circle at 24% 4%, rgba(54, 45, 34, 0.72) 0 3px, transparent 4px),
-    radial-gradient(circle at 42% 0%, rgba(54, 45, 34, 0.72) 0 3px, transparent 4px),
-    radial-gradient(circle at 60% 2%, rgba(54, 45, 34, 0.72) 0 3px, transparent 4px),
-    radial-gradient(circle at 76% 8%, rgba(54, 45, 34, 0.72) 0 3px, transparent 4px),
-    rgba(54, 45, 34, 0.64);
+    radial-gradient(circle at 24% 4%, rgba(54, 45, 34, 0.82) 0 3.5px, transparent 4.5px),
+    radial-gradient(circle at 42% 0%, rgba(54, 45, 34, 0.82) 0 3.5px, transparent 4.5px),
+    radial-gradient(circle at 60% 2%, rgba(54, 45, 34, 0.82) 0 3.5px, transparent 4.5px),
+    radial-gradient(circle at 76% 8%, rgba(54, 45, 34, 0.82) 0 3.5px, transparent 4.5px),
+    rgba(54, 45, 34, 0.72);
   opacity: 0;
   transform: rotate(var(--footprint-rotation));
   animation: footprint-fade 5.6s ease-in-out infinite;
@@ -2411,7 +2463,7 @@ select:focus-visible {
   top: 30%;
   width: 84px;
   height: 84px;
-  border: 7px solid rgba(32, 53, 41, 0.7);
+  border: 8px solid rgba(32, 53, 41, 0.76);
   border-radius: 50%;
   background: rgba(255, 250, 240, 0.26);
   box-shadow: inset 0 0 0 2px rgba(255, 250, 240, 0.36);
@@ -2423,8 +2475,8 @@ select:focus-visible {
   position: absolute;
   right: -34px;
   bottom: -26px;
-  width: 48px;
-  height: 9px;
+  width: 52px;
+  height: 11px;
   border-radius: 999px;
   background: rgba(95, 59, 35, 0.84);
   transform: rotate(45deg);
