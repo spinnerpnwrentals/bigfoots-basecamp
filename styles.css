@@ -2087,17 +2087,23 @@ select:focus-visible {
   isolation: isolate;
   align-items: center;
   min-height: clamp(540px, 72vh, 720px);
-  padding: clamp(28px, 5vw, 56px) 0 clamp(44px, 7vw, 74px);
+  width: min(100% - clamp(40px, 8vw, 150px), 1380px);
+  padding: clamp(44px, 6vw, 72px) clamp(48px, 5.4vw, 72px) clamp(52px, 7vw, 82px);
+  border-radius: var(--radius);
 }
 
 .home-page .hero-copy {
-  max-width: 760px;
+  max-width: 720px;
 }
 
 .home-page .site-header,
 .home-page main,
 .home-page .site-footer {
   width: min(100% - clamp(36px, 9vw, 150px), 1220px);
+}
+
+.home-page .site-header.hero {
+  width: min(100% - clamp(40px, 8vw, 150px), 1380px);
 }
 
 .seasonal-atmosphere,
@@ -2111,6 +2117,10 @@ select:focus-visible {
   inset: 0 calc(50% - 50vw);
   z-index: 0;
   overflow: hidden;
+}
+
+.home-page .hero .seasonal-atmosphere {
+  display: none;
 }
 
 .mountain-mist {
@@ -2202,30 +2212,17 @@ select:focus-visible {
 }
 
 .home-page .hero::before {
+  inset: 0;
   background:
-    linear-gradient(90deg, rgba(26, 45, 36, 0.8) 0%, rgba(39, 65, 50, 0.54) 48%, rgba(39, 65, 50, 0.18) 100%),
-    linear-gradient(180deg, rgba(255, 250, 240, 0.28), rgba(98, 125, 94, 0.28) 36%, rgba(31, 64, 49, 0.7)),
-    linear-gradient(135deg, rgba(247, 238, 217, 0.22), rgba(32, 53, 41, 0.32)),
-    var(--illustration-snowy-bg) center 42% / cover no-repeat,
-    radial-gradient(ellipse at 18% 16%, rgba(255, 250, 240, 0.26), transparent 12rem),
-    radial-gradient(ellipse at 74% 20%, rgba(255, 250, 240, 0.2), transparent 11rem),
-    var(--illustration-mist) center 38% / min(1380px, 134vw) auto no-repeat,
-    var(--illustration-mountains-main) center bottom / min(1420px, 138vw) auto no-repeat,
-    var(--illustration-mountains-far) center 36% / min(1420px, 138vw) auto no-repeat,
-    var(--illustration-topo) center / 820px auto repeat,
-    linear-gradient(180deg, rgba(107, 134, 102, 0.9), rgba(80, 111, 86, 0.84) 48%, rgba(45, 78, 62, 0.9));
-  background-blend-mode: normal, normal, color, luminosity, normal, normal, screen, normal, soft-light, multiply, normal;
-  filter: saturate(0.82) contrast(0.9) brightness(0.95);
+    linear-gradient(90deg, rgba(20, 38, 30, 0.78) 0%, rgba(32, 53, 41, 0.52) 44%, rgba(32, 53, 41, 0.18) 76%, rgba(255, 250, 240, 0.08) 100%),
+    linear-gradient(180deg, rgba(247, 238, 217, 0.14) 0%, rgba(73, 104, 81, 0.2) 42%, rgba(14, 36, 27, 0.62) 100%),
+    var(--illustration-snowy-bg) center top / cover no-repeat;
+  background-blend-mode: normal, color, normal;
+  filter: saturate(0.76) contrast(0.86) brightness(0.9);
 }
 
 .home-page .hero::after {
-  height: 48%;
-  background:
-    linear-gradient(180deg, rgba(247, 238, 217, 0.02), rgba(31, 62, 47, 0.7)),
-    var(--illustration-forest) center bottom / min(1220px, 132vw) auto no-repeat,
-    var(--illustration-trees) left bottom / auto 100% repeat-x;
-  background-blend-mode: normal, multiply, multiply;
-  opacity: 0.74;
+  display: none;
 }
 
 .hero::before,
@@ -3181,8 +3178,9 @@ select:focus-visible {
   }
 
   .home-page .hero {
+    width: min(100% - 28px, 1220px);
     min-height: auto;
-    padding: 26px 0 40px;
+    padding: 30px clamp(22px, 6vw, 28px) 40px;
   }
 
   .home-page .hero-copy {
@@ -3220,17 +3218,13 @@ select:focus-visible {
   }
 
   .home-page .hero::before {
+    inset: 0;
     background:
-      linear-gradient(180deg, rgba(26, 45, 36, 0.78) 0%, rgba(39, 65, 50, 0.56) 52%, rgba(31, 64, 49, 0.74) 100%),
-      linear-gradient(135deg, rgba(247, 238, 217, 0.22), rgba(32, 53, 41, 0.32)),
-      var(--illustration-snowy-bg) center top / cover no-repeat,
-      radial-gradient(ellipse at 18% 14%, rgba(255, 250, 240, 0.22), transparent 10rem),
-      var(--illustration-mist) center 34% / 135% auto no-repeat,
-      var(--illustration-mountains-main) center bottom / 155% auto no-repeat,
-      var(--illustration-mountains-far) center 34% / 150% auto no-repeat,
-      var(--illustration-topo) center / 720px auto repeat,
-      linear-gradient(180deg, rgba(107, 134, 102, 0.9), rgba(72, 105, 82, 0.92));
-    background-blend-mode: normal, color, luminosity, normal, screen, normal, soft-light, multiply, normal;
+      linear-gradient(180deg, rgba(20, 38, 30, 0.72) 0%, rgba(32, 53, 41, 0.5) 48%, rgba(14, 36, 27, 0.66) 100%),
+      linear-gradient(135deg, rgba(247, 238, 217, 0.18), rgba(32, 53, 41, 0.3)),
+      var(--illustration-snowy-bg) center top / cover no-repeat;
+    background-blend-mode: normal, color, normal;
+    filter: saturate(0.76) contrast(0.86) brightness(0.9);
   }
 
   .home-page .hero::after {
