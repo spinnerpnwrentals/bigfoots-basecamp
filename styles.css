@@ -2296,25 +2296,26 @@ select:focus-visible {
 }
 
 .homepage-card-layout,
-.homepage-card-top,
 .homepage-card-quad,
 .homepage-card-bottom {
   display: grid;
   align-items: stretch;
+  min-width: 0;
 }
 
 .homepage-card-layout {
   grid-template-columns: minmax(0, 1fr);
 }
 
-.homepage-card-top {
-  grid-template-columns: minmax(0, 1fr);
-}
-
-.homepage-card-top,
 .homepage-card-quad,
 .homepage-card-bottom {
   gap: clamp(16px, 2.4vw, 24px);
+}
+
+.homepage-card-layout > *,
+.homepage-card-quad > *,
+.homepage-card-bottom > * {
+  min-width: 0;
 }
 
 .homepage-card-quad,
@@ -2352,9 +2353,9 @@ select:focus-visible {
   background: rgba(255, 250, 240, 0.18);
 }
 
-.homepage-card-top .hunt-feature,
-.homepage-card-top .homepage-card-quad,
-.homepage-card-top .homepage-card-quad .experience-card,
+.homepage-card-layout > .hunt-feature,
+.homepage-card-layout > .homepage-card-quad,
+.homepage-card-quad .experience-card,
 .homepage-card-bottom .experience-card {
   height: 100%;
 }
@@ -2864,9 +2865,17 @@ select:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .homepage-card-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .portal-card.featured,
   .experience-card.featured {
     grid-column: span 2;
+  }
+
+  .homepage-card-layout > .hunt-feature {
+    grid-column: auto;
   }
 
   .card-actions,
@@ -2952,11 +2961,28 @@ select:focus-visible {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .homepage-card-top {
-    grid-template-columns: minmax(420px, 1.08fr) minmax(0, 1fr);
+  .homepage-card-layout {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   }
 
-  .homepage-card-top .experience-card.featured {
+  .homepage-card-layout > .hunt-feature {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: stretch;
+  }
+
+  .homepage-card-layout > .homepage-card-quad {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .homepage-card-layout > .homepage-card-bottom {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .homepage-card-layout > .experience-card.featured {
+    grid-column: auto;
     grid-row: auto;
   }
 
@@ -2969,17 +2995,16 @@ select:focus-visible {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .homepage-card-top .hunt-feature {
-    align-self: stretch;
+  .homepage-card-layout > .hunt-feature {
     min-height: 0;
     padding: clamp(1.15rem, 2vw, 1.5rem);
   }
 
-  .homepage-card-top .hunt-feature .hunt-art {
+  .homepage-card-layout > .hunt-feature .hunt-art {
     min-height: clamp(300px, 34vw, 390px);
   }
 
-  .homepage-card-top .hunt-feature .hunt-copy-panel {
+  .homepage-card-layout > .hunt-feature .hunt-copy-panel {
     grid-template-columns: minmax(0, 1fr);
     align-items: start;
     gap: 0.65rem 1.1rem;
@@ -3007,11 +3032,11 @@ select:focus-visible {
     box-shadow: inset 0 0 0 4px rgba(255, 250, 240, 0.36);
   }
 
-  .homepage-card-top .experience-card.hunt-feature .card-category,
-  .homepage-card-top .experience-card.hunt-feature .card-label,
-  .homepage-card-top .experience-card.hunt-feature .hunt-divider,
-  .homepage-card-top .experience-card.hunt-feature .hunt-body,
-  .homepage-card-top .experience-card.hunt-feature .card-action {
+  .homepage-card-layout > .experience-card.hunt-feature .card-category,
+  .homepage-card-layout > .experience-card.hunt-feature .card-label,
+  .homepage-card-layout > .experience-card.hunt-feature .hunt-divider,
+  .homepage-card-layout > .experience-card.hunt-feature .hunt-body,
+  .homepage-card-layout > .experience-card.hunt-feature .card-action {
     grid-column: 1;
   }
 
