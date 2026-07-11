@@ -2294,10 +2294,10 @@ select:focus-visible {
 }
 
 .hunt-feature {
-  min-height: clamp(580px, 68vw, 760px);
+  min-height: 0;
   grid-template-columns: minmax(0, 1fr);
-  align-content: stretch;
-  gap: clamp(0.9rem, 2vw, 1.15rem);
+  align-content: start;
+  gap: 0;
   padding: clamp(1rem, 3.6vw, 1.6rem);
   border-color: rgba(61, 69, 50, 0.28);
 }
@@ -2323,14 +2323,17 @@ select:focus-visible {
   position: relative;
   inset: auto;
   z-index: 0;
-  min-height: clamp(240px, 32vw, 360px);
-  border: 1px solid rgba(61, 69, 50, 0.16);
-  border-radius: 16px;
+  min-height: clamp(230px, 34vw, 330px);
+  border: 1px solid rgba(61, 69, 50, 0.18);
+  border-radius: 18px;
   overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(157, 180, 154, 0.78), rgba(232, 216, 185, 0.8) 58%, rgba(184, 139, 91, 0.48)),
-    var(--illustration-mountains-main) center 8% / 115% auto no-repeat;
-  box-shadow: inset 0 -26px 42px rgba(32, 53, 41, 0.1);
+    linear-gradient(180deg, rgba(157, 180, 154, 0.68), rgba(232, 216, 185, 0.78) 56%, rgba(184, 139, 91, 0.46)),
+    var(--illustration-mist) center 20% / 118% auto no-repeat,
+    var(--illustration-mountains-main) center 4% / 112% auto no-repeat;
+  box-shadow:
+    inset 0 -28px 42px rgba(32, 53, 41, 0.12),
+    0 14px 26px rgba(17, 29, 22, 0.08);
 }
 
 .hunt-terrain,
@@ -2352,10 +2355,10 @@ select:focus-visible {
 }
 
 .hunt-trail {
-  left: 18%;
-  bottom: -28%;
-  width: 56%;
-  height: 86%;
+  left: 21%;
+  bottom: -33%;
+  width: 52%;
+  height: 88%;
   border-radius: 52% 48% 0 0;
   background:
     linear-gradient(90deg, transparent 0 46%, rgba(255, 250, 240, 0.26) 47% 49%, transparent 50%),
@@ -2366,7 +2369,7 @@ select:focus-visible {
 
 .trail-sign {
   left: 8%;
-  top: 21%;
+  top: 18%;
   padding: 0.45rem 0.7rem;
   border: 2px solid rgba(95, 59, 35, 0.32);
   border-radius: 4px;
@@ -2434,21 +2437,21 @@ select:focus-visible {
 
 .footprint-one {
   left: 32%;
-  bottom: 20%;
+  bottom: 18%;
   animation-delay: 0.2s;
 }
 
 .footprint-two {
   --footprint-rotation: -12deg;
   left: 43%;
-  bottom: 34%;
+  bottom: 32%;
   animation-delay: 0.9s;
 }
 
 .footprint-three {
   --footprint-rotation: 12deg;
   left: 54%;
-  bottom: 48%;
+  bottom: 46%;
   transform: rotate(var(--footprint-rotation)) scale(0.86);
   animation-delay: 1.6s;
 }
@@ -2456,16 +2459,16 @@ select:focus-visible {
 .footprint-four {
   --footprint-rotation: -16deg;
   left: 64%;
-  bottom: 62%;
+  bottom: 60%;
   transform: rotate(var(--footprint-rotation)) scale(0.78);
   animation-delay: 2.3s;
 }
 
 .magnifier {
   right: 9%;
-  top: 30%;
-  width: 84px;
-  height: 84px;
+  top: 27%;
+  width: clamp(66px, 15vw, 84px);
+  height: clamp(66px, 15vw, 84px);
   border: 8px solid rgba(32, 53, 41, 0.76);
   border-radius: 50%;
   background: rgba(255, 250, 240, 0.26);
@@ -2485,56 +2488,81 @@ select:focus-visible {
   transform: rotate(45deg);
 }
 
-.hunt-subtitle {
-  grid-column: 1;
-  display: block;
-  color: var(--cedar-dark);
-  font-family: "Trebuchet MS", Verdana, sans-serif;
-  font-size: 1rem;
-  font-weight: 900;
-}
-
 .hunt-copy-panel {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 0.58rem;
+  align-content: start;
+  align-items: start;
+  gap: 0.72rem;
   z-index: 1;
-  border: 1px solid rgba(61, 69, 50, 0.18);
-  border-radius: 14px;
-  padding: clamp(1rem, 4vw, 1.35rem);
-  background: rgba(255, 250, 240, 0.9);
-  box-shadow: 0 18px 34px rgba(17, 29, 22, 0.12);
-  backdrop-filter: blur(6px);
+  width: min(100%, 92%);
+  justify-self: center;
+  margin-top: clamp(-2rem, -4vw, -1.15rem);
+  border: 1px solid rgba(61, 69, 50, 0.2);
+  border-radius: 18px;
+  padding: clamp(1.1rem, 4vw, 1.45rem);
+  background:
+    linear-gradient(90deg, rgba(139, 95, 57, 0.06), transparent 1.4rem),
+    rgba(255, 250, 240, 0.96);
+  box-shadow: 0 20px 38px rgba(17, 29, 22, 0.14);
+  backdrop-filter: blur(5px);
 }
 
-.hunt-feature .card-category,
-.hunt-feature .card-label,
-.hunt-feature .card-copy,
-.hunt-feature .card-action,
-.hunt-feature .hunt-subtitle {
+.experience-card.hunt-feature .card-category,
+.experience-card.hunt-feature .card-label,
+.experience-card.hunt-feature .card-copy,
+.experience-card.hunt-feature .card-action,
+.experience-card.hunt-feature .hunt-body,
+.experience-card.hunt-feature .hunt-divider {
   grid-column: 1;
 }
 
 .hunt-feature .card-category {
   color: var(--cedar-dark);
+  margin-bottom: -0.1rem;
 }
 
 .hunt-feature .card-label {
-  max-width: 8.5em;
-  font-size: clamp(1.9rem, 5.4vw, 3rem);
-  line-height: 0.98;
+  max-width: none;
+  color: var(--deep-forest);
+  font-size: clamp(1.85rem, 5.2vw, 3rem);
+  line-height: 1;
+}
+
+.hunt-divider {
+  display: block;
+  width: min(140px, 44%);
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cedar), rgba(139, 95, 57, 0.12));
+}
+
+.hunt-body {
+  display: block;
+  color: #444a3b;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.hunt-badge {
+  display: none;
 }
 
 .hunt-feature .card-action {
-  width: fit-content;
-  min-height: 48px;
-  margin-top: 0.45rem;
-  padding: 0.85rem 1rem;
+  display: inline-grid;
+  place-items: center;
+  width: 100%;
+  align-self: start;
+  min-height: 50px;
+  margin-top: 0.35rem;
+  padding: 0.9rem 1.1rem;
   border-radius: var(--radius);
   background: var(--forest);
   color: var(--cream);
   box-shadow: 0 12px 26px rgba(16, 32, 25, 0.18);
+  text-align: center;
 }
 
 .card-category {
@@ -2570,8 +2598,7 @@ select:focus-visible {
   color: var(--forest);
 }
 
-.hunt-feature .card-category,
-.hunt-feature .hunt-subtitle {
+.hunt-feature .card-category {
   color: var(--cedar-dark);
 }
 
@@ -2903,7 +2930,49 @@ select:focus-visible {
   .park-grid .hunt-feature {
     grid-column: 1;
     grid-row: span 4;
-    min-height: 100%;
+    align-self: start;
+    min-height: 0;
+    padding: clamp(1.15rem, 2vw, 1.5rem);
+  }
+
+  .park-grid .hunt-feature .hunt-art {
+    min-height: clamp(300px, 34vw, 390px);
+  }
+
+  .park-grid .hunt-feature .hunt-copy-panel {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 0.65rem 1.1rem;
+    width: min(92%, 560px);
+    margin-top: -2.35rem;
+    padding: clamp(1.25rem, 2.4vw, 1.75rem);
+  }
+
+  .hunt-badge {
+    position: absolute;
+    left: clamp(-2.35rem, -3vw, -1.6rem);
+    top: clamp(1rem, 2vw, 1.35rem);
+    display: block;
+    width: 74px;
+    height: 74px;
+    border: 1px solid rgba(95, 59, 35, 0.22);
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 18%, rgba(54, 45, 34, 0.78) 0 4px, transparent 5px),
+      radial-gradient(circle at 44% 12%, rgba(54, 45, 34, 0.78) 0 4px, transparent 5px),
+      radial-gradient(circle at 58% 14%, rgba(54, 45, 34, 0.78) 0 4px, transparent 5px),
+      radial-gradient(circle at 70% 23%, rgba(54, 45, 34, 0.78) 0 4px, transparent 5px),
+      radial-gradient(ellipse at 52% 62%, rgba(54, 45, 34, 0.72) 0 16px, transparent 17px),
+      linear-gradient(135deg, rgba(255, 250, 240, 0.96), rgba(234, 216, 183, 0.78));
+    box-shadow: inset 0 0 0 4px rgba(255, 250, 240, 0.36);
+  }
+
+  .park-grid .experience-card.hunt-feature .card-category,
+  .park-grid .experience-card.hunt-feature .card-label,
+  .park-grid .experience-card.hunt-feature .hunt-divider,
+  .park-grid .experience-card.hunt-feature .hunt-body,
+  .park-grid .experience-card.hunt-feature .card-action {
+    grid-column: 1;
   }
 
   .park-grid .experience-card:not(.hunt-feature) {
@@ -2926,6 +2995,10 @@ select:focus-visible {
 
   .card-action {
     margin-top: auto;
+  }
+
+  .hunt-feature .card-action {
+    margin-top: 0.35rem;
   }
 
   .section-grid {
