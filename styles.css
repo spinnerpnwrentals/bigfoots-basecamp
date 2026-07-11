@@ -2682,7 +2682,12 @@ select:focus-visible {
 }
 
 .hunt-feature .card-action {
+  grid-column: 1;
+  display: inline-grid;
+  place-items: center;
+  width: 100%;
   color: var(--cream);
+  text-align: center;
 }
 
 .home-page .hero-logo {
