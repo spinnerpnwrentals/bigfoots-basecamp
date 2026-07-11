@@ -1937,6 +1937,77 @@ select:focus-visible {
   overflow: hidden;
 }
 
+.form-note {
+  margin: 0;
+  color: #444a3b;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.thank-you-page .guide-shell {
+  max-width: 940px;
+}
+
+.thank-you-card {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(2rem, 6vw, 4rem);
+  overflow: hidden;
+}
+
+.thank-you-card h1 {
+  max-width: 720px;
+  color: var(--deep-forest);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.6rem, 8vw, 5.2rem);
+  line-height: 0.95;
+}
+
+.thank-you-card p:not(.eyebrow) {
+  max-width: 620px;
+  color: #444a3b;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.thank-you-card .button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.thank-you-mark {
+  position: absolute;
+  right: clamp(1.1rem, 5vw, 3rem);
+  bottom: clamp(1rem, 4vw, 2rem);
+  width: clamp(120px, 24vw, 190px);
+  height: clamp(120px, 24vw, 190px);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 22%, rgba(54, 45, 34, 0.68) 0 7px, transparent 8px),
+    radial-gradient(circle at 47% 17%, rgba(54, 45, 34, 0.68) 0 7px, transparent 8px),
+    radial-gradient(circle at 60% 19%, rgba(54, 45, 34, 0.68) 0 7px, transparent 8px),
+    radial-gradient(circle at 72% 28%, rgba(54, 45, 34, 0.68) 0 7px, transparent 8px),
+    radial-gradient(ellipse at 54% 64%, rgba(54, 45, 34, 0.62) 0 32px, transparent 33px),
+    linear-gradient(135deg, rgba(234, 216, 183, 0.9), rgba(255, 250, 240, 0.46));
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.thank-trail {
+  position: absolute;
+  inset: 18%;
+  border: 2px dashed rgba(95, 59, 35, 0.34);
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  transform: rotate(-18deg);
+}
+
 .etiquette-grid {
   display: grid;
   gap: 14px;

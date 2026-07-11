@@ -65,7 +65,7 @@
         <p>Private thoughts, public-style review comments, favorite moments, tiny fixes, big wins — it's all helpful.</p>
       </div>
 
-      <form class="guest-review-form" name="guest-review" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/reviews/">
+      <form class="guest-review-form" name="guest-review" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you/">
         <input type="hidden" name="form-name" value="guest-review" />
 
         <p class="form-hidden">
@@ -144,6 +144,8 @@
           <input id="photo-sharing" name="photo-sharing-interest" type="checkbox" value="yes" />
           <span>I may be interested in sharing a photo from our stay.</span>
         </label>
+
+        <p class="form-note">Your message is sent privately to the Bigfoot's Basecamp team.</p>
 
         <button class="button primary" type="submit">Send Feedback</button>
       </form>
