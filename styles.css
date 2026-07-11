@@ -2866,7 +2866,7 @@ select:focus-visible {
   }
 
   .homepage-card-layout {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .portal-card.featured,
@@ -2875,7 +2875,18 @@ select:focus-visible {
   }
 
   .homepage-card-layout > .hunt-feature {
-    grid-column: auto;
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .homepage-card-layout > .homepage-card-quad {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .homepage-card-layout > .homepage-card-bottom {
+    grid-column: 1 / -1;
+    grid-row: 3;
   }
 
   .card-actions,
@@ -2962,23 +2973,27 @@ select:focus-visible {
   }
 
   .homepage-card-layout {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr)) auto;
   }
 
   .homepage-card-layout > .hunt-feature {
-    grid-column: 1;
-    grid-row: 1;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
     align-self: stretch;
   }
 
   .homepage-card-layout > .homepage-card-quad {
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    align-self: stretch;
   }
 
   .homepage-card-layout > .homepage-card-bottom {
     grid-column: 1 / -1;
-    grid-row: 2;
+    grid-row: 3;
   }
 
   .homepage-card-layout > .experience-card.featured {
@@ -2988,7 +3003,7 @@ select:focus-visible {
 
   .homepage-card-quad {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
   }
 
   .homepage-card-bottom {
