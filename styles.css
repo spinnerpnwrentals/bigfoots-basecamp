@@ -2661,7 +2661,7 @@ select:focus-visible {
   color: var(--muted);
 }
 
-.experience-card.featured .card-action {
+.experience-card.featured:not(.hunt-feature) .card-action {
   color: var(--forest);
 }
 
