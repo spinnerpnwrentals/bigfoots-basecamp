@@ -23,6 +23,15 @@
   --home-max: var(--site-max-width);
   --home-gutter: calc(var(--site-gutter) * 2);
   --home-mobile-gutter: calc(var(--site-gutter) * 2);
+  --hero-shell-width: min(calc(100% - (2 * var(--home-gutter))), var(--home-max));
+  --hero-frame-inset: 24px;
+  --hero-frame-width: 3px;
+  --hero-frame-radius: 18px;
+  --hero-border-width: 8px;
+  --hero-padding-inline: clamp(48px, 5.4vw, 72px);
+  --hero-padding-top: clamp(44px, 6vw, 72px);
+  --hero-padding-bottom: clamp(52px, 7vw, 82px);
+  --subpage-hero-min-height: clamp(340px, 50vh, 540px);
   --illustration-topo: url("/assets/illustrations/topo-pattern.webp");
   --illustration-mountains-far: url("/assets/illustrations/mountains-far.webp");
   --illustration-mountains-main: url("/assets/illustrations/mountains-main.webp");
@@ -236,6 +245,10 @@ main,
   color: var(--cream);
 }
 
+.site-header.site-hero {
+  width: var(--hero-shell-width);
+}
+
 .hero {
   display: grid;
   gap: 1.5rem;
@@ -259,6 +272,57 @@ main,
   min-height: clamp(340px, 48vh, 520px);
   padding: 42px 0 34px;
   overflow: hidden;
+}
+
+.site-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  align-items: start;
+  min-height: var(--subpage-hero-min-height);
+  width: 100%;
+  overflow: hidden;
+  padding: var(--hero-padding-top) var(--hero-padding-inline) var(--hero-padding-bottom);
+  border: var(--hero-border-width) solid var(--deep-forest);
+  border-radius: var(--radius);
+  background: var(--deep-forest);
+  color: var(--cream);
+  box-shadow: 0 24px 52px rgba(16, 32, 25, 0.18);
+  animation: rise-in 680ms ease both;
+}
+
+.site-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(115deg, rgba(16, 32, 25, 0.8) 0%, rgba(28, 48, 38, 0.71) 34%, rgba(47, 78, 58, 0.53) 68%, rgba(83, 112, 88, 0.4) 100%),
+    linear-gradient(180deg, rgba(32, 53, 41, 0.22) 0%, rgba(32, 53, 41, 0.33) 58%, rgba(16, 32, 25, 0.44) 100%),
+    var(--illustration-snowy-bg) center top / cover no-repeat;
+  background-blend-mode: multiply, multiply, normal;
+  filter: saturate(0.72) contrast(0.88) brightness(0.86);
+}
+
+.site-hero-frame {
+  position: absolute;
+  inset: var(--hero-frame-inset);
+  width: auto;
+  height: auto;
+  z-index: 2;
+  box-sizing: border-box;
+  pointer-events: none;
+  border: var(--hero-frame-width) solid var(--cream);
+  border-radius: var(--hero-frame-radius);
+}
+
+.site-hero-copy {
+  max-width: 720px;
+  position: relative;
+  z-index: 3;
+  animation: rise-in 680ms ease both;
 }
 
 .kicker,
@@ -1050,75 +1114,24 @@ select:focus-visible {
   display: grid;
   align-content: center;
   min-height: 100vh;
+  width: var(--hero-shell-width);
+  margin-inline: auto;
   padding: 36px 0;
 }
 
 .page-header {
   display: grid;
   gap: 0.9rem;
-  position: relative;
-  min-height: clamp(340px, 50vh, 540px);
-  overflow: hidden;
-  padding: clamp(30px, 4.8vw, 44px) clamp(24px, 5vw, 72px) clamp(34px, 5vw, 48px);
-  border: 1px solid rgba(255, 250, 240, 0.2);
-  border-radius: var(--radius);
-  background:
-    linear-gradient(180deg, rgba(79, 112, 89, 0.94), rgba(91, 120, 93, 0.78) 48%, rgba(52, 86, 67, 0.92)),
-    #4f7059;
-  color: var(--cream);
-  box-shadow: 0 28px 70px rgba(16, 32, 25, 0.22);
-  animation: rise-in 680ms ease both;
 }
 
-.page-header::before,
-.page-header::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-}
-
-.page-header::before {
-  inset: 0;
-  z-index: 0;
-  background:
-    linear-gradient(90deg, rgba(28, 48, 38, 0.72) 0%, rgba(35, 58, 45, 0.52) 42%, rgba(35, 58, 45, 0.22) 100%),
-    linear-gradient(180deg, rgba(255, 250, 240, 0.36), rgba(87, 116, 88, 0.38) 54%, rgba(27, 55, 42, 0.7)),
-    linear-gradient(135deg, rgba(247, 238, 217, 0.2), rgba(32, 53, 41, 0.28)),
-    var(--illustration-snowy-bg) center 44% / cover no-repeat,
-    var(--illustration-mist) center 42% / min(1200px, 118vw) auto no-repeat,
-    var(--illustration-mountains-main) center bottom / min(1180px, 128vw) auto no-repeat,
-    var(--illustration-mountains-far) center 52% / min(1240px, 134vw) auto no-repeat,
-    var(--illustration-topo) center / 720px auto repeat;
-  background-blend-mode: normal, normal, color, luminosity, screen, normal, soft-light, multiply;
-  opacity: 0.88;
-  filter: saturate(0.82) contrast(0.9) brightness(0.96);
-}
-
-.page-header::after {
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  z-index: 0;
-  height: 46%;
-  background:
-    linear-gradient(180deg, rgba(247, 238, 217, 0.02), rgba(30, 62, 47, 0.74)),
-    var(--illustration-forest) center bottom / min(1120px, 130vw) auto no-repeat,
-    var(--illustration-trees) left bottom / auto 100% repeat-x;
-  background-blend-mode: normal, multiply, multiply;
-  opacity: 0.62;
-}
-
-.page-header > * {
-  position: relative;
-  z-index: 1;
-}
-
-.page-header h1 {
+.page-header h1,
+.page-hero h1 {
   margin-bottom: 0;
   font-size: clamp(2.6rem, 13vw, 6rem);
 }
 
-.page-header .hero-text {
+.page-header .hero-text,
+.page-hero .hero-text {
   margin-bottom: 0;
 }
 
@@ -1135,8 +1148,7 @@ select:focus-visible {
 
 .guide-shell {
   align-content: start;
-  width: var(--site-shell-width);
-  margin-inline: auto;
+  width: 100%;
 }
 
 .page-intro {
@@ -1923,7 +1935,7 @@ select:focus-visible {
 
 .thank-you-card h1 {
   max-width: 720px;
-  color: var(--deep-forest);
+  color: inherit;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.6rem, 8vw, 5.2rem);
   line-height: 0.95;
@@ -1931,7 +1943,7 @@ select:focus-visible {
 
 .thank-you-card p:not(.eyebrow) {
   max-width: 620px;
-  color: #444a3b;
+  color: rgba(255, 250, 240, 0.82);
   font-family: "Trebuchet MS", Verdana, sans-serif;
   font-size: clamp(1.05rem, 2.4vw, 1.25rem);
   line-height: 1.65;
@@ -2048,16 +2060,6 @@ select:focus-visible {
   min-height: clamp(540px, 72vh, 720px);
   width: min(100% - var(--home-gutter), var(--home-max));
   padding: clamp(44px, 6vw, 72px) clamp(48px, 5.4vw, 72px) clamp(52px, 7vw, 82px);
-  border: 8px solid var(--deep-forest);
-  border-radius: var(--radius);
-  background: var(--deep-forest);
-  box-shadow: 0 24px 52px rgba(16, 32, 25, 0.18);
-}
-
-.home-page .hero-copy {
-  max-width: 720px;
-  position: relative;
-  z-index: 3;
 }
 
 .home-page .site-header,
@@ -2168,31 +2170,6 @@ select:focus-visible {
   --needle-rotation: 36deg;
   animation-delay: -12s;
   animation-duration: 30s;
-}
-
-.home-page .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background:
-    linear-gradient(115deg, rgba(16, 32, 25, 0.8) 0%, rgba(28, 48, 38, 0.71) 34%, rgba(47, 78, 58, 0.53) 68%, rgba(83, 112, 88, 0.4) 100%),
-    linear-gradient(180deg, rgba(32, 53, 41, 0.22) 0%, rgba(32, 53, 41, 0.33) 58%, rgba(16, 32, 25, 0.44) 100%),
-    var(--illustration-snowy-bg) center top / cover no-repeat;
-  background-blend-mode: multiply, multiply, normal;
-  filter: saturate(0.72) contrast(0.88) brightness(0.86);
-}
-
-.home-hero-frame {
-  position: absolute;
-  inset: 24px;
-  width: auto;
-  height: auto;
-  z-index: 2;
-  box-sizing: border-box;
-  pointer-events: none;
-  border: 3px solid var(--cream);
-  border-radius: 18px;
 }
 
 .hero::before,
@@ -2960,7 +2937,6 @@ select:focus-visible {
 
   .page-hero {
     grid-template-columns: minmax(0, 1fr);
-    padding-top: 72px;
   }
 
   .page-header {
@@ -3210,11 +3186,27 @@ select:focus-visible {
     width: min(100% - var(--home-mobile-gutter), var(--home-max));
   }
 
-  .home-page .hero {
-    width: min(100% - var(--home-mobile-gutter), var(--home-max));
+  .site-hero {
     min-height: auto;
     padding: 30px clamp(22px, 6vw, 28px) 40px;
     border-width: 7px;
+  }
+
+  .site-hero-copy {
+    max-width: 100%;
+  }
+
+  .site-hero::before {
+    background:
+      linear-gradient(125deg, rgba(16, 32, 25, 0.73) 0%, rgba(32, 53, 41, 0.58) 52%, rgba(73, 104, 81, 0.36) 100%),
+      var(--illustration-snowy-bg) center top / cover no-repeat;
+    background-blend-mode: color, normal;
+    filter: saturate(0.74) contrast(0.84) brightness(0.9);
+  }
+
+  .home-page .hero {
+    width: min(100% - var(--home-mobile-gutter), var(--home-max));
+    min-height: auto;
   }
 
   .home-page .hero-copy {
@@ -3243,15 +3235,7 @@ select:focus-visible {
     margin-top: 1rem;
   }
 
-  .home-page .hero::before {
-    background:
-      linear-gradient(125deg, rgba(16, 32, 25, 0.73) 0%, rgba(32, 53, 41, 0.58) 52%, rgba(73, 104, 81, 0.36) 100%),
-      var(--illustration-snowy-bg) center top / cover no-repeat;
-    background-blend-mode: color, normal;
-    filter: saturate(0.74) contrast(0.84) brightness(0.9);
-  }
-
-  .home-hero-frame {
+  .site-hero-frame {
     inset: 12px;
     border-width: 2px;
   }
