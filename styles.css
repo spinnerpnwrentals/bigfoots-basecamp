@@ -1528,6 +1528,10 @@ select:focus-visible {
 }
 
 .food-guide .recommendation-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
   overflow: hidden;
   gap: 0;
   padding: 0;
@@ -1538,6 +1542,23 @@ select:focus-visible {
   gap: 0.8rem;
   align-content: start;
   padding: 1rem;
+}
+
+.food-guide .recommendation-grid {
+  align-items: stretch;
+}
+
+.food-guide .recommendation-content {
+  flex: 1;
+  height: 100%;
+  grid-template-rows: minmax(0, 1fr) auto auto auto;
+  align-content: stretch;
+}
+
+.food-guide .recommendation-main {
+  display: grid;
+  gap: 0.8rem;
+  align-content: start;
 }
 
 .recommendation-card h3 {
@@ -1798,6 +1819,10 @@ select:focus-visible {
   display: grid;
   gap: 0.65rem;
   margin-top: 0.2rem;
+}
+
+.food-guide .recommendation-actions {
+  margin-top: auto;
 }
 
 .explore-page .recommendation-actions {
