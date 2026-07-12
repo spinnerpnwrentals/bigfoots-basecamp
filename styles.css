@@ -1521,6 +1521,12 @@ select:focus-visible {
   padding: 1rem;
 }
 
+.explore-page .recommendation-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .food-guide .recommendation-card {
   overflow: hidden;
   gap: 0;
@@ -1792,6 +1798,11 @@ select:focus-visible {
   display: grid;
   gap: 0.65rem;
   margin-top: 0.2rem;
+}
+
+.explore-page .recommendation-actions {
+  margin-top: auto;
+  padding-top: 0.2rem;
 }
 
 .recommendation-actions .button {
