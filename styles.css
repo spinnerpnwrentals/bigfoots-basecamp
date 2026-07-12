@@ -1561,6 +1561,16 @@ select:focus-visible {
   align-content: start;
 }
 
+.food-guide .south-fork-card .recommendation-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.food-guide .south-fork-card .recommendation-main {
+  margin-bottom: auto;
+}
+
 .recommendation-card h3 {
   margin-bottom: -0.4rem;
   color: var(--deep-forest);
