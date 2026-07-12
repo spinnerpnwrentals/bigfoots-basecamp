@@ -2921,6 +2921,10 @@ select:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .explore-page section[aria-labelledby="classic-hikes"] .recommendation-grid > .featured-trail {
+    grid-column: 1 / -1;
+  }
+
   .recommendation-actions {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
