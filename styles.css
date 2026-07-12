@@ -2208,48 +2208,6 @@ select:focus-visible {
   animation-duration: 30s;
 }
 
-.hero::before,
-.page-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0 calc(50% - 50vw);
-  z-index: -1;
-  background:
-    linear-gradient(90deg, rgba(26, 45, 36, 0.76) 0%, rgba(39, 65, 50, 0.52) 42%, rgba(39, 65, 50, 0.2) 100%),
-    linear-gradient(180deg, rgba(255, 250, 240, 0.26), rgba(70, 104, 81, 0.44) 58%, rgba(30, 61, 47, 0.78)),
-    linear-gradient(135deg, rgba(247, 238, 217, 0.2), rgba(32, 53, 41, 0.28)),
-    var(--illustration-snowy-bg) center 44% / cover no-repeat,
-    radial-gradient(circle at 18% 20%, rgba(185, 120, 67, 0.14), transparent 17rem),
-    radial-gradient(ellipse at 66% 34%, rgba(255, 250, 240, 0.2), transparent 21rem),
-    var(--illustration-mist) center 44% / min(1260px, 128vw) auto no-repeat,
-    var(--illustration-mountains-main) center bottom / min(1280px, 136vw) auto no-repeat,
-    var(--illustration-mountains-far) center 52% / min(1320px, 140vw) auto no-repeat,
-    var(--illustration-topo) center / 760px auto repeat,
-    linear-gradient(145deg, rgba(75, 107, 84, 0.96), rgba(89, 119, 91, 0.62) 48%, rgba(139, 95, 57, 0.24));
-  background-blend-mode: normal, normal, color, luminosity, normal, normal, screen, normal, soft-light, multiply, normal;
-  filter: saturate(0.82) contrast(0.9) brightness(0.95);
-}
-
-.hero::after,
-.page-hero::after {
-  content: "";
-  position: absolute;
-  left: calc(50% - 50vw);
-  right: calc(50% - 50vw);
-  bottom: -1px;
-  z-index: -1;
-  height: 56%;
-  background:
-    linear-gradient(180deg, rgba(247, 238, 217, 0.04), rgba(28, 58, 44, 0.76)),
-    var(--illustration-forest) center bottom / min(1220px, 134vw) auto no-repeat,
-    var(--illustration-trees) left bottom / auto 100% repeat-x;
-  background-blend-mode: normal, multiply, multiply;
-  background-position: center, center bottom, left bottom;
-  opacity: 0.68;
-  transform-origin: bottom center;
-  animation: forest-drift 14s ease-in-out infinite alternate;
-}
-
 .hero-body {
   max-width: 560px;
   color: rgba(255, 250, 240, 0.78);
