@@ -2918,6 +2918,10 @@ select:focus-visible {
     grid-column: 1 / -1;
   }
 
+  .family-activities-page section[aria-labelledby="outdoor-adventures"] .recommendation-grid > .featured-family-activity {
+    grid-column: 1 / -1;
+  }
+
   .recommendation-actions {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
