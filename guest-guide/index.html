@@ -83,6 +83,82 @@
       <aside class="callout-card">
         <p>If you need a little extra time, please reach out in advance and we'll do our best to help.</p>
       </aside>
+      <div class="arrival-checklist-panel" aria-labelledby="arrival-checklist-title">
+        <div class="arrival-checklist-head">
+          <h3 id="arrival-checklist-title">First 10 Minutes at Basecamp</h3>
+          <p>Take a few quick steps to get settled, get comfortable, and start enjoying the mountains.</p>
+        </div>
+        <form class="interactive-checklist" id="arrivalChecklist">
+          <div class="check-item is-complete">
+            <input type="checkbox" id="arrival-step-1" data-step="arrive" checked />
+            <label for="arrival-step-1">
+              <span class="check-item-title">Arrive at Basecamp!</span>
+              <span class="check-item-copy">You made it! Set down your bags, take a breath, and enjoy the mountain view.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="arrival-step-2" data-step="wifi" />
+            <label for="arrival-step-2">
+              <span class="check-item-title">Connect to Wi-Fi</span>
+              <span class="check-item-copy">Connect your devices to the Bigfoot's Basecamp Wi-Fi so you can access the guest guide, mountain conditions, and local recommendations.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="arrival-step-3" data-step="comfort" />
+            <label for="arrival-step-3">
+              <span class="check-item-title">Get Comfortable</span>
+              <span class="check-item-copy">Feel free to adjust the thermostat to a temperature that is comfortable for your group.</span>
+              <span class="check-item-note">Please return it to the posted departure setting before checkout.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="arrival-step-4" data-step="house-check" />
+            <label for="arrival-step-4">
+              <span class="check-item-title">Settle In and Check the House</span>
+              <span class="check-item-copy">Take a quick look around and make sure everything is clean, ready, and working as expected.</span>
+              <span class="check-item-note">If you notice damage, missing items, or anything that needs immediate attention, please contact us through the messaging system on the booking website or app you used to reserve your stay.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="arrival-step-5" data-step="trash" />
+            <label for="arrival-step-5">
+              <span class="check-item-title">Know Where the Trash Goes</span>
+              <span class="check-item-copy">Household trash can go in the outdoor barrel located on the side of the house.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="arrival-step-6" data-step="parking" />
+            <label for="arrival-step-6">
+              <span class="check-item-title">Review Parking</span>
+              <span class="check-item-copy">Make sure all vehicles are parked in the garage or designated driveway spaces and are not blocking neighboring homes or the roadway.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="arrival-step-7" data-step="hot-tub" />
+            <label for="arrival-step-7">
+              <span class="check-item-title">Check the Hot Tub Basics</span>
+              <span class="check-item-copy">Review the <a href="/hot-tub/">hot tub hours and safety guidance</a> before your first soak, and always replace the cover when you are finished.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="arrival-step-8" data-step="first-adventure" />
+            <label for="arrival-step-8">
+              <span class="check-item-title">Plan Your First Adventure</span>
+              <span class="check-item-copy">Check current mountain and road conditions before heading out, especially during winter weather.</span>
+              <span class="check-item-note">Start with <a href="/mountain-conditions/">Mountain Conditions</a> or <a href="/explore/">Explore Snoqualmie Pass</a>.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="arrival-step-9" data-step="feedback" />
+            <label for="arrival-step-9">
+              <span class="check-item-title">Tell Us How Basecamp Can Be Better</span>
+              <span class="check-item-copy">We want to hear how we can improve Bigfoot's Basecamp. For general feedback, suggestions, or ideas, visit our <a href="/reviews/">private feedback page</a>.</span>
+              <span class="check-item-note">For anything that needs immediate help during your stay, contact us through the messaging system on the booking website or app you used to reserve Basecamp.</span>
+            </label>
+          </div>
+        </form>
+        <button class="button secondary arrival-checklist-reset" id="arrivalChecklistReset" type="button" aria-label="Reset arrival checklist">Reset Checklist</button>
+      </div>
     </section>
 
     <section class="guide-section" aria-labelledby="parking">
@@ -170,5 +246,6 @@
       <a class="return-link" href="/">← Return to Guest Portal</a>
     </section>
   </main>
+  <script src="/script.js"></script>
 </body>
 </html>
