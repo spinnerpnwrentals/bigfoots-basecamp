@@ -299,8 +299,8 @@ main,
   inset: 0;
   z-index: 0;
   background:
-    linear-gradient(115deg, rgba(16, 32, 25, 0.64) 0%, rgba(28, 48, 38, 0.57) 34%, rgba(47, 78, 58, 0.42) 68%, rgba(83, 112, 88, 0.32) 100%),
-    linear-gradient(180deg, rgba(32, 53, 41, 0.18) 0%, rgba(32, 53, 41, 0.26) 58%, rgba(16, 32, 25, 0.35) 100%),
+    linear-gradient(115deg, rgba(16, 32, 25, 0.45) 0%, rgba(28, 48, 38, 0.4) 34%, rgba(47, 78, 58, 0.29) 68%, rgba(83, 112, 88, 0.22) 100%),
+    linear-gradient(180deg, rgba(32, 53, 41, 0.13) 0%, rgba(32, 53, 41, 0.18) 58%, rgba(16, 32, 25, 0.25) 100%),
     var(--illustration-snowy-bg) center top / cover no-repeat;
   background-blend-mode: multiply, multiply, normal;
   filter: saturate(0.72) contrast(0.88) brightness(0.86);
@@ -3357,7 +3357,7 @@ select:focus-visible {
 
   .site-hero::before {
     background:
-      linear-gradient(125deg, rgba(16, 32, 25, 0.58) 0%, rgba(32, 53, 41, 0.46) 52%, rgba(73, 104, 81, 0.29) 100%),
+      linear-gradient(125deg, rgba(16, 32, 25, 0.41) 0%, rgba(32, 53, 41, 0.32) 52%, rgba(73, 104, 81, 0.2) 100%),
       var(--illustration-snowy-bg) center top / cover no-repeat;
     background-blend-mode: color, normal;
     filter: saturate(0.74) contrast(0.84) brightness(0.9);
