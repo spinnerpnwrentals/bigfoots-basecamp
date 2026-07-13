@@ -873,6 +873,16 @@ select:focus-visible {
   letter-spacing: 0.08em;
 }
 
+.progress-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.85rem;
+}
+
+.progress-actions .button {
+  min-width: 160px;
+}
+
 .hunt-list {
   display: grid;
   gap: 14px;
@@ -3258,6 +3268,16 @@ select:focus-visible {
 }
 
 @media (max-width: 680px) {
+  .progress-copy {
+    align-items: start;
+    flex-wrap: wrap;
+  }
+
+  .progress-actions .button {
+    width: 100%;
+    min-width: 0;
+  }
+
   .check-item {
     grid-template-columns: 1fr;
     gap: 0.6rem;

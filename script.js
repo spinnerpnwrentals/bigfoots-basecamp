@@ -164,6 +164,7 @@ function initScavengerHunt() {
     adminList: document.querySelector("#adminList"),
     exitAdmin: document.querySelector("#exitAdmin"),
     addBigfoot: document.querySelector("#addBigfoot"),
+    huntResetButton: document.querySelector("#huntResetButton"),
     resetProgress: document.querySelector("#resetProgress"),
     restoreDefaults: document.querySelector("#restoreDefaults"),
     confettiCanvas: document.querySelector("#confettiCanvas")
@@ -335,8 +336,8 @@ function initScavengerHunt() {
     render();
   }
 
-  function resetProgress() {
-    if (!confirm("Reset scavenger hunt progress on this device?")) return;
+  function resetHuntProgress() {
+    if (!confirm("Reset your Bigfoot hunt? This will clear all 12 discoveries and return the tracker to 0/12.")) return;
 
     state.found = state.bigfoots.map(() => false);
     state.confettiPlayed = false;
@@ -458,7 +459,8 @@ function initScavengerHunt() {
     render();
   });
 
-  elements.resetProgress.addEventListener("click", resetProgress);
+  elements.huntResetButton?.addEventListener("click", resetHuntProgress);
+  elements.resetProgress.addEventListener("click", resetHuntProgress);
   elements.restoreDefaults.addEventListener("click", restoreDefaults);
 
   loadFound();
