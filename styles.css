@@ -1159,6 +1159,15 @@ select:focus-visible {
   font-size: 1.02rem;
 }
 
+.page-purpose {
+  max-width: 680px;
+  margin: 0.85rem 0 0;
+  color: rgba(255, 250, 240, 0.82);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 .guide-section,
 .owner-tip,
 .page-note,
@@ -2959,7 +2968,8 @@ select:focus-visible {
   .page-header .kicker,
   .page-header h1,
   .page-header .hero-text,
-  .page-header .page-intro {
+  .page-header .page-intro,
+  .page-header .page-purpose {
     grid-column: 1;
   }
 
