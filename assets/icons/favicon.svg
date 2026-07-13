@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Evergreen tree">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Hairy creature">
   <text
     x="50"
-    y="54"
+    y="56"
     text-anchor="middle"
     dominant-baseline="middle"
-    font-size="82"
-  >🌲</text>
+    font-size="80"
+  >&#x1FAC8;</text>
 </svg>
