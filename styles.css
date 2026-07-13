@@ -1684,7 +1684,7 @@ select:focus-visible {
 .food-guide .recommendation-content {
   flex: 1;
   height: 100%;
-  grid-template-rows: minmax(0, 1fr) auto auto auto;
+  grid-template-rows: minmax(0, 1fr) auto auto;
   align-content: stretch;
 }
 
@@ -1692,16 +1692,6 @@ select:focus-visible {
   display: grid;
   gap: 0.8rem;
   align-content: start;
-}
-
-.food-guide .south-fork-card .recommendation-content {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.food-guide .south-fork-card .recommendation-main {
-  margin-bottom: auto;
 }
 
 .recommendation-card h3 {
@@ -1892,6 +1882,10 @@ select:focus-visible {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.6rem;
   margin: 0;
+}
+
+.quick-facts > div:only-child {
+  grid-column: 1 / -1;
 }
 
 .quick-facts div {
