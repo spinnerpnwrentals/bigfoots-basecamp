@@ -3270,16 +3270,53 @@ select:focus-visible {
 }
 
 @media (max-width: 680px) {
-  .food-guide .page-shell {
-    width: calc(100% - 24px);
+  :root {
+    --mobile-shell-width: calc(100% - 24px);
+    --mobile-panel-padding: 1rem;
+  }
+
+  .page-shell,
+  .guide-shell {
+    width: var(--mobile-shell-width);
     max-width: none;
     margin-inline: auto;
   }
 
-  .food-guide .guide-section,
-  .food-guide .owner-tip,
-  .food-guide .page-note {
-    padding: 1rem;
+  .site-header.site-hero,
+  .home-page main,
+  .home-page .site-footer,
+  .home-page .hero {
+    width: var(--mobile-shell-width);
+    max-width: none;
+    margin-inline: auto;
+  }
+
+  .guide-section,
+  .owner-tip,
+  .page-note,
+  .portal-intro,
+  .info-section,
+  .welcome-section,
+  .about-section,
+  .welcome-panel,
+  .progress-panel,
+  .complete-panel,
+  .secret-guide,
+  .admin-panel {
+    padding: var(--mobile-panel-padding);
+  }
+
+  .portal-card,
+  .experience-card,
+  .info-card,
+  .dashboard-card,
+  .resource-card,
+  .widget-placeholder,
+  .recommendation-card,
+  .hunt-card,
+  .daylight-card {
+    width: 100%;
+    min-width: 0;
   }
 
   .food-guide .recommendation-grid {
@@ -3374,12 +3411,6 @@ select:focus-visible {
     align-items: start;
   }
 
-  .home-page .site-header,
-  .home-page main,
-  .home-page .site-footer {
-    width: min(100% - var(--home-mobile-gutter), var(--home-max));
-  }
-
   .site-hero {
     min-height: auto;
     padding: 30px clamp(22px, 6vw, 28px) 40px;
@@ -3399,7 +3430,6 @@ select:focus-visible {
   }
 
   .home-page .hero {
-    width: min(100% - var(--home-mobile-gutter), var(--home-max));
     min-height: auto;
   }
 
