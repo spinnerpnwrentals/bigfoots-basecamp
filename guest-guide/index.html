@@ -224,15 +224,65 @@
         <p class="eyebrow">Before You Leave</p>
         <h2 id="departure">A Simple Departure Checklist</h2>
       </div>
-      <ul class="checklist">
-        <li>Start the dishwasher if needed.</li>
-        <li>Place trash in the outdoor trash bin.</li>
-        <li>Return furniture to its original location if moved.</li>
-        <li>Lock all doors and windows.</li>
-        <li>Turn off lights.</li>
-        <li>Make sure the hot tub cover is securely replaced.</li>
-        <li>Travel safely!</li>
-      </ul>
+      <div class="arrival-checklist-panel checkout-checklist-panel" aria-labelledby="checkout-checklist-title">
+        <div class="arrival-checklist-head">
+          <h3 id="checkout-checklist-title">Before You Head Out</h3>
+          <p>A quick final sweep helps keep checkout easy and leaves Basecamp ready for the next mountain weekend.</p>
+        </div>
+        <form class="interactive-checklist" id="checkoutChecklist">
+          <div class="check-item">
+            <input type="checkbox" id="checkout-step-1" data-step="dishwasher" />
+            <label for="checkout-step-1">
+              <span class="check-item-title">Start the Dishwasher</span>
+              <span class="check-item-copy">Start the dishwasher before you leave if there are dishes waiting.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="checkout-step-2" data-step="trash" />
+            <label for="checkout-step-2">
+              <span class="check-item-title">Take Out the Trash</span>
+              <span class="check-item-copy">Place all bagged trash in the outdoor trash bin before heading out.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="checkout-step-3" data-step="furniture" />
+            <label for="checkout-step-3">
+              <span class="check-item-title">Reset Moved Furniture</span>
+              <span class="check-item-copy">Return any furniture to its original spot if your group rearranged things.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="checkout-step-4" data-step="lights" />
+            <label for="checkout-step-4">
+              <span class="check-item-title">Turn Off the Lights</span>
+              <span class="check-item-copy">Give the house one last pass and switch off lights before you go.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="checkout-step-5" data-step="hot-tub" />
+            <label for="checkout-step-5">
+              <span class="check-item-title">Close Up the Hot Tub</span>
+              <span class="check-item-copy">Make sure the hot tub cover is fully replaced and secure before checkout.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="checkout-step-6" data-step="doors" />
+            <label for="checkout-step-6">
+              <span class="check-item-title">Lock Doors and Windows</span>
+              <span class="check-item-copy">Lock all doors and windows so Basecamp is buttoned up behind you.</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="checkout-step-7" data-step="belongings" />
+            <label for="checkout-step-7">
+              <span class="check-item-title">Don't Leave Anything Behind</span>
+              <span class="check-item-copy">Do one final sweep for phones, chargers, glasses, favorite blankets, kids' treasures, and any Bigfoot tracking devices.</span>
+            </label>
+          </div>
+        </form>
+        <p class="checklist-signoff">Travel safely, and thanks again for spending time at Basecamp.</p>
+        <button class="button secondary arrival-checklist-reset" id="checkoutChecklistReset" type="button" aria-label="Reset checkout checklist">Reset Checkout Checklist</button>
+      </div>
     </section>
 
     <aside class="owner-tip" aria-labelledby="help-title">

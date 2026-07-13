@@ -1,19 +1,39 @@
 const ARRIVAL_CHECKLIST_STORAGE_KEY = "bigfoots-basecamp-arrival-checklist";
+const CHECKOUT_CHECKLIST_STORAGE_KEY = "bigfoots-basecamp-checkout-checklist";
 
-initArrivalChecklist();
+initInteractiveChecklist({
+  checklistSelector: "#arrivalChecklist",
+  resetSelector: "#arrivalChecklistReset",
+  storageKey: ARRIVAL_CHECKLIST_STORAGE_KEY,
+  defaultCheckedSteps: ["arrive"],
+  lockedSteps: ["arrive"]
+});
+initInteractiveChecklist({
+  checklistSelector: "#checkoutChecklist",
+  resetSelector: "#checkoutChecklistReset",
+  storageKey: CHECKOUT_CHECKLIST_STORAGE_KEY
+});
 initScavengerHunt();
 
-function initArrivalChecklist() {
-  const checklist = document.querySelector("#arrivalChecklist");
-  const resetButton = document.querySelector("#arrivalChecklistReset");
+function initInteractiveChecklist({
+  checklistSelector,
+  resetSelector,
+  storageKey,
+  defaultCheckedSteps = [],
+  lockedSteps = []
+}) {
+  const checklist = document.querySelector(checklistSelector);
+  const resetButton = document.querySelector(resetSelector);
   if (!checklist || !resetButton) return;
 
   const inputs = Array.from(checklist.querySelectorAll('input[type="checkbox"][data-step]'));
   if (!inputs.length) return;
+  const defaultCheckedSet = new Set(defaultCheckedSteps);
+  const lockedSet = new Set(lockedSteps);
 
   function readState() {
     try {
-      return JSON.parse(localStorage.getItem(ARRIVAL_CHECKLIST_STORAGE_KEY) || "{}");
+      return JSON.parse(localStorage.getItem(storageKey) || "{}");
     } catch {
       return {};
     }
@@ -21,7 +41,11 @@ function initArrivalChecklist() {
 
   function applyState(savedState) {
     inputs.forEach((input) => {
-      const checked = input.dataset.step === "arrive" ? true : Boolean(savedState[input.dataset.step]);
+      const checked = lockedSet.has(input.dataset.step)
+        ? true
+        : savedState[input.dataset.step] === undefined
+          ? defaultCheckedSet.has(input.dataset.step)
+          : Boolean(savedState[input.dataset.step]);
       input.checked = checked;
       input.closest(".check-item")?.classList.toggle("is-complete", checked);
     });
@@ -30,9 +54,11 @@ function initArrivalChecklist() {
   function saveState() {
     const nextState = {};
     inputs.forEach((input) => {
-      nextState[input.dataset.step] = input.dataset.step === "arrive" ? true : input.checked;
+      nextState[input.dataset.step] = lockedSet.has(input.dataset.step)
+        ? true
+        : input.checked;
     });
-    localStorage.setItem(ARRIVAL_CHECKLIST_STORAGE_KEY, JSON.stringify(nextState));
+    localStorage.setItem(storageKey, JSON.stringify(nextState));
   }
 
   applyState(readState());
@@ -42,7 +68,7 @@ function initArrivalChecklist() {
     const input = event.target.closest('input[type="checkbox"][data-step]');
     if (!input) return;
 
-    if (input.dataset.step === "arrive") {
+    if (lockedSet.has(input.dataset.step)) {
       input.checked = true;
     }
 
@@ -51,7 +77,8 @@ function initArrivalChecklist() {
   });
 
   resetButton.addEventListener("click", () => {
-    applyState({ arrive: true });
+    localStorage.removeItem(storageKey);
+    applyState({});
     saveState();
   });
 }
