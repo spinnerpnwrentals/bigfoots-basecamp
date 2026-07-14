@@ -2814,6 +2814,18 @@ select:focus-visible {
   line-height: 0.92;
 }
 
+.home-page .mobile-title-line {
+  display: inline;
+}
+
+.home-page .mobile-title-line-nowrap {
+  white-space: normal;
+}
+
+.home-page .home-hero-break {
+  display: block;
+}
+
 .premium-footer {
   margin-top: 18px;
   display: grid;
@@ -3431,28 +3443,46 @@ select:focus-visible {
 
   .home-page .hero {
     min-height: auto;
-    padding: 36px 0 0;
-    gap: 1rem;
+    padding: 28px clamp(18px, 5.6vw, 24px) 30px;
+    gap: 0.9rem;
   }
 
-  .home-page .hero-copy {
+  .home-page .hero-copy,
+  .home-page .site-hero-copy {
+    min-width: 0;
     max-width: 100%;
   }
 
   .home-page h1 {
-    font-size: clamp(2.75rem, 14vw, 4.3rem);
-    line-height: 0.92;
-    margin-bottom: 0.72rem;
+    font-size: clamp(2.65rem, 11.8vw, 3.85rem);
+    line-height: 0.9;
+    margin-bottom: 0.8rem;
+    text-wrap: initial;
+  }
+
+  .home-page .mobile-title-line {
+    display: block;
+  }
+
+  .home-page .mobile-title-line-nowrap {
+    white-space: nowrap;
+  }
+
+  .home-page .home-hero-break {
+    display: none;
   }
 
   .home-page .hero-text {
-    margin-bottom: 0.45rem;
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+    font-size: clamp(1rem, 4vw, 1.12rem);
+    line-height: 1.42;
   }
 
   .home-page .hero-body {
-    max-width: 34rem;
-    font-size: 0.96rem;
-    line-height: 1.5;
+    max-width: 100%;
+    font-size: 0.94rem;
+    line-height: 1.52;
   }
 
   .home-page .hero-actions {
