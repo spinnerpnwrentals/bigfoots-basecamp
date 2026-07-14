@@ -3423,7 +3423,7 @@ select:focus-visible {
 
   .site-hero::before {
     background:
-      linear-gradient(125deg, rgba(16, 32, 25, 0.41) 0%, rgba(32, 53, 41, 0.32) 52%, rgba(73, 104, 81, 0.2) 100%),
+      linear-gradient(125deg, rgba(16, 32, 25, 0.53) 0%, rgba(32, 53, 41, 0.42) 52%, rgba(73, 104, 81, 0.26) 100%),
       var(--illustration-snowy-bg) center top / cover no-repeat;
     background-blend-mode: color, normal;
     filter: saturate(0.74) contrast(0.84) brightness(0.9);
