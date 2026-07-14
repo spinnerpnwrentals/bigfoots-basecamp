@@ -3431,6 +3431,8 @@ select:focus-visible {
 
   .home-page .hero {
     min-height: auto;
+    padding: 36px 0 0;
+    gap: 1rem;
   }
 
   .home-page .hero-copy {
@@ -3454,9 +3456,11 @@ select:focus-visible {
   }
 
   .home-page .hero-actions {
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
-    margin-top: 1rem;
+    display: none;
+  }
+
+  .home-page .welcome-section {
+    margin-top: 20px;
   }
 
   .site-hero-frame {
