@@ -2780,6 +2780,120 @@ select:focus-visible {
   text-underline-offset: 0.2em;
 }
 
+.adventure-filters {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.adventure-filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.filter-chip {
+  min-height: 42px;
+  border: 1px solid rgba(32, 53, 41, 0.18);
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  background: rgba(255, 250, 240, 0.72);
+  color: var(--forest);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.filter-chip:hover,
+.filter-chip:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(32, 53, 41, 0.34);
+  background: rgba(255, 250, 240, 0.88);
+}
+
+.filter-chip.is-active {
+  border-color: rgba(32, 53, 41, 0.18);
+  background: linear-gradient(135deg, rgba(32, 53, 41, 0.96), rgba(73, 104, 77, 0.92));
+  color: var(--cream);
+  box-shadow: 0 12px 24px rgba(16, 32, 25, 0.16);
+}
+
+.filter-status {
+  margin: 0;
+  color: var(--muted);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.95rem;
+}
+
+.adventure-log-grid {
+  align-items: stretch;
+}
+
+.story-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  min-width: 0;
+}
+
+.story-card[hidden] {
+  display: none;
+}
+
+.story-card-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: start;
+}
+
+.story-card-head > div {
+  min-width: 0;
+}
+
+.story-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(95, 59, 35, 0.2);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 240, 0.9), rgba(234, 216, 183, 0.56)),
+    rgba(32, 53, 41, 0.08);
+  color: var(--forest);
+  box-shadow: 0 10px 20px rgba(17, 29, 22, 0.08);
+}
+
+.story-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.25;
+}
+
+.story-meta {
+  margin: -0.3rem 0 0;
+  color: var(--cedar-dark);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.adventure-log-form .button {
+  width: fit-content;
+  min-width: min(100%, 220px);
+}
+
 @keyframes rise-in {
   from {
     opacity: 0;
