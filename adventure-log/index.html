@@ -64,20 +64,18 @@
       <div class="adventure-filters" role="region" aria-label="Adventure category filters">
         <div class="adventure-filter-list" role="toolbar" aria-label="Filter adventures by category">
           <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true">All Adventures</button>
-          <button class="filter-chip" type="button" data-filter="family" aria-pressed="false">Family</button>
-          <button class="filter-chip" type="button" data-filter="hiking" aria-pressed="false">Hiking</button>
-          <button class="filter-chip" type="button" data-filter="skiing-snow" aria-pressed="false">Skiing & Snow</button>
-          <button class="filter-chip" type="button" data-filter="celebrations" aria-pressed="false">Celebrations</button>
+          <button class="filter-chip" type="button" data-filter="basecamp-moments" aria-pressed="false">Basecamp Moments</button>
+          <button class="filter-chip" type="button" data-filter="outdoors" aria-pressed="false">Outdoors</button>
           <button class="filter-chip" type="button" data-filter="pets" aria-pressed="false">Pets</button>
           <button class="filter-chip" type="button" data-filter="bigfoot-sightings" aria-pressed="false">Bigfoot Sightings</button>
         </div>
-        <p id="adventure-filter-status" class="filter-status" aria-live="polite">Showing all 6 adventures.</p>
+        <p id="adventure-filter-status" class="filter-status" aria-live="polite">Showing all 4 adventures.</p>
         <noscript><p class="form-note">JavaScript is off, so every story is shown together.</p></noscript>
       </div>
 
       <div class="recommendation-grid adventure-log-grid">
         <!-- Sample story: replace or remove before launch -->
-        <article class="recommendation-card story-card" data-category="family">
+        <article class="recommendation-card story-card" data-category="basecamp-moments">
           <div class="story-card-head">
             <span class="story-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
@@ -88,7 +86,7 @@
             </span>
             <div>
               <div class="badge-list" aria-label="Story category">
-                <span class="badge">Family</span>
+                <span class="badge">Basecamp Moments</span>
                 <span class="badge">Sample Story</span>
               </div>
               <h3>A New Family Record</h3>
@@ -123,29 +121,7 @@
         </article>
 
         <!-- Sample story: replace or remove before launch -->
-        <article class="recommendation-card story-card" data-category="hiking">
-          <div class="story-card-head">
-            <span class="story-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M7 19 10 8l2.5 3 2-1.2L18 19" />
-                <path d="M11.5 4.8a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Z" />
-                <path d="M5 19h14" />
-              </svg>
-            </span>
-            <div>
-              <div class="badge-list" aria-label="Story category">
-                <span class="badge">Hiking</span>
-                <span class="badge">Sample Story</span>
-              </div>
-              <h3>Snack Breaks Count as Strategy</h3>
-            </div>
-          </div>
-          <p class="story-meta">June 2026 • The Summit Snack Society</p>
-          <p>We packed what felt like too many trail snacks, then used every single one before we hit the lake. Zero regrets. The views were worth every extra granola bar.</p>
-        </article>
-
-        <!-- Sample story: replace or remove before launch -->
-        <article class="recommendation-card story-card" data-category="skiing-snow">
+        <article class="recommendation-card story-card" data-category="outdoors">
           <div class="story-card-head">
             <span class="story-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
@@ -158,37 +134,14 @@
             </span>
             <div>
               <div class="badge-list" aria-label="Story category">
-                <span class="badge">Skiing & Snow</span>
+                <span class="badge">Outdoors</span>
                 <span class="badge">Sample Story</span>
               </div>
               <h3>First Chair, Last Cocoa</h3>
             </div>
           </div>
           <p class="story-meta">January 2026 • Powder Chasers</p>
-          <p>We chased morning snow, got exactly the kind of tired that feels earned, and finished the day back at Basecamp in socks with mugs of cocoa and zero ambition.</p>
-        </article>
-
-        <!-- Sample story: replace or remove before launch -->
-        <article class="recommendation-card story-card" data-category="celebrations">
-          <div class="story-card-head">
-            <span class="story-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path d="M12 3v18" />
-                <path d="M7 8h10" />
-                <path d="M8.5 3.5 12 7l3.5-3.5" />
-                <path d="M9 18h6" />
-              </svg>
-            </span>
-            <div>
-              <div class="badge-list" aria-label="Story category">
-                <span class="badge">Celebrations</span>
-                <span class="badge">Sample Story</span>
-              </div>
-              <h3>Anniversary Under the Stars</h3>
-            </div>
-          </div>
-          <p class="story-meta">September 2026 • Two Stargazers</p>
-          <p>We spent the day exploring, grabbed dinner on the way back, and ended the evening in the hot tub counting stars and pretending we knew any constellations at all.</p>
+          <p>We caught morning snow, took the scenic long way back, and wrapped the day at Basecamp in socks with cocoa and the kind of tired you actually want.</p>
         </article>
 
         <!-- Sample story: replace or remove before launch -->
@@ -261,10 +214,8 @@
             <span>Adventure category</span>
             <select id="adventure-category" name="adventure-category" required>
               <option value="">Choose one</option>
-              <option value="family">Family</option>
-              <option value="hiking">Hiking</option>
-              <option value="skiing-snow">Skiing & Snow</option>
-              <option value="celebrations">Celebrations</option>
+              <option value="basecamp-moments">Basecamp Moments</option>
+              <option value="outdoors">Outdoors</option>
               <option value="pets">Pets</option>
               <option value="bigfoot-sightings">Bigfoot Sightings</option>
             </select>
