@@ -53,10 +53,6 @@
         <h1>Every stay leaves a story.</h1>
         <p class="hero-text">A mountain trail log full of family wins, celebration weekends, powder-day memories, and the occasional suspicious noise upstairs.</p>
         <p class="page-intro">Some guests discover a new trail. Others celebrate birthdays, weddings, anniversaries, or unforgettable powder days. A few even claim they spotted Bigfoot. Read the adventures shared by guests—or leave a story of your own.</p>
-        <div class="button-row">
-          <a class="button primary" href="#published-adventures">Read the Adventures</a>
-          <a class="button secondary light" href="#share-your-story">Share Your Story</a>
-        </div>
       </div>
     </header>
 
@@ -193,7 +189,7 @@
               <h3>Anniversary Under the Stars</h3>
             </div>
           </div>
-          <p class="story-meta">September 2026 • Katie &amp; Ben</p>
+          <p class="story-meta">September 2026 • Two Stargazers</p>
           <p>We spent the day exploring, grabbed dinner on the way back, and ended the evening in the hot tub counting stars and pretending we knew any constellations at all.</p>
         </article>
 
@@ -230,7 +226,7 @@
         <p>What adventure did you have while staying at Bigfoot's Basecamp? Share a favorite memory, celebration, trail story, powder day, family moment, or possible Bigfoot encounter.</p>
       </div>
 
-      <form class="guest-review-form adventure-log-form" name="adventure-log-submission" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/adventure-log/thanks/">
+      <form class="guest-review-form adventure-log-form" name="adventure-log-submission" method="POST" enctype="multipart/form-data" data-netlify="true" data-netlify-honeypot="bot-field" action="/adventure-log/thanks/">
         <input type="hidden" name="form-name" value="adventure-log-submission" />
 
         <p class="form-hidden">
@@ -287,13 +283,20 @@
           <textarea id="story-text" name="story-text" rows="7" required placeholder="Tell us what happened — the trail, the celebration, the powder day, the family moment, or the suspicious late-night footsteps."></textarea>
         </label>
 
-        <div class="callout-card inline-callout">
-          <p>Photo uploads are not enabled in this first version. If you have a favorite photo to go with your story, send it directly to Kevin and Katie after you submit your note.</p>
-        </div>
+        <label class="form-field" for="adventure-photo">
+          <span>Optional photo upload</span>
+          <input id="adventure-photo" name="adventure-photo" type="file" accept="image/jpeg,image/png,image/webp" />
+          <span class="field-help">Optional: Add one favorite photo from your adventure. JPG, PNG, or WebP. Smaller files will be easier to send from the trail.</span>
+        </label>
 
         <label class="checkbox-field" for="story-permission">
           <input id="story-permission" name="story-permission" type="checkbox" value="yes" required />
-          <span>I give Kevin and Katie permission to review, edit for length or clarity, and publish this story on the Bigfoot's Basecamp website.</span>
+          <span>I give the Bigfoot's Basecamp team permission to review, edit for length or clarity, and publish this story on the Bigfoot's Basecamp website.</span>
+        </label>
+
+        <label class="checkbox-field" for="photo-permission">
+          <input id="photo-permission" name="photo-permission" type="checkbox" value="yes" />
+          <span>If I'm sharing a photo, I confirm that I have permission to share it and allow it to be displayed on the Bigfoot's Basecamp website.</span>
         </label>
 
         <label class="checkbox-field" for="moderation-acknowledgement">
@@ -301,14 +304,14 @@
           <span>I understand that submissions are moderated and will not appear immediately.</span>
         </label>
 
-        <p class="form-note">Stories are reviewed before publication. Please avoid including private contact information, exact home addresses, or identifying information about children. Kevin and Katie may make minor edits for spelling, clarity, privacy, or length.</p>
+        <p class="form-note">Stories and photos are reviewed before publication. Please avoid including private contact information, exact home addresses, or identifying information about children. Your Bigfoot's Basecamp hosts may make minor edits for spelling, clarity, privacy, or length.</p>
 
         <button class="button primary" type="submit">Share Your Story</button>
       </form>
     </section>
 
     <section class="page-note">
-      <p>Submissions are sent to Kevin and Katie through the site's form inbox for review before anything is published.</p>
+      <p>Submissions are sent to the Bigfoot's Basecamp team through the site's form inbox for review before anything is published.</p>
       <a class="return-link" href="/">← Return to Guest Portal</a>
     </section>
   </main>
