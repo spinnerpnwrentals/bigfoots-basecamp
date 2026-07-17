@@ -2805,22 +2805,6 @@ select:focus-visible {
   line-height: 1.5;
 }
 
-.footer-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem 1rem;
-  align-items: center;
-  justify-content: flex-end;
-  font-family: "Trebuchet MS", Verdana, sans-serif;
-  font-size: 0.82rem;
-  font-weight: 900;
-}
-
-.footer-nav a {
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.2em;
-}
-
 .adventure-filters {
   display: grid;
   gap: 0.75rem;
@@ -3548,10 +3532,6 @@ select:focus-visible {
   .premium-footer {
     display: grid;
     justify-items: start;
-  }
-
-  .footer-nav {
-    justify-content: flex-start;
   }
 }
 
