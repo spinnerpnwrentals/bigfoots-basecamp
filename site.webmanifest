@@ -9,9 +9,19 @@
   "theme_color": "#203529",
   "icons": [
     {
-      "src": "/favicon.svg?v=5",
+      "src": "/favicon.svg?v=7",
       "sizes": "any",
       "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon-32x32.png?v=7",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png?v=7",
+      "sizes": "16x16",
+      "type": "image/png"
     }
   ]
 }
