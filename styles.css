@@ -445,6 +445,12 @@ select:focus-visible {
   backdrop-filter: blur(10px);
 }
 
+.hot-tub-download {
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 1.35rem;
+}
+
 .portal-intro,
 .journal-page,
 .progress-panel,
