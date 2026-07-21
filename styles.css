@@ -449,6 +449,7 @@ select:focus-visible {
   width: fit-content;
   max-width: 100%;
   margin-top: 1.35rem;
+  opacity: 1;
 }
 
 .portal-intro,
