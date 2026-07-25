@@ -97,29 +97,39 @@ function initScavengerHunt() {
 
   const defaultBigfoots = [
     {
-      name: "The Cold-Kitchen Clinger",
-      clue: "Something small is clinging to a cold kitchen giant, hiding in plain sight. Slow down—quick trackers can walk right past it.",
-      hint: "Search the outside of the refrigerator for something held in place without tape."
+      name: "The Cold Clinger",
+      clue: "A tiny traveler holds tight to a chilly giant, hiding where hungry explorers often pass without a second glance.",
+      hint: "Look carefully on the outside of the kitchen refrigerator. The magnet is not placed in an obvious spot."
     },
     {
-      name: "Bigfoot's Ultimate Test",
-      clue: "A thousand tiny pieces are waiting for the most dedicated trackers. Head below the main floor toward the place where games get serious and find the challenge that takes patience to assemble.",
-      hint: "Look downstairs in the game room for a 1,000-piece puzzle. No need to put it together to mark this clue found."
+      name: "Bigfoot's Morning Cup",
+      clue: "When the forest wakes, this cozy companion waits among a crowd of vessels ready for something warm.",
+      hint: "Open the kitchen cabinet where the mugs and drinking cups are stored."
     },
     {
-      name: "Bigfoot's Favorite Cup",
-      clue: "Coffee, cocoa, or tea? Bigfoot packed a cup for one enormous sip, then tucked it among the kitchen's other cozy drink companions.",
-      hint: "Look where cups and mugs are stored in the kitchen cabinets."
+      name: "The Helpful Hanger",
+      clue: "This quiet helper stays close to the place where meals grow hot, always ready when hands or spills need saving.",
+      hint: "Look at the kitchen towel hanging from the stove or oven handle."
     },
     {
-      name: "The Helpful Hot Spot",
-      clue: "After helping around the kitchen, I dry hands and hang close to where meals are made—warmer than any other treasure in the hunt.",
-      hint: "Look near the oven or stove for a towel hanging from the handle."
+      name: "The Mountain Watcher",
+      clue: "Climb toward the highest indoor lookout, where something strong and silent keeps watch over the distant peaks.",
+      hint: "Go to the upstairs loft and look near the area overlooking the mountain views. Find the metal artwork."
     },
     {
-      name: "The Mountain Lookout",
-      clue: "Climb above the main living area to a perch with mountain views. Something artistic and made of metal is keeping watch from the loft.",
-      hint: "Search the upstairs loft, especially the mountain-facing area, for a metal piece of artwork."
+      name: "The Feast Keeper",
+      clue: "Before a woodland gathering begins, this flat companion waits in hiding for cheeses, snacks, and forest-sized feasts.",
+      hint: "Look inside the kitchen cabinets near the stove for the charcuterie board."
+    },
+    {
+      name: "Bigfoot's Bunk Key",
+      clue: "Where tired explorers stack their dreams, a tiny keepsake hides below the sleeping place. No climbing is required.",
+      hint: "Go to the bunk room, crouch down, and look underneath the bunk bed. The keychain is attached to the underside rail."
+    },
+    {
+      name: "The Thousand-Piece Trial",
+      clue: "Only the most hardened Bigfoot hunters reach this final test. A thousand scattered possibilities wait below, where games and patient explorers gather.",
+      hint: "Head downstairs to the game room and look for the 1000-piece puzzle."
     }
   ];
 
@@ -346,7 +356,7 @@ function initScavengerHunt() {
   }
 
   function restoreDefaults() {
-    if (!confirm("Restore the default five-item hunt on this device?")) return;
+    if (!confirm("Restore the default seven-item hunt on this device?")) return;
 
     state.bigfoots = [...defaultBigfoots];
     state.found = state.bigfoots.map(() => false);
