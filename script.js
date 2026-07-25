@@ -97,64 +97,29 @@ function initScavengerHunt() {
 
   const defaultBigfoots = [
     {
-      name: "Bigfoot #1",
-      clue: "Where snowy boots rest after an adventure.",
-      hint: "Look near the entry or mudroom where guests naturally leave footwear."
+      name: "The Cold-Kitchen Clinger",
+      clue: "Something small is clinging to a cold kitchen giant, hiding in plain sight. Slow down—quick trackers can walk right past it.",
+      hint: "Search the outside of the refrigerator for something held in place without tape."
     },
     {
-      name: "Bigfoot #2",
-      clue: "I keep watch where coats shake off mountain weather.",
-      hint: "Check hooks, coat storage, or gear zones guests can safely reach."
+      name: "Bigfoot's Ultimate Test",
+      clue: "A thousand tiny pieces are waiting for the most dedicated trackers. Head below the main floor toward the place where games get serious and find the challenge that takes patience to assemble.",
+      hint: "Look downstairs in the game room for a 1,000-piece puzzle. No need to put it together to mark this clue found."
     },
     {
-      name: "Bigfoot #3",
-      clue: "Warmth is nearby, but I never touch the flames.",
-      hint: "Search around the hearth or cozy seating area, not inside anything hot."
+      name: "Bigfoot's Favorite Cup",
+      clue: "Coffee, cocoa, or tea? Bigfoot packed a cup for one enormous sip, then tucked it among the kitchen's other cozy drink companions.",
+      hint: "Look where cups and mugs are stored in the kitchen cabinets."
     },
     {
-      name: "Bigfoot #4",
-      clue: "The best trail stories are told from this comfortable lookout.",
-      hint: "Look around the main living room seating and nearby decor."
+      name: "The Helpful Hot Spot",
+      clue: "After helping around the kitchen, I dry hands and hang close to where meals are made—warmer than any other treasure in the hunt.",
+      hint: "Look near the oven or stove for a towel hanging from the handle."
     },
     {
-      name: "Bigfoot #5",
-      clue: "I guard the snacks without stealing a single bite.",
-      hint: "Try the kitchen or dining area, especially guest-facing shelves and counters."
-    },
-    {
-      name: "Bigfoot #6",
-      clue: "Steam and tired ski legs pass through my territory.",
-      hint: "Check a bathroom, spa towel area, or the route toward post-adventure cleanup."
-    },
-    {
-      name: "Bigfoot #7",
-      clue: "Games are serious business when the mountain is dark.",
-      hint: "Look near board games, scorekeeping, puzzles, or game room shelves."
-    },
-    {
-      name: "Bigfoot #8",
-      clue: "I prefer bedtime stories with a view of the trees.",
-      hint: "Search guest-accessible bedroom decor and surfaces."
-    },
-    {
-      name: "Bigfoot #9",
-      clue: "When wet gear dries, I stay close and quiet.",
-      hint: "Think laundry, hooks, drying areas, or warm gear storage."
-    },
-    {
-      name: "Bigfoot #10",
-      clue: "I like fresh mountain air, especially near a favorite soak.",
-      hint: "Check the route toward the hot tub or nearby outdoor guest area."
-    },
-    {
-      name: "Bigfoot #11",
-      clue: "You may pass me on the way to a great night's sleep.",
-      hint: "Search hallways, landings, and bedroom entry areas."
-    },
-    {
-      name: "Bigfoot #12",
-      clue: "The final Bigfoot watches over the whole Basecamp.",
-      hint: "Look for a broad view of a main gathering space."
+      name: "The Mountain Lookout",
+      clue: "Climb above the main living area to a perch with mountain views. Something artistic and made of metal is keeping watch from the loft.",
+      hint: "Search the upstairs loft, especially the mountain-facing area, for a metal piece of artwork."
     }
   ];
 
@@ -203,7 +168,9 @@ function initScavengerHunt() {
 
     try {
       const parsed = JSON.parse(saved);
-      return Array.isArray(parsed) && parsed.length ? parsed : [...defaultBigfoots];
+      return Array.isArray(parsed) && parsed.length === defaultBigfoots.length
+        ? parsed
+        : [...defaultBigfoots];
     } catch {
       return [...defaultBigfoots];
     }
@@ -219,7 +186,10 @@ function initScavengerHunt() {
       parsed = [];
     }
 
-    state.found = state.bigfoots.map((_, index) => Boolean(parsed[index]));
+    const savedMatchesCurrentHunt = parsed.length === state.bigfoots.length;
+    state.found = state.bigfoots.map((_, index) => (
+      savedMatchesCurrentHunt ? Boolean(parsed[index]) : false
+    ));
     saveFound();
   }
 
@@ -277,7 +247,8 @@ function initScavengerHunt() {
       article.innerHTML = `
         <div class="hunt-card-head">
           <div>
-            <h3>${escapeHtml(bigfoot.name || `Bigfoot #${index + 1}`)}</h3>
+            <p class="eyebrow">Clue ${index + 1}</p>
+            <h3>${escapeHtml(bigfoot.name || `Clue ${index + 1}`)}</h3>
             <p class="clue-text">${escapeHtml(bigfoot.clue)}</p>
           </div>
           <span class="status-pill">${state.found[index] ? "✓ Found" : "Searching"}</span>
@@ -329,7 +300,7 @@ function initScavengerHunt() {
       const item = document.createElement("article");
       item.className = "admin-item";
       item.innerHTML = `
-        <h3>Bigfoot ${index + 1}</h3>
+        <h3>Clue ${index + 1}</h3>
         <label>Name <input value="${escapeAttribute(bigfoot.name)}" data-field="name" data-index="${index}" /></label>
         <label>Clue <textarea data-field="clue" data-index="${index}">${escapeHtml(bigfoot.clue)}</textarea></label>
         <label>Hint <textarea data-field="hint" data-index="${index}">${escapeHtml(bigfoot.hint || "")}</textarea></label>
@@ -364,7 +335,8 @@ function initScavengerHunt() {
   }
 
   function resetHuntProgress() {
-    if (!confirm("Reset your Bigfoot hunt? This will clear all 12 discoveries and return the tracker to 0/12.")) return;
+    const total = state.bigfoots.length;
+    if (!confirm(`Reset your Bigfoot hunt? This will clear all ${total} discoveries and return the tracker to 0/${total}.`)) return;
 
     state.found = state.bigfoots.map(() => false);
     state.confettiPlayed = false;
@@ -374,7 +346,7 @@ function initScavengerHunt() {
   }
 
   function restoreDefaults() {
-    if (!confirm("Restore the default 12-Bigfoot hunt on this device?")) return;
+    if (!confirm("Restore the default five-item hunt on this device?")) return;
 
     state.bigfoots = [...defaultBigfoots];
     state.found = state.bigfoots.map(() => false);
@@ -476,8 +448,8 @@ function initScavengerHunt() {
   elements.addBigfoot.addEventListener("click", () => {
     const nextNumber = state.bigfoots.length + 1;
     state.bigfoots.push({
-      name: `Bigfoot #${nextNumber}`,
-      clue: "Add a new clue for this hidden Bigfoot.",
+      name: `Clue ${nextNumber}`,
+      clue: "Add a new riddle for this Basecamp treasure.",
       hint: "Add an optional hint guests can reveal."
     });
     state.found.push(false);
