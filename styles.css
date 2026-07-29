@@ -1667,6 +1667,12 @@ select:focus-visible {
   height: 100%;
 }
 
+.family-activities-page .recommendation-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .food-guide .recommendation-card {
   display: flex;
   flex-direction: column;
@@ -1862,6 +1868,11 @@ select:focus-visible {
 }
 
 .explore-page .recommendation-actions {
+  margin-top: auto;
+  padding-top: 0.2rem;
+}
+
+.family-activities-page .recommendation-actions {
   margin-top: auto;
   padding-top: 0.2rem;
 }
