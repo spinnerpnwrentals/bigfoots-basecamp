@@ -118,13 +118,8 @@ function initScavengerHunt() {
     },
     {
       name: "The Feast Keeper",
-      clue: "Before a woodland gathering begins, this flat companion waits in hiding for cheeses, snacks, and forest-sized feasts.",
-      hint: "Look inside the kitchen cabinets near the stove for the charcuterie board."
-    },
-    {
-      name: "Bigfoot's Bunk Key",
-      clue: "Where tired explorers stack their dreams, a tiny keepsake hides below the sleeping place. No climbing is required.",
-      hint: "Go to the bunk room, crouch down, and look underneath the bunk bed. The keychain is attached to the underside rail."
+      clue: "Before a woodland gathering begins, this flat companion stands ready for cheeses, snacks, and forest-sized feasts.",
+      hint: "Look on the kitchen counter near the stove. The wooden charcuterie board is standing upright with a mountain-and-tree design."
     },
     {
       name: "The Thousand-Piece Trial",
@@ -178,9 +173,11 @@ function initScavengerHunt() {
 
     try {
       const parsed = JSON.parse(saved);
-      return Array.isArray(parsed) && parsed.length === defaultBigfoots.length
-        ? parsed
-        : [...defaultBigfoots];
+      if (Array.isArray(parsed) && parsed.length === defaultBigfoots.length) {
+        return parsed;
+      }
+      localStorage.setItem(STORAGE_KEYS.hunt, JSON.stringify(defaultBigfoots));
+      return [...defaultBigfoots];
     } catch {
       return [...defaultBigfoots];
     }
@@ -197,9 +194,15 @@ function initScavengerHunt() {
     }
 
     const savedMatchesCurrentHunt = parsed.length === state.bigfoots.length;
-    state.found = state.bigfoots.map((_, index) => (
-      savedMatchesCurrentHunt ? Boolean(parsed[index]) : false
-    ));
+    const savedMatchesPreviousHunt = parsed.length === state.bigfoots.length + 1;
+    state.found = state.bigfoots.map((_, index) => {
+      if (savedMatchesCurrentHunt) return Boolean(parsed[index]);
+      if (savedMatchesPreviousHunt) {
+        const previousIndex = index < state.bigfoots.length - 1 ? index : index + 1;
+        return Boolean(parsed[previousIndex]);
+      }
+      return false;
+    });
     saveFound();
   }
 
@@ -356,7 +359,7 @@ function initScavengerHunt() {
   }
 
   function restoreDefaults() {
-    if (!confirm("Restore the default seven-item hunt on this device?")) return;
+    if (!confirm("Restore the default six-item hunt on this device?")) return;
 
     state.bigfoots = [...defaultBigfoots];
     state.found = state.bigfoots.map(() => false);
