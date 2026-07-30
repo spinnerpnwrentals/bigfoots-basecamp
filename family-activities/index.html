@@ -282,23 +282,52 @@
     </section>
 
     <section class="guide-section" aria-labelledby="packing">
-      <div class="guide-section-head">
-        <p class="eyebrow">Packing Suggestions</p>
-        <h2 id="packing">Easy Family Checklist</h2>
-        <p>Start early on summer weekends, check the weather, and bring the basics. Mountain plans go smoother when everyone has snacks.</p>
+      <div class="arrival-checklist-panel" aria-labelledby="packing">
+        <div class="guide-section-head arrival-checklist-head">
+          <p class="eyebrow">Packing Suggestions</p>
+          <h2 id="packing">Easy Family Checklist</h2>
+          <p>Start early on summer weekends, check the weather, and bring the basics. Mountain plans go smoother when everyone has snacks.</p>
+        </div>
+        <form class="interactive-checklist" id="familyChecklist">
+          <div class="check-item">
+            <input type="checkbox" id="family-checklist-water" data-step="water" />
+            <label for="family-checklist-water">
+              <span class="check-item-title">Water bottles</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="family-checklist-snacks" data-step="snacks" />
+            <label for="family-checklist-snacks">
+              <span class="check-item-title">Snacks</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="family-checklist-sunscreen" data-step="sunscreen" />
+            <label for="family-checklist-sunscreen">
+              <span class="check-item-title">Sunscreen</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="family-checklist-rain-jacket" data-step="rain-jacket" />
+            <label for="family-checklist-rain-jacket">
+              <span class="check-item-title">Rain jacket</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="family-checklist-layers" data-step="layers" />
+            <label for="family-checklist-layers">
+              <span class="check-item-title">Extra layers for changing mountain weather</span>
+            </label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="family-checklist-shoes" data-step="shoes" />
+            <label for="family-checklist-shoes">
+              <span class="check-item-title">Comfortable shoes</span>
+            </label>
+          </div>
+        </form>
+        <button class="button secondary arrival-checklist-reset" id="familyChecklistReset" type="button" aria-label="Reset Easy Family Checklist">Reset Checklist</button>
       </div>
-      <ul class="checklist dashboard-checklist">
-        <li>Water bottles</li>
-        <li>Snacks</li>
-        <li>Sunscreen</li>
-        <li>Rain jacket</li>
-        <li>Extra layers for changing mountain weather</li>
-        <li>Comfortable shoes</li>
-        <li>Camera</li>
-        <li>Binoculars, optional</li>
-        <li>Give wildlife plenty of space</li>
-        <li>Leave No Trace so future families can enjoy these places too</li>
-      </ul>
     </section>
 
     <section class="guide-section" aria-labelledby="seasonal">
@@ -331,5 +360,6 @@
       <a class="return-link" href="/">← Return to Guest Portal</a>
     </section>
   </main>
+  <script src="/script.js"></script>
 </body>
 </html>

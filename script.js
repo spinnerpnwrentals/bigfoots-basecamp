@@ -1,5 +1,6 @@
 const ARRIVAL_CHECKLIST_STORAGE_KEY = "bigfoots-basecamp-arrival-checklist";
 const CHECKOUT_CHECKLIST_STORAGE_KEY = "bigfoots-basecamp-checkout-checklist";
+const FAMILY_CHECKLIST_STORAGE_KEY = "bigfoots-basecamp-family-checklist";
 
 initInteractiveChecklist({
   checklistSelector: "#arrivalChecklist",
@@ -12,6 +13,11 @@ initInteractiveChecklist({
   checklistSelector: "#checkoutChecklist",
   resetSelector: "#checkoutChecklistReset",
   storageKey: CHECKOUT_CHECKLIST_STORAGE_KEY
+});
+initInteractiveChecklist({
+  checklistSelector: "#familyChecklist",
+  resetSelector: "#familyChecklistReset",
+  storageKey: FAMILY_CHECKLIST_STORAGE_KEY
 });
 initScavengerHunt();
 
