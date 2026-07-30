@@ -457,7 +457,6 @@ select:focus-visible {
 .progress-panel,
 .hunt-card,
 .admin-panel,
-.secret-guide,
 .info-section,
 .portal-card {
   background:
@@ -477,7 +476,6 @@ select:focus-visible {
 .info-section .eyebrow,
 .welcome-panel .eyebrow,
 .admin-panel .eyebrow,
-.secret-guide .eyebrow,
 .complete-panel .eyebrow {
   color: var(--cedar-dark);
 }
@@ -980,7 +978,6 @@ select:focus-visible {
 }
 
 .complete-panel,
-.secret-guide,
 .admin-panel {
   margin-top: 18px;
   padding: clamp(1.2rem, 5vw, 2rem);
@@ -997,29 +994,6 @@ select:focus-visible {
   margin-bottom: 0;
   color: var(--cedar);
   font-size: 1.2rem;
-}
-
-.guide-header {
-  margin-bottom: 1rem;
-}
-
-.guide-grid {
-  display: grid;
-  gap: 12px;
-}
-
-.guide-item {
-  border-top: 1px solid var(--line);
-  padding-top: 1rem;
-}
-
-.guide-item h3 {
-  margin-bottom: 0.35rem;
-}
-
-.guide-item p {
-  margin-bottom: 0;
-  color: var(--muted);
 }
 
 .admin-heading {
@@ -3076,10 +3050,6 @@ select:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .guide-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .info-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3362,7 +3332,6 @@ select:focus-visible {
   .welcome-panel,
   .progress-panel,
   .complete-panel,
-  .secret-guide,
   .admin-panel {
     padding: var(--mobile-panel-padding);
   }

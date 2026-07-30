@@ -134,18 +134,6 @@ function initScavengerHunt() {
     }
   ];
 
-  const secretGuideSections = [
-    ["Favorite hikes", "Placeholder: add trail names, drive times, difficulty, pass requirements, and seasonal notes."],
-    ["Waterfalls", "Placeholder: add waterfall stops, parking notes, and best months for flow."],
-    ["Restaurants", "Placeholder: add casual dinner spots, family favorites, and reservation tips."],
-    ["Coffee", "Placeholder: add nearby espresso stops and favorite morning orders."],
-    ["Breweries", "Placeholder: add taprooms, food options, and designated-driver notes."],
-    ["Ski tips", "Placeholder: add pass guidance, parking timing, rental notes, and beginner-friendly runs."],
-    ["Summer activities", "Placeholder: add lake days, biking, scenic drives, and rainy-day options."],
-    ["Wildlife", "Placeholder: add common sightings and respectful viewing reminders."],
-    ["Sunset locations", "Placeholder: add viewpoints, timing notes, and safe pullouts."]
-  ];
-
   const state = {
     bigfoots: loadBigfoots(),
     found: [],
@@ -160,8 +148,6 @@ function initScavengerHunt() {
     progressMeter: document.querySelector(".progress-meter"),
     progressBlocks: document.querySelector("#progressBlocks"),
     complete: document.querySelector("#complete"),
-    secretGuide: document.querySelector("#secretGuide"),
-    guideGrid: document.querySelector("#guideGrid"),
     adminButton: document.querySelector("#adminButton"),
     adminPanel: document.querySelector("#adminPanel"),
     adminList: document.querySelector("#adminList"),
@@ -227,7 +213,6 @@ function initScavengerHunt() {
   function render() {
     renderProgress();
     renderClues();
-    renderGuide();
     renderAdmin();
   }
 
@@ -243,8 +228,6 @@ function initScavengerHunt() {
     elements.progressMeter.setAttribute("aria-valuemax", String(total));
     elements.progressBlocks.textContent = "█".repeat(found) + "░".repeat(Math.max(total - found, 0));
     elements.complete.classList.toggle("hidden", !complete);
-    elements.secretGuide.classList.toggle("hidden", !complete);
-
     if (complete && !state.confettiPlayed) {
       state.confettiPlayed = true;
       localStorage.setItem(STORAGE_KEYS.completed, "true");
@@ -299,15 +282,6 @@ function initScavengerHunt() {
 
       elements.clues.appendChild(article);
     });
-  }
-
-  function renderGuide() {
-    elements.guideGrid.innerHTML = secretGuideSections.map(([title, copy]) => `
-      <article class="guide-item">
-        <h3>${title}</h3>
-        <p>${copy}</p>
-      </article>
-    `).join("");
   }
 
   function renderAdmin() {
