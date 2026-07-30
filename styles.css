@@ -788,6 +788,12 @@ select:focus-visible {
   overflow: hidden;
 }
 
+.scavenger-footprint-icon {
+  display: none;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  line-height: 1;
+}
+
 .stamp {
   display: inline-grid;
   place-items: center;
@@ -3283,20 +3289,17 @@ select:focus-visible {
     padding-right: 32%;
   }
 
-  .welcome-panel::after {
-    content: "";
+  .scavenger-footprint-icon {
     position: absolute;
     right: clamp(1.5rem, 5vw, 3rem);
     top: 50%;
+    display: grid;
+    place-items: center;
     width: 150px;
     height: 210px;
-    border: 2px solid rgba(32, 53, 41, 0.28);
-    border-radius: 48% 45% 42% 46%;
     transform: translateY(-50%) rotate(8deg);
-    background:
-      radial-gradient(ellipse at 50% 20%, rgba(32, 53, 41, 0.2) 0 22px, transparent 23px),
-      radial-gradient(ellipse at 50% 65%, rgba(32, 53, 41, 0.13) 0 58px, transparent 59px);
-    opacity: 0.82;
+    font-size: clamp(4.75rem, 8vw, 6.5rem);
+    text-shadow: 0 10px 24px rgba(32, 53, 41, 0.16);
   }
 }
 
