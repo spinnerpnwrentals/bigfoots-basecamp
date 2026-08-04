@@ -1938,6 +1938,51 @@ select:focus-visible {
   font-weight: 900;
 }
 
+.booking-gallery-section {
+  overflow: hidden;
+}
+
+.booking-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+}
+
+.booking-gallery figure {
+  aspect-ratio: 4 / 3;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0.65rem;
+  background: rgba(32, 53, 41, 0.1);
+}
+
+.booking-gallery-featured {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 10;
+}
+
+.booking-gallery img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+@media (hover: hover) {
+  .booking-gallery figure:hover img {
+    transform: scale(1.025);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .booking-gallery img {
+    transition: none;
+  }
+}
+
 .booking-comparison-note {
   border-left: 4px solid var(--copper);
 }
@@ -3167,6 +3212,20 @@ select:focus-visible {
 
   .booking-options-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .booking-gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+
+  .booking-gallery figure {
+    aspect-ratio: auto;
+  }
+
+  .booking-gallery-featured {
+    grid-column: span 2;
+    grid-row: span 3;
   }
 
   .explore-page section[aria-labelledby="classic-hikes"] .recommendation-grid > .featured-trail {
