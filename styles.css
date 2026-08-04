@@ -2009,13 +2009,29 @@ select:focus-visible {
   margin-inline: 0;
 }
 
-.home-booking-options {
-  display: flex;
-  justify-content: flex-end;
-  margin: 18px 0 0;
+.home-booking-cta {
+  display: grid;
+  justify-items: start;
+  gap: 0.7rem;
 }
 
-.home-booking-options .return-link {
+.home-booking-cta h2,
+.home-booking-cta p {
+  margin-bottom: 0;
+}
+
+.home-booking-cta .button {
+  width: fit-content;
+  margin-top: 0.25rem;
+}
+
+.booking-cross-link h2 {
+  margin-bottom: 0.45rem;
+  color: var(--deep-forest);
+  font-size: clamp(1.35rem, 4vw, 1.8rem);
+}
+
+.booking-cross-link .return-link {
   margin-top: 0;
 }
 
@@ -2950,6 +2966,18 @@ select:focus-visible {
   margin-bottom: 0;
   font-size: 0.95rem;
   line-height: 1.5;
+}
+
+.footer-booking {
+  color: rgba(255, 250, 240, 0.78);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 0.86rem;
+}
+
+.footer-booking a {
+  color: var(--cream);
+  font-weight: 900;
+  text-underline-offset: 0.2em;
 }
 
 .adventure-filters {
