@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Book Your Stay | Bigfoot's Basecamp</title>
-  <meta name="description" content="Choose Airbnb, Vrbo, or Booking.com to view availability and reserve Bigfoot's Basecamp near Snoqualmie Pass." />
+  <meta name="description" content="Book Bigfoot's Basecamp directly or choose Airbnb, Vrbo, or Booking.com to reserve your Snoqualmie Pass stay." />
   <meta name="theme-color" content="#203529" />
   <link rel="canonical" href="https://bigfootsbasecamp.com/book-your-stay/" />
   <link rel="icon" href="/favicon.svg?v=7" type="image/svg+xml" />
@@ -15,13 +15,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Bigfoot's Basecamp" />
   <meta property="og:title" content="Book Your Stay | Bigfoot's Basecamp" />
-  <meta property="og:description" content="Choose Airbnb, Vrbo, or Booking.com to view availability and reserve Bigfoot's Basecamp near Snoqualmie Pass." />
+  <meta property="og:description" content="Book Bigfoot's Basecamp directly or choose Airbnb, Vrbo, or Booking.com to reserve your Snoqualmie Pass stay." />
   <meta property="og:url" content="https://bigfootsbasecamp.com/book-your-stay/" />
   <meta property="og:image" content="https://bigfootsbasecamp.com/assets/images/bigfoots-basecamp-logo.png" />
   <meta property="og:image:alt" content="Bigfoot's Basecamp logo" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Book Your Stay | Bigfoot's Basecamp" />
-  <meta name="twitter:description" content="Choose Airbnb, Vrbo, or Booking.com to view availability and reserve Bigfoot's Basecamp near Snoqualmie Pass." />
+  <meta name="twitter:description" content="Book Bigfoot's Basecamp directly or choose Airbnb, Vrbo, or Booking.com to reserve your Snoqualmie Pass stay." />
   <meta name="twitter:image" content="https://bigfootsbasecamp.com/assets/images/bigfoots-basecamp-logo.png" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
@@ -63,7 +63,7 @@
         <p class="eyebrow">Booking Options</p>
         <h2 id="booking-intro-title">Choose What Works for You</h2>
       </div>
-      <p>Bigfoot's Basecamp is available on Airbnb, Vrbo, and Booking.com. Choose the platform you're most comfortable using to view availability, pricing, policies, and reservation details.</p>
+      <p>Choose direct booking or reserve through Airbnb, Vrbo, or Booking.com&mdash;whichever option works best for you.</p>
       <p>The home, amenities, and Basecamp experience are the same whichever platform you choose.</p>
     </section>
 
@@ -107,10 +107,20 @@
       <div class="guide-section-head">
         <p class="eyebrow">Pick Your Platform</p>
         <h2 id="booking-platforms-title">View Bigfoot's Basecamp</h2>
-        <p>Each listing is for the same Basecamp stay. Use whichever booking site feels most familiar.</p>
+        <p>Choose direct booking or use whichever booking site feels most familiar. Every option is for the same Basecamp stay.</p>
       </div>
 
       <div class="booking-options-grid">
+        <article class="booking-option-card">
+          <h3 class="booking-platform-title">
+            <span>Direct Booking</span>
+          </h3>
+          <p>Check real-time availability and reserve directly through Bigfoot's Basecamp. Booking direct may help you avoid some third-party platform service fees.</p>
+          <div class="booking-option-actions">
+            <a class="button secondary" href="#direct-booking-availability">Check Availability</a>
+          </div>
+        </article>
+
         <article class="booking-option-card">
           <h3 class="booking-platform-title">
             <img class="booking-platform-logo" src="/assets/images/booking-platforms/airbnb-logo.png" alt="" aria-hidden="true" />
@@ -144,10 +154,81 @@
           </div>
         </article>
       </div>
+
+      <div class="direct-booking-panel" id="direct-booking-availability">
+        <div class="guide-section-head">
+          <p class="eyebrow">Book Direct</p>
+          <h3>Check Availability</h3>
+          <p>Select your dates and number of guests to view real-time availability and continue through our secure Guesty booking system.</p>
+        </div>
+        <div class="guesty-widget-shell">
+          <div id="search-widget_IO312PWQ">
+            <script>
+              !function(e,t,a,n,c,r){
+                function s(t){
+                  e.console.log("[Guesty Embedded Widget]:",t)
+                }
+                var i,d,l,o,y,m,g,h,p,u;
+                n&&(
+                  i=n,
+                  d=t.getElementsByTagName("head")[0],
+                  (l=t.createElement("link")).rel="stylesheet",
+                  l.type="text/css",
+                  l.href=i,
+                  l.media="all",
+                  d.appendChild(l)
+                ),
+                o=function(){
+                  try{
+                    e[a].create(r).catch(function(e){
+                      s(e.message)
+                    })
+                  }catch(e){
+                    s(e.message)
+                  }
+                },
+                h=!1,
+                y=c,
+                m=function(){
+                  h||this.readyState&&"complete"!=this.readyState||(
+                    h=!0,
+                    o()
+                  )
+                },
+                (g=t.createElement("script")).type="text/javascript",
+                g.src=y,
+                g.async="true",
+                g.onload=g.onreadystatechange=m,
+                p=g,
+                (u=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,u)
+              }(
+                window,
+                document,
+                "GuestySearchBarWidget",
+                "https://s3.amazonaws.com/guesty-frontend-production/search-bar-production.css",
+                "https://s3.amazonaws.com/guesty-frontend-production/search-bar-production.js",
+                {
+                  "siteUrl":"spinnerpnwrentalsllc.guestybookings.com",
+                  "color":"#203529"
+                }
+              );
+            </script>
+          </div>
+          <noscript>
+            <p>
+              JavaScript is required to load live availability.
+              <a href="https://spinnerpnwrentalsllc.guestybookings.com" target="_blank" rel="noopener noreferrer">
+                Open the direct-booking page
+              </a>.
+            </p>
+          </noscript>
+        </div>
+        <p class="direct-booking-fallback">Having trouble loading availability? <a href="https://spinnerpnwrentalsllc.guestybookings.com" target="_blank" rel="noopener noreferrer">Open our secure direct-booking page</a>.</p>
+      </div>
     </section>
 
     <aside class="page-note booking-comparison-note" aria-label="Booking platform details">
-      <p>Availability, pricing, fees, and booking terms may vary by platform. Review the details shown on your selected booking site before reserving.</p>
+      <p>Availability, pricing, fees, cancellation terms, and payment schedules may vary by booking method. Review all details before confirming your reservation.</p>
     </aside>
 
     <section class="page-note">
