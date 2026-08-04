@@ -1895,6 +1895,23 @@ select:focus-visible {
   font-size: 1.45rem;
 }
 
+.booking-platform-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.booking-platform-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 5rem;
+  max-height: clamp(1.4rem, 2vw, 1.75rem);
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
 .booking-option-card p {
   margin-bottom: 0;
   color: #444a3b;
