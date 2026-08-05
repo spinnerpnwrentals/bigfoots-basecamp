@@ -171,6 +171,26 @@
           </div>
           <h3>Wildfire Smoke</h3>
           <p>Review current air quality during late summer, especially if smoke is in the forecast.</p>
+          <div class="aqi-live" data-aqi-widget aria-live="polite" aria-busy="true">
+            <p class="aqi-live-label">Current AQI</p>
+            <div class="aqi-live-reading" data-aqi-reading hidden>
+              <strong class="aqi-live-value" data-aqi-value></strong>
+              <div class="aqi-live-details">
+                <p class="aqi-live-category" data-aqi-category></p>
+                <p class="aqi-live-pollutant" data-aqi-pollutant hidden></p>
+              </div>
+            </div>
+            <p class="aqi-live-status" data-aqi-status>Loading current AQI…</p>
+            <p class="aqi-live-location">Snoqualmie Pass, WA 98068</p>
+            <p class="aqi-live-source">Preliminary data · Updated hourly from AirNow</p>
+          </div>
+          <a
+            class="button secondary aqi-live-link"
+            href="https://www.airnow.gov/?city=Snoqualmie%20Pass&amp;state=WA&amp;country=USA"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View current air quality details for Snoqualmie Pass on AirNow"
+          >View Details on AirNow</a>
         </article>
         <article class="recommendation-card">
           <div class="badge-list" aria-label="Categories">
@@ -347,6 +367,75 @@
 
       sunriseTarget.textContent = sunrise ? formatter.format(sunrise) : "Unavailable today";
       sunsetTarget.textContent = sunset ? formatter.format(sunset) : "Unavailable today";
+    })();
+
+    (() => {
+      const widget = document.querySelector("[data-aqi-widget]");
+      if (!widget) return;
+
+      const reading = widget.querySelector("[data-aqi-reading]");
+      const value = widget.querySelector("[data-aqi-value]");
+      const category = widget.querySelector("[data-aqi-category]");
+      const pollutant = widget.querySelector("[data-aqi-pollutant]");
+      const status = widget.querySelector("[data-aqi-status]");
+      const categoryClasses = [
+        "aqi-live-good",
+        "aqi-live-moderate",
+        "aqi-live-sensitive",
+        "aqi-live-unhealthy",
+        "aqi-live-very-unhealthy",
+        "aqi-live-hazardous"
+      ];
+      const categoryClass = {
+        "Good": "aqi-live-good",
+        "Moderate": "aqi-live-moderate",
+        "Unhealthy for Sensitive Groups": "aqi-live-sensitive",
+        "Unhealthy": "aqi-live-unhealthy",
+        "Very Unhealthy": "aqi-live-very-unhealthy",
+        "Hazardous": "aqi-live-hazardous"
+      };
+
+      const showUnavailable = () => {
+        reading.hidden = true;
+        status.hidden = false;
+        status.textContent = "Current AQI is temporarily unavailable.";
+        widget.setAttribute("aria-busy", "false");
+      };
+
+      fetch("/.netlify/functions/current-aqi", {
+        headers: { "Accept": "application/json" }
+      })
+        .then((response) => {
+          if (!response.ok) throw new Error("AQI request failed");
+          return response.json();
+        })
+        .then((data) => {
+          const hasNumericAqi = typeof data.aqi === "number"
+            || (typeof data.aqi === "string" && data.aqi.trim() !== "");
+          const numericAqi = hasNumericAqi ? Number(data.aqi) : Number.NaN;
+          if (data.available === false || !Number.isFinite(numericAqi)) {
+            throw new Error("AQI unavailable");
+          }
+
+          value.textContent = String(Math.round(numericAqi));
+          category.textContent = typeof data.category === "string" && data.category
+            ? data.category
+            : "Category unavailable";
+
+          if (typeof data.pollutant === "string" && data.pollutant) {
+            pollutant.textContent = `Primary pollutant: ${data.pollutant}`;
+            pollutant.hidden = false;
+          } else {
+            pollutant.hidden = true;
+          }
+
+          widget.classList.remove(...categoryClasses);
+          if (categoryClass[data.category]) widget.classList.add(categoryClass[data.category]);
+          status.hidden = true;
+          reading.hidden = false;
+          widget.setAttribute("aria-busy", "false");
+        })
+        .catch(showUnavailable);
     })();
   </script>
 </body>
