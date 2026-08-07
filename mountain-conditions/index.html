@@ -182,7 +182,7 @@
               </div>
             </div>
             <p class="aqi-live-status" data-aqi-status>Loading current AQI…</p>
-            <p class="aqi-live-location">Snoqualmie Pass, WA 98068</p>
+            <p class="aqi-live-location" data-aqi-location>Snoqualmie Pass area</p>
             <p class="aqi-live-source">Preliminary data · Updated hourly from AirNow</p>
           </div>
           <a
@@ -378,6 +378,7 @@
       const value = widget.querySelector("[data-aqi-value]");
       const category = widget.querySelector("[data-aqi-category]");
       const pollutant = widget.querySelector("[data-aqi-pollutant]");
+      const location = widget.querySelector("[data-aqi-location]");
       const status = widget.querySelector("[data-aqi-status]");
       const categoryClasses = [
         "aqi-live-good",
@@ -428,6 +429,10 @@
             pollutant.hidden = false;
           } else {
             pollutant.hidden = true;
+          }
+
+          if (location && typeof data.reportingArea === "string" && data.reportingArea) {
+            location.textContent = `Snoqualmie Pass area · ${data.reportingArea} reporting area`;
           }
 
           widget.classList.remove(...categoryClasses);
