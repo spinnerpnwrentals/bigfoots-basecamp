@@ -128,6 +128,21 @@ function initScavengerHunt() {
       hint: "Look on the kitchen counter near the stove. The wooden charcuterie board is standing upright with a mountain-and-tree design."
     },
     {
+      name: "Bigfoot’s Welcome Step",
+      clue: "Every adventure starts with a first step. One quiet guardian waits where muddy boots pause before the climb begins.",
+      hint: "Look in the entryway at the base of the stairs. Check the doormat."
+    },
+    {
+      name: "A Very Important Warning",
+      clue: "Some forest rules are too important to ignore. One warning waits along a path you’ll walk inside the Basecamp.",
+      hint: "Check the first-floor hallway for the ‘Don’t Feed the Sasquatch’ sign."
+    },
+    {
+      name: "Frozen Footprints",
+      clue: "Bigfoot left a chilly surprise where even the biggest footprints can freeze solid.",
+      hint: "Open the kitchen freezer and look for the ice tray that makes Bigfoot-shaped ice cubes."
+    },
+    {
       name: "The Thousand-Piece Trial",
       clue: "Only the most hardened Bigfoot hunters reach this final test. A thousand scattered possibilities wait below, where games and patient explorers gather.",
       hint: "Head downstairs to the game room and look for the 1000-piece puzzle."
@@ -186,12 +201,17 @@ function initScavengerHunt() {
     }
 
     const savedMatchesCurrentHunt = parsed.length === state.bigfoots.length;
-    const savedMatchesPreviousHunt = parsed.length === state.bigfoots.length + 1;
+    const savedMatchesSixItemHunt = state.bigfoots.length === 9 && parsed.length === 6;
+    const savedMatchesSevenItemHunt = state.bigfoots.length === 9 && parsed.length === 7;
     state.found = state.bigfoots.map((_, index) => {
       if (savedMatchesCurrentHunt) return Boolean(parsed[index]);
-      if (savedMatchesPreviousHunt) {
-        const previousIndex = index < state.bigfoots.length - 1 ? index : index + 1;
-        return Boolean(parsed[previousIndex]);
+      if (savedMatchesSixItemHunt) {
+        if (index < 5) return Boolean(parsed[index]);
+        if (index === 8) return Boolean(parsed[5]);
+      }
+      if (savedMatchesSevenItemHunt) {
+        if (index < 5) return Boolean(parsed[index]);
+        if (index === 8) return Boolean(parsed[6]);
       }
       return false;
     });
@@ -339,7 +359,7 @@ function initScavengerHunt() {
   }
 
   function restoreDefaults() {
-    if (!confirm("Restore the default six-item hunt on this device?")) return;
+    if (!confirm("Restore the default nine-item hunt on this device?")) return;
 
     state.bigfoots = [...defaultBigfoots];
     state.found = state.bigfoots.map(() => false);
